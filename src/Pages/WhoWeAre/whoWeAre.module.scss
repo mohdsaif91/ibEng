@@ -1,0 +1,139 @@
+@import "../../variable.module.scss";
+
+.box {
+  height: 70px;
+  width: 70px;
+  position: relative;
+  border-bottom: 2px solid #0004ff;
+  background: #cccaca;
+}
+.borderLeft {
+  border-left: 2px solid #0004ff;
+  position: absolute;
+  top: 95%;
+  bottom: 0;
+}
+.borderRight {
+  position: absolute;
+  border-right: 2px solid #0004ff;
+  top: 0;
+}
+
+.whoWeAreContaine {
+  padding: 106px 280px 0 280px;
+  .headingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .heading {
+      color: $blackColor;
+      font-family: Roboto;
+      font-size: 80px;
+      font-weight: 700;
+    }
+    .verticalDevider {
+      margin-top: 40px;
+      height: 80px;
+      width: 3px;
+      background-color: $borderColor;
+    }
+  }
+  .headingContainerText {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 124px;
+
+    .borderContainer {
+      width: 110%;
+      height: 400px;
+      border-bottom: 2px solid $borderColor;
+      border-right: 2px solid $borderColor;
+      position: relative;
+      top: -114px;
+      margin-bottom: -114px;
+      .topBorder {
+        position: absolute;
+        border-right: 2px solid $blackColor;
+        height: 2px;
+        width: 12%;
+        right: 0;
+        background-color: $borderColor;
+      }
+      .protfolioContainer {
+        position: relative;
+        top: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .protfolioImg {
+          width: 999px;
+        }
+      }
+    }
+    .borderContainerTwo {
+      width: 110%;
+      height: 440px;
+      border-left: 2px solid $borderColor;
+      .bottomBorder {
+        position: relative;
+        background-color: $borderColor;
+        border-bottom: 1px solid #000;
+        height: 1px;
+        width: 12%;
+        left: 0;
+        top: 99.8%;
+        .headingContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+    .borderContainerThree {
+      width: 110%;
+      height: 400px;
+      border-right: 2px solid $borderColor;
+      .rightTopBorder {
+        position: relative;
+        background-color: $borderColor;
+        border-bottom: 1px solid #000;
+        height: 1px;
+        width: 12%;
+        left: 88%;
+        top: 0%;
+      }
+      .containerThreeHeadingOne {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: -14%;
+      }
+    }
+  }
+}
+.marginTop {
+  margin-top: 40px;
+}
+
+.containerTwoHeadingWidth {
+  width: 896px;
+}
+.containerOneHeadingWidth {
+  width: 920px;
+}
+
+.heading {
+  text-align: center;
+  font-family: Lato;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 33.6px */
+  color: $blackColor;
+}
