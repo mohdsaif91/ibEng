@@ -9,6 +9,7 @@ import style from "./index.module.scss";
 
 const Home = React.lazy(() => import("./Pages/Home/Home"));
 const WhoWeAre = React.lazy(() => import("./Pages/WhoWeAre/WhoWeAre"));
+const WhatWeDo = React.lazy(() => import("./Pages/WhatWeDo/WhatWeDo"));
 
 function App() {
   return (
@@ -26,8 +27,16 @@ function App() {
         <Route
           path="/whoWeAre"
           element={
-            <Suspense fallback={Loading}>
+            <Suspense fallback={<Loading />}>
               <WhoWeAre />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/whatWeDO"
+          element={
+            <Suspense fallback={<Loading />}>
+              <WhatWeDo />
             </Suspense>
           }
         />
