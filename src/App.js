@@ -10,6 +10,11 @@ import style from "./index.module.scss";
 const Home = React.lazy(() => import("./Pages/Home/Home"));
 const WhoWeAre = React.lazy(() => import("./Pages/WhoWeAre/WhoWeAre"));
 const WhatWeDo = React.lazy(() => import("./Pages/WhatWeDo/WhatWeDo"));
+const Protfolio = React.lazy(() => import("./Pages/Portfolio/Protfolio"));
+const WhatOurClientSay = React.lazy(() =>
+  import("./Pages/WhatOurClientSay/WhatOurClientSay")
+);
+const ContactUs = React.lazy(() => import("./Pages/ContactUs/ContactUs"));
 
 function App() {
   return (
@@ -37,6 +42,30 @@ function App() {
           element={
             <Suspense fallback={<Loading />}>
               <WhatWeDo />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/protfolio"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Protfolio />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/whatOurClientsSay"
+          element={
+            <Suspense fallback={<Loading />}>
+              <WhatOurClientSay />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/getInTouch"
+          element={
+            <Suspense>
+              <ContactUs />
             </Suspense>
           }
         />

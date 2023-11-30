@@ -19,6 +19,9 @@
       font-weight: 700;
       text-transform: uppercase;
       cursor: pointer;
+      &:hover {
+        color: $activePage;
+      }
     }
     .activePage {
       color: $activePage;

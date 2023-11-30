@@ -291,25 +291,125 @@ function WhoWeAre() {
                   </div>
                   <div className={style.leaderNameLabel}>Alaa Bishara</div>
                   <div className={style.designationLabel}>
-                    Development Department Manager
+                    {leaderData[leaderCount].designation}
                   </div>
                   <div className={style.subText}>
-                    A dynamic professional, serves as the Business Development
-                    Department Manager at IB Engineering.{" "}
+                    {leaderCount === 0 ? (
+                      <>
+                        A dynamic{" "}
+                        <span className={style.boldText}>professional</span>,
+                        serves as the Business Development Department Manager at
+                        <span className={style.boldText}> IB Engineering.</span>
+                      </>
+                    ) : leaderCount === 1 ? (
+                      <>
+                        Is a rising star at{" "}
+                        <span className={style.boldText}>IB ENG</span>. Started
+                        as an intern, Today he is a licensed{" "}
+                        <span className={style.boldText}>Engineer</span>, he
+                        honed his skills under our founder's guidance.
+                      </>
+                    ) : (
+                      <>
+                        As the{" "}
+                        <span className={style.boldText}>
+                          dedicated leader{" "}
+                        </span>{" "}
+                        of our Interior Design Department, Rawan Beshara Sabah
+                        brings a wealth of expertise to IB Engineering.
+                      </>
+                    )}
                   </div>
                   <div className={style.subText}>
-                    With a diverse educational background, including a
-                    bachelor's degree in law and business administration from
-                    Reichman University and a master's degree in business
-                    administration specializing in real estate and appraisals,
-                    Alaa brings a unique blend of skills to the team.
+                    {leaderCount === 0 ? (
+                      <>
+                        With a diverse educational background, including a
+                        bachelor's degree in{" "}
+                        <span className={style.boldText}>
+                          law and business administration{" "}
+                        </span>
+                        from Reichman University and a master's degree in
+                        <span className={style.boldText}>
+                          {" "}
+                          business administration{" "}
+                        </span>{" "}
+                        specializing in real estate and appraisals, Alaa brings
+                        a unique blend of skills to the team.
+                      </>
+                    ) : leaderCount === 1 ? (
+                      <>
+                        His youthful{" "}
+                        <span className={style.boldText}>
+                          energy and extensive experience{" "}
+                        </span>{" "}
+                        drive our planning department's commitment to
+                        excellence, ensuring that each project is meticulously
+                        planned and{" "}
+                        <span className={style.boldText}>
+                          executed with precision.
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        A distinguished alumna of the Technion with a degree in
+                        <span className={style.boldText}>
+                          civil engineering
+                        </span>
+                        , specialized in structures, and honored in interior
+                        design, Rawan has been a registered engineer and
+                        architect since 2009.
+                      </>
+                    )}
                   </div>
                   <div className={style.subText}>
-                    As a serial founder, entrepreneur, and VP of sales, he has
-                    played pivotal roles in several successful companies. His
-                    visionary leadership and extensive experience contribute
-                    significantly to IB Engineering's growth and success.
+                    {leaderCount === 0 ? (
+                      <>
+                        As a
+                        <span className={style.boldText}>
+                          serial founder, entrepreneur, and VP of sales,
+                        </span>{" "}
+                        he has played pivotal roles in several successful
+                        companies. His visionary
+                        <span className={style.boldText}>
+                          leadership and extensive experience{" "}
+                        </span>{" "}
+                        contribute significantly to IB Engineering's growth and
+                        success.
+                      </>
+                    ) : leaderCount === 1 ? (
+                      <>
+                        Mohammad's visionary leadership and collaborative.
+                        Approach inspire our team to achieve new heights in the
+                        world of{" "}
+                        <span className={style.boldText}>
+                          construction planning.
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        With over{" "}
+                        <span className={style.boldText}>
+                          15 years of experience
+                        </span>
+                        , she has been the guiding force behind numerous
+                        construction and{" "}
+                        <span className={style.boldText}>
+                          interior design projects
+                        </span>
+                        , particularly in residential towers across central and
+                        northern regions.
+                      </>
+                    )}
                   </div>
+                  {leaderCount === 3 && (
+                    <div className={style.subText}>
+                      Rawan's passion
+                      <span className={style.boldText}>for art, fashion</span>,
+                      and a discerning taste infuse her work with creativity and
+                      innovation, elevating every project to new heights of
+                      excellence.
+                    </div>
+                  )}
                   <div className={style.iconSignatureContainer}>
                     <div className={style.ogSignatureContainer}>
                       <img
@@ -369,14 +469,6 @@ function WhoWeAre() {
             </div>
             <div className={style.innerMostImageOverlay} />
           </div>
-          {/* <div className={style.leaderContainerBackgroundBlack} /> */}
-          {/* <div className={style.leaderInnerContainerParent}>
-            <div className={style.leaderInnerContainer}>
-              <div className={style.leaderImgTextContainerParent}>
-                <div className={style.leaderImgTextContainer}></div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

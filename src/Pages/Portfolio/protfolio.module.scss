@@ -1,0 +1,186 @@
+@import "../../variable.module.scss";
+
+.protfolioContainer {
+  .protfolioHeroContainer {
+    background-image: url("../../Asset/Img/protfolioHeroImage.png");
+    height: 544px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    .heroText {
+      position: relative;
+      top: 32%;
+      color: $whiteColor;
+      text-align: center;
+      font-family: Lato;
+      font-size: 92px;
+      font-weight: 700;
+      line-height: 120%; /* 110.4px */
+    }
+  }
+  .ourProjectContainer {
+    padding-top: 64px;
+    height: 400px;
+    background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0.62) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    .headingContainer {
+      text-align: center;
+      .mainHeading {
+        color: $footerbackgroundColor;
+        font-size: 80px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .subHeading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .dash {
+          width: 30px;
+          height: 3px;
+          background-color: $activePage;
+          margin-left: 16px;
+          margin-right: 16px;
+        }
+        .dashText {
+          font-size: 36px;
+          color: $activePage;
+        }
+      }
+    }
+  }
+  .actualprojectContainer {
+    height: 440px;
+    .projectCardContainer {
+      padding: 0 120px;
+      position: relative;
+      margin-top: -7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .projectCard {
+        height: 340px;
+        cursor: pointer;
+        .projectImg {
+          height: 218px;
+          width: 248px;
+        }
+        .imgOverLay {
+          position: relative;
+          top: -222px;
+          width: 248px;
+          height: 219px;
+          border-radius: 10px;
+          background: rgba(0, 0, 0, 0.3);
+        }
+        .projectText {
+          color: $whiteColor;
+          text-align: center;
+          font-size: 22.716px;
+          font-weight: 700;
+          line-height: 120%; /* 27.259px */
+          position: relative;
+          margin-top: -272px;
+        }
+      }
+    }
+  }
+  .projectSelectedContainer {
+    padding: 64px 64px 0 64px;
+    .upperActionContainer {
+      margin-bottom: 72px;
+      .leftIcon {
+        cursor: pointer;
+      }
+    }
+    .imgtextContainer {
+      display: flex;
+      justify-content: space-between;
+      .textContainer {
+        width: 40%;
+        .heading {
+          color: $whiteColor;
+          font-size: 80px;
+          font-weight: 700;
+        }
+        .subTextContainer {
+          margin-top: 56px;
+          .subTextItem {
+            color: $whiteColor;
+            font-family: Lato;
+            font-size: 25px;
+            margin-bottom: 24px;
+          }
+        }
+        .cityImgConmtainer {
+          display: flex;
+          align-items: end;
+          justify-content: start;
+          position: absolute;
+          margin-top: 1%;
+          .city1Icon {
+            width: 281px;
+            height: 281px;
+          }
+          .city2Icon {
+            position: relative;
+            margin-left: -8%;
+            margin-right: -7%;
+            width: 172px;
+            height: 172px;
+          }
+          .city3Icon {
+            width: 213px;
+            height: 213px;
+          }
+        }
+      }
+      .imgContainer {
+        width: 55%;
+        display: flex;
+        align-items: end;
+        margin-bottom: 8%;
+        .projectImg {
+          width: 80%;
+          height: 600px;
+        }
+        .btnAndLineContainer {
+          display: flex;
+          align-items: end;
+          flex-direction: column;
+          justify-content: end;
+          height: 100%;
+          .lineContainer {
+            margin-bottom: 160%;
+            .line {
+              width: 19px;
+              height: 6px;
+              border-radius: 20px;
+              background: rgba(242, 244, 248, 0.6);
+              margin-bottom: 12px;
+            }
+            .activeLine {
+              width: 52px;
+              height: 6px;
+              background: #f2f4f8;
+            }
+          }
+          .btnContainer {
+            margin-left: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .arrowBtn {
+              cursor: pointer;
+              margin-bottom: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
