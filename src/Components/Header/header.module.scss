@@ -28,3 +28,29 @@
     }
   }
 }
+.iconMarginLeft {
+  margin-left: 8px;
+}
+.withIcon {
+  display: flex;
+}
+
+.moreIcon {
+  margin-left: 16px;
+}
+.DrawerOpen {
+  width: 360px;
+  border-radius: 8px;
+  background-color: $headerColor;
+  position: absolute;
+  margin-top: 4%;
+  z-index: 99;
+  .subLinks {
+    color: $pageLinkColor;
+    text-align: center;
+    margin: 8px;
+    &:hover {
+      color: $activePage;
+    }
+  }
+}

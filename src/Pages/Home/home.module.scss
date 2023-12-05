@@ -6,15 +6,16 @@
       &:last-child {
         height: 880px;
       }
+      .linearHighLight {
+        // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+      }
       .detialsContainer {
         display: flex;
         align-items: end;
         justify-content: space-between;
-        position: relative;
+        // position: relative;
         padding: 0 56px 40px 56px;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
-        margin-bottom: -267px;
-        bottom: 292px;
+
         .imageTextContainer {
           .mainHeading {
             color: $headerColor;
@@ -31,8 +32,17 @@
             margin-bottom: 12px;
             // font-weight: 700;
             line-height: 120%; /* 31.2px */
+            transition-delay: 500ms;
             .highLight {
               font-size: 26px;
+              font-weight: 700;
+              font-style: italic;
+            }
+            .moreTextSubText {
+              margin-bottom: 24px;
+              &:first-child {
+                margin-top: 16px;
+              }
             }
           }
           .showMore {
@@ -67,7 +77,7 @@
           rgba(137, 134, 134, 0) 100%
         );
         margin-bottom: -267px;
-        bottom: 680px;
+        bottom: 615px;
         .serviceHeading {
           text-align: center;
           color: $whiteColor;
@@ -97,6 +107,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            color: $blackColor;
+            cursor: pointer;
+            &:hover {
+              background-color: $learnMoreColor;
+              color: $whiteColor;
+            }
             .serviceIcon {
               margin-top: 10%;
             }
@@ -105,7 +121,7 @@
               text-align: center;
               text-transform: uppercase;
               margin-top: 15%;
-              color: $blackColor;
+
               font-size: 20px;
               font-weight: 900;
               line-height: 120%; /* 24px */
@@ -136,12 +152,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .brandImg {
-      height: 120px !important;
-      max-width: 292px !important;
-      margin-right: 64px;
-    }
   }
+}
+.brandImg {
+  height: 120px !important;
+  max-width: 292px !important;
+  margin-right: 64px;
 }
 
 .sliderContainer {
@@ -152,3 +168,107 @@
   width: 100%;
   margin-bottom: 26px;
 }
+.defaultContainerOne {
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+  margin-bottom: -312px;
+  bottom: 343px;
+}
+
+.containerOne {
+  height: 700px;
+  position: relative;
+  margin-bottom: -699px;
+  bottom: 700px;
+  background: linear-gradient(6deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+}
+.largeImg {
+  height: 671px;
+}
+.defaultImg {
+  height: 100%;
+}
+
+.defaultContainerTwo {
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+  bottom: 290px;
+  margin-bottom: -260px;
+}
+
+.containerTwo {
+  height: 574px;
+  position: relative;
+  bottom: 607px;
+  margin-bottom: -571px;
+  background: linear-gradient(6deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+}
+
+.client_cards {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.glide {
+  overflow-y: hidden;
+}
+
+//animation
+
+.slide_in {
+  animation: slide-in 0.5s forwards;
+}
+
+.slide_out {
+  animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-15%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateY(15%);
+  }
+  100% {
+    transform: translateY(-1%);
+  }
+}
+
+.slide_in2 {
+  animation: slide-in2 0.5s forwards;
+}
+
+.slide_out2 {
+  animation: slide-out2 0.5s forwards;
+}
+
+@keyframes slide-in2 {
+  0% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-out2 {
+  0% {
+    transform: translateY(-15%);
+  }
+  50% {
+    transform: translateY(-7%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+//

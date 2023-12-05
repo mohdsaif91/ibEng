@@ -12,6 +12,9 @@ import brand6 from "../Asset/brand/brand6.png";
 import leader1 from "../Asset/Img/leader1.png";
 import leader2 from "../Asset/Img/leader2.png";
 import leader3 from "../Asset/Img/leader3.png";
+import leader1Bg from "../Asset/Img/meetLeader3.png";
+import leader2Bg from "../Asset/Img/leader2Bg.png";
+import leader3Bg from "../Asset/Img/leader3Bg.png";
 import signature1_1 from "../Asset/Img/signature1.1.png";
 import signature1_2 from "../Asset/Img/signature1.2.png";
 import signature2_1 from "../Asset/Img/signature2.png";
@@ -153,6 +156,7 @@ export const leaderData = [
       "As a serial founder, entrepreneur, and VP of sales, he has played pivotal roles in several successful companies. His visionary leadership and extensive experience contribute significantly to IB Engineering's growth and success.",
     ],
     img: leader1,
+    backgroundImg: leader1Bg,
     signature: `${(
       <div className="dflex_center">
         <img src={signature1_1} alt="sig1" />
@@ -170,6 +174,7 @@ export const leaderData = [
       "His youthful energy and extensive experience drive our planning department's commitment to excellence, ensuring that each project is meticulously planned and executed with precision.",
       "Mohammad's visionary leadership and collaborative. Approach inspire our team to achieve new heights in the world of construction planning.",
     ],
+    backgroundImg: leader2Bg,
     img: leader2,
     signature: `${(
       <div className="">
@@ -189,6 +194,7 @@ export const leaderData = [
       "With over 15 years of experience, she has been the guiding force behind numerous construction and interior design projects, particularly in residential towers across central and northern regions.",
       "Rawan's passion for art, fashion, and a discerning taste infuse her work with creativity and innovation, elevating every project to new heights of excellence.",
     ],
+    backgroundImg: leader3Bg,
     img: leader3,
     signature: `${(
       <div className="">
@@ -387,10 +393,10 @@ export const projectData = [
 ];
 
 export const clientSayData = [
-  { id: 1, img: client1 },
-  { id: 2, img: client2 },
-  { id: 3, img: client3 },
-  { id: 4, img: client4 },
-  { id: 5, img: client5 },
-  { id: 6, img: client6 },
+  { id: 1, img: client1, name: "TSAMAROT" },
+  { id: 2, img: client2, name: "SAMAR AWWAD" },
+  { id: 3, img: client3, name: "HASAN ARCHETICS" },
+  { id: 4, img: client4, name: "ERAN MEBEL" },
+  { id: 5, img: client5, name: "EBRAHIM NASSER" },
+  { id: 6, img: client6, name: "A.A ABU RAS" },
 ];

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Animated } from "react-animated-css";
 
 import TextInput from "../../Components/Input/TextInput";
 import MailIcon from "../../Asset/Icon/mainIcon.png";
@@ -24,8 +25,14 @@ function ContactUs() {
   const [contactForm, setContactForm] = useState(false);
   return (
     <div className={style.contactUsContainer}>
-      {contactForm ? (
-        <div className={style.outerContainer}>
+      {contactForm && (
+        <Animated
+          animationIn="fadeInUp"
+          isVisible={true}
+          animationInDelay={300}
+          animationInDuration={500}
+          className={style.outerContainer}
+        >
           <div className={style.blackLine}></div>
           <div className={style.contactForm}>
             <div className={style.formContainer}>
@@ -139,31 +146,44 @@ function ContactUs() {
               </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <div className={style.contactUsHero}>
-          <div className={style.backgroundShade} />
-          <div className={style.herotextContainer}>
-            <h1 className={style.heroMaintext}>Get in Touch</h1>
-            <div className={style.heroSubText}>
-              Have a specific inquiry or want to discuss a potential project?
-            </div>
-            <div className={style.actualSubText}>
-              Fill out the form when you click on “Contact Us” button, and one
-              of our representatives will get back to you promptly. We
-              appreciate your interest in IB Engineering, and we look forward to
-              working with you to turn your construction and engineering visions
-              into reality.
-            </div>
-            <button
-              className={style.contactUsBtn}
-              onClick={() => setContactForm(true)}
+        </Animated>
+      )}
+      {!contactForm && (
+        <>
+          {!contactForm && (
+            <Animated
+              animationOut="hinge"
+              isVisible={true}
+              animationOutDuration={300}
+              className={style.contactUsHero}
             >
-              Contact Us
-            </button>
-            <div className={style.greyTextContainer}>All Rights Reserved </div>
-          </div>
-        </div>
+              <div className={style.backgroundShade} />
+              <div className={style.herotextContainer}>
+                <h1 className={style.heroMaintext}>Get in Touch</h1>
+                <div className={style.heroSubText}>
+                  Have a specific inquiry or want to discuss a potential
+                  project?
+                </div>
+                <div className={style.actualSubText}>
+                  Fill out the form when you click on “Contact Us” button, and
+                  one of our representatives will get back to you promptly. We
+                  appreciate your interest in IB Engineering, and we look
+                  forward to working with you to turn your construction and
+                  engineering visions into reality.
+                </div>
+                <button
+                  className={style.contactUsBtn}
+                  onClick={() => setContactForm(true)}
+                >
+                  Contact Us
+                </button>
+                <div className={style.greyTextContainer}>
+                  All Rights Reserved{" "}
+                </div>
+              </div>
+            </Animated>
+          )}
+        </>
       )}
     </div>
   );

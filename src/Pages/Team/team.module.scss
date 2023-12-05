@@ -1,0 +1,339 @@
+@import "../../variable.module.scss";
+
+.box {
+  height: 70px;
+  width: 70px;
+  position: relative;
+  border-bottom: 2px solid #0004ff;
+  background: #cccaca;
+}
+.borderLeft {
+  border-left: 2px solid #0004ff;
+  position: absolute;
+  top: 95%;
+  bottom: 0;
+}
+.borderRight {
+  position: absolute;
+  border-right: 2px solid #0004ff;
+  top: 0;
+}
+
+.whoWeAreContaineParent {
+  .meetOurLeaderContainer {
+    .leaderList {
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $leaderBackgroundColor;
+      overflow: hidden;
+      .meetLeaderLabelContainer {
+        margin-left: 64px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .border {
+          width: 248px;
+          height: 5px;
+          background: $whiteColor;
+          &:first-child {
+            margin-bottom: 32px;
+          }
+          &:last-child {
+            margin-top: 32px;
+          }
+        }
+        .meetLeaderLabel {
+          color: $whiteColor;
+          font-family: Roboto;
+          font-size: 52px;
+          font-style: italic;
+          font-weight: 600;
+          line-height: 120%; /* 62.4px */
+          letter-spacing: 1.3px;
+        }
+      }
+      .imgContainer {
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .listItem {
+          width: 350px;
+          position: relative;
+          .leaderImg {
+            width: 376px;
+          }
+        }
+      }
+    }
+    .leaderContainer {
+      width: 100%;
+      height: 1092px;
+      .outerImage {
+        width: 100%;
+        height: 1092px;
+        background-image: url("../../Asset/Img/meetLeader1.png");
+        background-repeat: no-repeat;
+        .outerImageOverlay {
+          height: 100%;
+          width: 100%;
+          background: rgba(43, 46, 53, 0.8);
+        }
+      }
+      .innerMiddelImgContainer {
+        position: relative;
+        bottom: 90%;
+        left: 10%;
+        width: 1280px;
+        height: 872px;
+        background-image: url("../../Asset/Img/meetLeader2.png");
+        background-repeat: no-repeat;
+        .innerMiddleImageOverlay {
+          height: 100%;
+          width: 100%;
+          background: rgba(43, 46, 53, 0.8);
+        }
+      }
+      .innerMostImgContainer {
+        position: relative;
+        width: 1069.91px;
+        height: 717.117px;
+        bottom: 163%;
+        left: 18%;
+        // background-image: url("../../Asset/Img/meetLeader3.png");
+        background-repeat: no-repeat;
+
+        .containerDetials {
+          position: relative;
+          z-index: 99;
+          padding: 32px 48px;
+          top: -109%;
+          .containerHeaing {
+            color: $whiteColor;
+            font-family: Lato;
+            font-size: 40px;
+            line-height: 120%; /* 48px */
+          }
+          .imgTextContainer {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            .detailsContainer {
+              display: flex;
+              justify-content: flex-end;
+              flex-direction: column;
+              color: $whiteColor;
+              height: 672px;
+              .upperUnderlinedBorderParent {
+                display: flex;
+                align-items: center;
+                justify-content: right;
+                width: 100%;
+                .upperUnderlinedBorder {
+                  width: 264px;
+                  height: 6px;
+                  background: $borderColor2;
+                }
+              }
+              .leaderNameLabel {
+                text-align: right;
+                font-family: Lato;
+                font-style: italic;
+                font-weight: 700;
+                line-height: 120%; /* 72px */
+              }
+              .designationLabel {
+                margin-top: 24px;
+                color: $whiteColor;
+                text-align: right;
+                font-family: Lato;
+                font-size: 26px;
+                line-height: 120%; /* 31.2px */
+                margin-bottom: 24px;
+              }
+              .subText {
+                max-width: 449px;
+                margin-bottom: 16px;
+                color: $whiteColor;
+                text-align: right;
+                font-family: Lato;
+                font-size: 18px;
+                line-height: 130%; /* 26px */
+                margin-top: 0;
+                &:last-child {
+                  margin-bottom: 0;
+                }
+                &:nth-child(1) {
+                  margin-top: 32px;
+                }
+              }
+              .iconSignatureContainer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 48px;
+                .ogSignatureContainer {
+                  display: flex;
+                  align-items: center;
+                  justify-content: left;
+                }
+              }
+              .btnContainer {
+                position: absolute;
+                margin-left: 456px;
+                .arrowContainer {
+                }
+              }
+            }
+          }
+        }
+
+        .innerMostImageOverlay {
+          position: relative;
+          height: 750.117px;
+          background: rgba(36, 36, 44, 0.88);
+          top: -214%;
+        }
+      }
+      .leaderInnerContainerParent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        .leaderInnerContainer {
+          position: relative;
+          width: 1432px;
+          height: 872px;
+          background-image: url("../../Asset/Img/meetLeader2.png");
+          background-repeat: no-repeat;
+          .leaderImgTextContainerParent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            .leaderImgTextContainer {
+              position: relative;
+              width: 1069px;
+              height: 717px;
+              background-image: url("../../Asset/Img/meetLeader3.png");
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.leaderContainerBackgroundBlack {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(43, 46, 53, 0.8);
+}
+.verticalDevider {
+  margin-top: 40px;
+  height: 80px;
+  width: 3px;
+  background-color: $borderColor;
+}
+.marginTop {
+  margin-top: 40px;
+}
+
+.containerTwoHeadingWidth {
+  width: 896px;
+}
+.containerOneHeadingWidth {
+  width: 920px;
+}
+
+.headingFiveWidth {
+  width: 942px;
+}
+
+.heading {
+  text-align: center;
+  font-family: Lato;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 33.6px */
+  color: $blackColor;
+}
+
+.boldText {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.vissionContainer {
+  position: relative;
+  margin-top: -3.5%;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 495px;
+  height: 108px;
+  background: $whiteColor;
+  border-radius: 13px;
+  .rectBox {
+    flex-shrink: 0;
+    color: $blackColor;
+    font-size: 46px;
+    font-weight: 700;
+  }
+}
+.withBorderLTR {
+  border-radius: 13px 13px 0 0 !important;
+  border-left: 2px solid $borderColor;
+  border-top: 2px solid $borderColor;
+  border-right: 2px solid $borderColor;
+}
+
+.icon {
+  cursor: pointer;
+}
+.signatureContainerLeader2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.mr_2 {
+  margin-left: 8px;
+}
+
+.additionalStyle {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.secondLeader {
+  left: -5%;
+}
+
+.bgImg {
+  position: relative;
+  width: 1069.91px;
+  height: 747.117px;
+  bottom: 163%;
+}
+
+.smFont {
+  font-size: 54px;
+}
+.defaultFont {
+  font-size: 60px;
+}

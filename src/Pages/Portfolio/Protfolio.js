@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Animated } from "react-animated-css";
 
 import { projectData } from "../../utils";
 import leftBackIcon from "../../Asset/Icon/backLeftIcon.png";
@@ -7,6 +8,8 @@ import city2 from "../../Asset/Img/City Buildings_2.png";
 import city3 from "../../Asset/Img/City Buildings_3.png";
 import upBtn from "../../Asset/Icon/upArrow.png";
 import downBtn from "../../Asset/Icon/downArrow.png";
+import up from "../../Asset/Icon/up.png";
+import down from "../../Asset/Icon/down.png";
 
 import style from "./protfolio.module.scss";
 
@@ -25,13 +28,19 @@ function Protfolio() {
     <div className={style.protfolioContainer}>
       {!projectSelected.showProject ? (
         <>
-          <div className={style.protfolioHeroContainer}>
+          <Animated
+            animationIn="fadeIn"
+            isVisible={true}
+            animationInDelay={800}
+            animationInDuration={1000}
+            className={style.protfolioHeroContainer}
+          >
             <div className={style.heroText}>
               National Leader in
               <br />
               Engineering
             </div>
-          </div>
+          </Animated>
           <div className={style.ourProjectContainer}>
             <div className={style.headingContainer}>
               <div className={style.mainHeading}>PORTFOLIO</div>
@@ -115,51 +124,81 @@ function Protfolio() {
               </div>
             </div>
             <div className={style.imgContainer}>
-              <img
-                src={
-                  projectData[projectSelected.projectData || 0].imgBackground[
-                    currentProjectIndex
-                  ].img
-                }
-                className={style.projectImg}
-                alt="project Image"
-              />
+              {projectData[projectSelected.projectData || 0].imgBackground.map(
+                (imgData, i) => (
+                  <>
+                    {i === currentProjectIndex && (
+                      <Animated
+                        animationIn="fadeInUp"
+                        animationOut="fadeOutUp"
+                        isVisible={true}
+                        animationInDelay={300}
+                        animationInDuration={700}
+                      >
+                        <img
+                          src={
+                            projectData[projectSelected.projectData || 0]
+                              .imgBackground[currentProjectIndex].img
+                          }
+                          className={style.projectImg}
+                          alt="project Image"
+                        />
+                      </Animated>
+                    )}
+                  </>
+                )
+              )}
+
               <div className={style.btnAndLineContainer}>
                 <div className={style.lineContainer}>
                   {projectData[
                     projectSelected.projectData || 0
                   ].imgBackground.map((m, imgIndex) => (
-                    <div
-                      className={`${style.line} ${
-                        currentProjectIndex === imgIndex && style.activeLine
-                      }`}
-                      onClick={() => setCurrentProjectIndex(imgIndex)}
-                    />
+                    <>
+                      {currentProjectIndex === imgIndex ? (
+                        <Animated
+                          animationIn="pulse"
+                          isVisible={true}
+                          animationInDelay={300}
+                          animationInDuration={700}
+                          className={style.activeLine}
+                        ></Animated>
+                      ) : (
+                        <div
+                          className={`${style.line}`}
+                          onClick={() => setCurrentProjectIndex(imgIndex)}
+                        />
+                      )}
+                    </>
                   ))}
                 </div>
                 <div className={style.btnContainer}>
-                  <img
-                    src={upBtn}
-                    onClick={(e) =>
-                      currentProjectIndex === 0
-                        ? e.preventDefault()
-                        : setCurrentProjectIndex((data) => data - 1)
-                    }
-                    alt="up btn"
-                    className={style.arrowBtn}
-                  />
-                  <img
-                    src={downBtn}
-                    alt="down  btn"
-                    onClick={(e) =>
-                      currentProjectIndex + 1 ===
-                      projectData[projectSelected.projectData || 0]
-                        .imgBackground.length
-                        ? e.preventDefault()
-                        : setCurrentProjectIndex((data) => data + 1)
-                    }
-                    className={style.arrowBtn}
-                  />
+                  <div className={style.imgContainer}>
+                    <img
+                      src={up}
+                      onClick={(e) =>
+                        currentProjectIndex === 0
+                          ? e.preventDefault()
+                          : setCurrentProjectIndex((data) => data - 1)
+                      }
+                      alt="up btn"
+                      className={style.arrowBtn}
+                    />
+                  </div>
+                  <div className={style.imgContainer}>
+                    <img
+                      src={down}
+                      alt="down  btn"
+                      onClick={(e) =>
+                        currentProjectIndex + 1 ===
+                        projectData[projectSelected.projectData || 0]
+                          .imgBackground.length
+                          ? e.preventDefault()
+                          : setCurrentProjectIndex((data) => data + 1)
+                      }
+                      className={style.arrowBtn}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

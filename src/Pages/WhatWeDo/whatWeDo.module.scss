@@ -55,15 +55,20 @@
       &:nth-child(even) {
         flex-direction: row-reverse;
       }
-      .containerHeading {
+      .textIconContainer {
         position: relative;
-        color: $whiteColor;
-        font-size: 96px;
-        line-height: 120%;
         top: 130px;
-        left: 440px;
-        width: 1034px;
-        z-index: 99;
+        left: 415px;
+        width: 956px;
+        display: flex;
+        align-items: flex-start;
+        .containerHeading {
+          color: $whiteColor;
+          font-size: 90px;
+          line-height: 120%;
+
+          z-index: 99;
+        }
       }
       .imgContainer {
         display: flex;
@@ -127,7 +132,7 @@
       display: flex;
       .firstColumnContainer {
         .imgMarginTop {
-          margin-top: 12%;
+          margin-top: 32%;
         }
       }
       .secondColumnContainer {
@@ -144,19 +149,20 @@
             color: $whiteColor;
             font-size: 92px;
             line-height: 120%;
-            width: 788px;
+            width: 829px;
             position: absolute;
             z-index: 99;
-            margin-top: 22%;
-            margin-left: -9%;
+            margin-top: 8%;
+            margin-left: -16%;
           }
         }
         .thirdTextContainer {
         }
         .topMarginTextContainer {
-          margin-top: 40%;
+          //   margin-top: 40%;
           margin-left: 20%;
           width: 447px;
+          margin-top: 48%;
         }
       }
     }
@@ -200,7 +206,7 @@
 }
 
 .imgShadeContainer {
-  width: 746px;
+  width: 640px;
   height: 744px;
   .greyImage {
     width: 746px;
@@ -210,7 +216,20 @@
     width: 746px;
     height: 748px;
     position: relative;
-    top: -101%;
+    top: -750px;
     background: rgba(0, 0, 0, 0.3);
   }
+}
+
+.mainGeadingZIndex {
+  z-index: 99;
+}
+.headingIcon {
+  position: absolute;
+  color: $redColor;
+  text-align: center;
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 120%; /* 48px */
 }

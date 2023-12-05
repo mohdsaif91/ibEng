@@ -55,7 +55,7 @@
   .actualprojectContainer {
     height: 440px;
     .projectCardContainer {
-      padding: 0 120px;
+      padding: 0 80px;
       position: relative;
       margin-top: -7%;
       display: flex;
@@ -64,6 +64,13 @@
       .projectCard {
         height: 340px;
         cursor: pointer;
+        transition: transform 0.5s; /* Animation */
+
+        &:hover {
+          transform: scale(
+            1.2
+          ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
         .projectImg {
           height: 218px;
           width: 248px;
@@ -166,6 +173,8 @@
               width: 52px;
               height: 6px;
               background: #f2f4f8;
+              margin-bottom: 9px;
+              transition: 1s all ease;
             }
           }
           .btnContainer {
@@ -174,9 +183,22 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            .arrowBtn {
-              cursor: pointer;
-              margin-bottom: 4px;
+            .imgContainer {
+              border-radius: 50%;
+              height: 58px;
+              width: 58px;
+              background-color: $whiteColor;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              &:hover {
+                background-color: $learnMoreColor;
+              }
+              .arrowBtn {
+                cursor: pointer;
+                height: 40px;
+                margin-bottom: 4px;
+              }
             }
           }
         }

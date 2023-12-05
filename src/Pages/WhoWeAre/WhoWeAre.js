@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import Stefan from "../../Asset/people/stefan.png";
-import container5One from "../../Asset/Img/cont5sing1.jpeg";
-import container5Two from "../../Asset/Img/cont5multi1.jpeg";
-import container5Three from "../../Asset/Img/cont5multi2.jpeg";
-import heroImg from "../../Asset/Img/whoAreWeHeroImg.png";
-import intialConOne from "../../Asset/Img/initialConOne.png";
-import intialConTow from "../../Asset/Img/initialConTwo.png";
+// import Stefan from "../../Asset/people/stefan.png";
+// import container5One from "../../Asset/Img/cont5sing1.jpeg";
+// import container5Two from "../../Asset/Img/cont5multi1.jpeg";
+// import container5Three from "../../Asset/Img/cont5multi2.jpeg";
+// import heroImg from "../../Asset/Img/whoAreWeHeroImg.png";
+// import intialConOne from "../../Asset/Img/initialConOne.png";
+// import intialConTow from "../../Asset/Img/initialConTwo.png";
 import leaderOne from "../../Asset/Img/leaderOne.png";
 import leaderTwo from "../../Asset/Img/leaderTwo.png";
 import leaderThree from "../../Asset/Img/leaderThree.png";
@@ -26,7 +26,7 @@ function WhoWeAre() {
   const [leaderCount, setLeaderCount] = useState(0);
   return (
     <div className={style.whoWeAreContaineParent}>
-      <div className={style.heroContainer}>
+      {/* <div className={style.heroContainer}>
         <div className={style.imgTextContainer}>
           <img alt="hero img" src={heroImg} className={style.heroImg} />
           <div className={style.heroText}>MISSION AND VISION</div>
@@ -137,8 +137,8 @@ function WhoWeAre() {
             </div>
           </div>
         </div>
-      </div>
-      <div className={style.whoWeAreContaine}>
+      </div> */}
+      {/* <div className={style.whoWeAreContaine}>
         <div className={style.headingContainer}>
           <h1 className={style.heading}>THE MIND BEHIND </h1>
           <h1 className={style.heading}>IB ENG</h1>
@@ -253,8 +253,8 @@ function WhoWeAre() {
             </div>
           </div>
         </div>
-      </div>
-      <div className={style.meetOurLeaderContainer}>
+      </div> */}
+      {/* <div className={style.meetOurLeaderContainer}>
         <div className={style.leaderList}>
           <div className={style.meetLeaderLabelContainer}>
             <div className={style.border} />
@@ -470,7 +470,7 @@ function WhoWeAre() {
             <div className={style.innerMostImageOverlay} />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

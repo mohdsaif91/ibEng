@@ -35,8 +35,36 @@
       .img {
         opacity: 0.2;
         margin-top: 64px;
-        // width: 525.512px !important;
-        // height: 680px !important;
+        cursor: grab;
+      }
+      .defaultName {
+        text-align: center;
+        margin-top: 40px;
+        color: $whiteColor;
+        font-family: Lato;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        opacity: 0.6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .activeName {
+        opacity: 1 !important;
+      }
+      .dash {
+        width: 20px;
+        height: 2px;
+        flex-shrink: 0;
+        background: $borderColor2;
+        &:first-child {
+          margin-right: 16px;
+        }
+        &:last-child {
+          margin-left: 16px;
+        }
       }
       .imgScrollContainer {
         height: 400px;
@@ -72,11 +100,14 @@
     }
   }
 }
+.slider {
+  overflow: hidden;
+}
 .opacity1 {
   opacity: 1 !important;
   margin-top: 0 !important;
-  margin-left: 56px;
-  margin-right: 56px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .client_cards {
@@ -95,4 +126,67 @@
   height: 80px;
   width: 4px;
   background-color: black;
+}
+
+//
+
+.slick-track {
+  display: flex;
+}
+.slick-slider {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slick-slide {
+  padding-right: 10px;
+}
+
+.slick-slide:last-child {
+  padding-right: 0;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-list {
+  margin: 0 15px;
+}
+
+.slick-prev {
+  width: 50px;
+  left: 0;
+  top: 20%;
+  position: absolute;
+  height: 50px;
+  background: tomato;
+  z-index: 1;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.slick-next {
+  width: 50px;
+  right: 0;
+  top: 20%;
+  position: absolute;
+  height: 50px;
+  background: tomato;
+  z-index: 1;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.slick-prev:focus,
+.slick-prev:hover,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+  background: tomato;
+}
+.product-actions {
+  display: flex;
+  justify-content: space-between;
 }
