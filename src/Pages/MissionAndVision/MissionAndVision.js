@@ -155,7 +155,7 @@ function MissionAndVision() {
           {containerTwo && (
             <div className={style.lineTextContainer}>
               <Animated
-                animationIn="fadeInUp"
+                animationIn="slideInRight"
                 animationOut="fadeInUp"
                 isVisible={containerTwo}
                 animationInDelay={500}
@@ -170,7 +170,7 @@ function MissionAndVision() {
               </Animated>
               <div className={style.verticalLine} />
               <Animated
-                animationIn="fadeInUp"
+                animationIn="slideInLeft"
                 animationOut="fadeInUp"
                 isVisible={containerTwo}
                 animationInDelay={500}
@@ -189,6 +189,7 @@ function MissionAndVision() {
                   there, our dedicated team employs the latest advancements in
                   technology to craft meticulous plans that optimize
                   <span className={style.boldText}>
+                    {" "}
                     efficiency and precision.
                   </span>
                 </div>

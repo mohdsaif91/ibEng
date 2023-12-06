@@ -48,10 +48,10 @@
   border-radius: 8px;
   background-color: $headerColor;
   position: absolute;
-  margin-top: 4%;
+  margin-top: 13%;
   z-index: 99;
   @include smallLaptop {
-    margin-top: 14%;
+    margin-top: 13%;
   }
   .subLinks {
     color: $pageLinkColor;
