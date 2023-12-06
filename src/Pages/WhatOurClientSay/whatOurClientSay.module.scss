@@ -35,7 +35,11 @@
       .img {
         opacity: 0.2;
         margin-top: 64px;
-        cursor: grab;
+        cursor: pointer;
+        @include smallLaptop {
+          height: 600px;
+          width: 440px;
+        }
       }
       .defaultName {
         text-align: center;

@@ -52,6 +52,9 @@
       display: flex;
       flex-direction: column;
       margin: 0 144px;
+      @include smallLaptop {
+        margin: 0 80px;
+      }
       &:nth-child(even) {
         flex-direction: row-reverse;
       }
@@ -62,12 +65,17 @@
         width: 956px;
         display: flex;
         align-items: flex-start;
+        @include smallLaptop {
+          width: 780px;
+        }
         .containerHeading {
           color: $whiteColor;
           font-size: 90px;
           line-height: 120%;
-
           z-index: 99;
+          @include smallLaptop {
+            font-size: 72px;
+          }
         }
       }
       .imgContainer {
@@ -79,10 +87,14 @@
           align-items: end;
           margin-bottom: 64px;
           justify-content: center;
-          .subTextContainer {
+          @include smallLaptop {
+            width: 504px;
           }
           .firstTextContainer {
             margin-left: 144px;
+            @include smallLaptop {
+              margin-left: 40px;
+            }
           }
         }
       }
@@ -96,6 +108,9 @@
         .topMarginTextContainer {
           margin-top: 40%;
           width: 447px;
+          @include smallLaptop {
+            margin-right: 40px;
+          }
         }
 
         .headingImgContainer {
@@ -116,6 +131,10 @@
             z-index: 99;
             margin-top: 22%;
             margin-left: 24%;
+            @include smallLaptop {
+              font-size: 72px;
+              margin-top: 28%;
+            }
           }
         }
       }
@@ -140,6 +159,9 @@
           display: flex;
           align-items: center;
           flex-direction: column;
+          @include smallLaptop {
+            width: 504px;
+          }
           .verticalLine {
             width: 6px;
             height: 340px;
@@ -154,6 +176,10 @@
             z-index: 99;
             margin-top: 8%;
             margin-left: -16%;
+            @include smallLaptop {
+              font-size: 72px;
+              width: 780px;
+            }
           }
         }
         .thirdTextContainer {
@@ -163,10 +189,14 @@
           margin-left: 20%;
           width: 447px;
           margin-top: 48%;
+          @include smallLaptop {
+            margin-left: 20%;
+          }
         }
       }
     }
     .imageTextContainerFour {
+      display: flex;
       margin-left: 210px;
       margin-right: 140px;
     }
@@ -181,6 +211,11 @@
   z-index: 99;
   margin-top: 22%;
   margin-left: 42%;
+  @include smallLaptop {
+    margin-top: 28%;
+    font-size: 72px;
+    width: 1180px;
+  }
 }
 
 .contatinerTextOne {
@@ -196,6 +231,9 @@
     font-size: 20px;
     line-height: 120%; /* 31.092px */
     margin-bottom: 24px;
+    @include smallLaptop {
+      font-size: 18px;
+    }
     .highlightText {
       font-size: 20px;
       font-style: italic;
@@ -208,12 +246,17 @@
 .imgShadeContainer {
   width: 640px;
   height: 744px;
+  @include smallLaptop {
+    width: 626px;
+  }
   .greyImage {
-    width: 746px;
+    // width: 746px;
+    width: 100%;
     height: 744px;
   }
   .shade {
-    width: 746px;
+    // width: 746px;
+    width: 100%;
     height: 748px;
     position: relative;
     top: -750px;

@@ -27,6 +27,9 @@
         font-size: 80px;
         font-weight: 700;
         line-height: 120%; /* 96px */
+        @include smallLaptop {
+          font-size: 72px;
+        }
       }
       .heroSubText {
         text-align: center;
@@ -36,6 +39,9 @@
         width: 567px;
         height: 82px;
         margin-top: 24px;
+        @include smallLaptop {
+          font-size: 32px;
+        }
       }
       .actualSubText {
         text-align: center;
@@ -45,6 +51,9 @@
         height: 193px;
         flex-shrink: 0;
         margin-top: 48px;
+        @include smallLaptop {
+          font-size: 26px;
+        }
       }
       .contactUsBtn {
         padding: 8px 48px;
@@ -78,6 +87,9 @@
     justify-content: center;
     height: 864px;
     flex-direction: column;
+    @include smallLaptop {
+      height: 841px;
+    }
     .blackLine {
       height: 2px;
       width: 100%;
@@ -91,6 +103,9 @@
       background-color: $headerColor;
       .formContainer {
         padding: 32px 54px;
+        @include smallLaptop {
+          padding: 20px 54px;
+        }
         .headingContainer {
           display: flex;
           justify-content: space-between;
@@ -124,6 +139,10 @@
             border-bottom: 1px solid $inputBackgroundColor;
             margin-bottom: 56px;
             color: $blackColor;
+            @include smallLaptop {
+              margin-bottom: 40px;
+              width: 500px;
+            }
             &:focus {
               outline: none;
             }
@@ -161,6 +180,9 @@
         height: 100%;
         background: $detailsContainerColor;
         color: $whiteColor;
+        @include smallLaptop {
+          padding: 20px 56px 0 56px;
+        }
         .iconLabelContainer {
           display: flex;
           align-items: center;
@@ -184,6 +206,8 @@
         }
         .socialMediaIconcontainer {
           margin-top: 24px;
+          display: flex;
+          align-items: center;
         }
         .cityBuldContainer {
           margin-top: 120px;

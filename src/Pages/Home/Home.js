@@ -17,7 +17,7 @@ import "glider-js/glider.min.css";
 
 const sliderConfiguration = {
   animationDuration: 500,
-  autoplay: 3000,
+  autoplay: 1000,
   dragDistance: false,
   gap: 3,
   hoverMouse: false,
@@ -47,7 +47,10 @@ function Home() {
   const clients = useMemo(
     () => (
       <div className={`glide ${style.glide}`}>
-        <div className="glide__track" data-glide-el="track">
+        <div
+          className={`glide__track ${style.noOverFlow}`}
+          data-glide-el="track"
+        >
           <ul className={style.client_cards}>
             {brandData.map((m) => (
               <li className="glide__slide slider">
@@ -346,17 +349,6 @@ function Home() {
         </div>
       </div>
       {clients}
-      {/* <Glider
-        duration={1}
-        className={style.sliderContainer}
-        draggable
-        slidesToShow={4}
-        slidesToScroll={1}
-      >
-        {brandData.map((m) => (
-          <img className={style.brandImg} key={m.id} src={m.img} alt="brand" />
-        ))}
-      </Glider> */}
     </div>
   );
 }

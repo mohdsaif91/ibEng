@@ -12,7 +12,6 @@ function MissionAndVision() {
   const [containerTwo, setContainerTwo] = useState(false);
   const [containerThree, setContainerThree] = useState(false);
 
-  console.log(containerTwo, " <>?");
   return (
     <div className={style.whoWeAreContaineParent}>
       <div className={style.heroContainer}>
@@ -178,7 +177,7 @@ function MissionAndVision() {
                 animationInDuration={1000}
               >
                 <div
-                  className={`${style.heading} ${style.initialContainerThreeText}`}
+                  className={`${style.heading} ${style.initialContainerThreeText} ${style.smallLaptopMargin}`}
                 >
                   At <span className={style.boldText}> IB Engineering</span>,
                   our mission is to serve as your comprehensive partner in{" "}

@@ -108,6 +108,9 @@
             flex-direction: column;
             align-items: center;
             color: $blackColor;
+            @include smallLaptop {
+              width: 264px;
+            }
             cursor: pointer;
             &:hover {
               background-color: $learnMoreColor;
@@ -211,7 +214,11 @@
 }
 
 .glide {
-  overflow-y: hidden;
+  margin-bottom: 32px;
+}
+
+.noOverFlow {
+  overflow: hidden;
 }
 
 //animation

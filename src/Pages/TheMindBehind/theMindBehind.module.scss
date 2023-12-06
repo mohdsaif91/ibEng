@@ -2,7 +2,7 @@
 
 .whoWeAreContaineParent {
   .whoWeAreContaine {
-    padding: 106px 280px 0 280px;
+    padding: 106px 160px 0 160px;
     .headingContainer {
       display: flex;
       align-items: center;
@@ -232,6 +232,9 @@
   font-weight: 400;
   line-height: 120%; /* 33.6px */
   color: $blackColor;
+  @include smallLaptop {
+    font-size: 24px;
+  }
 }
 
 .boldText {

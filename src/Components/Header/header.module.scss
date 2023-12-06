@@ -19,6 +19,9 @@
       font-weight: 700;
       text-transform: uppercase;
       cursor: pointer;
+      @include smallLaptop {
+        font-size: 18px;
+      }
       &:hover {
         color: $activePage;
       }
@@ -33,6 +36,8 @@
 }
 .withIcon {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .moreIcon {
@@ -45,6 +50,9 @@
   position: absolute;
   margin-top: 4%;
   z-index: 99;
+  @include smallLaptop {
+    margin-top: 14%;
+  }
   .subLinks {
     color: $pageLinkColor;
     text-align: center;

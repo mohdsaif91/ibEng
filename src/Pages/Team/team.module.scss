@@ -52,6 +52,9 @@
           font-weight: 600;
           line-height: 120%; /* 62.4px */
           letter-spacing: 1.3px;
+          @include smallLaptop {
+            font-size: 44px;
+          }
         }
       }
       .imgContainer {
@@ -63,8 +66,14 @@
         .listItem {
           width: 350px;
           position: relative;
+          @include smallLaptop {
+            width: 316px;
+          }
           .leaderImg {
             width: 376px;
+            @include smallLaptop {
+              width: 336px;
+            }
           }
         }
       }
@@ -91,6 +100,10 @@
         height: 872px;
         background-image: url("../../Asset/Img/meetLeader2.png");
         background-repeat: no-repeat;
+        @include smallLaptop {
+          left: 6%;
+          width: 1188px;
+        }
         .innerMiddleImageOverlay {
           height: 100%;
           width: 100%;
@@ -105,6 +118,10 @@
         left: 18%;
         // background-image: url("../../Asset/Img/meetLeader3.png");
         background-repeat: no-repeat;
+
+        @include smallLaptop {
+          left: 11%;
+        }
 
         .containerDetials {
           position: relative;
@@ -322,6 +339,9 @@
 
 .secondLeader {
   left: -5%;
+}
+.thirdLeader {
+  left: -10%;
 }
 
 .bgImg {

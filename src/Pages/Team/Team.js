@@ -52,7 +52,7 @@ function Team() {
             <li className={`${style.listItem} ${style.secondLeader}`} key={2}>
               <img src={leaderTwo} alt="leader" className={style.leaderImg} />
             </li>
-            <li className={style.listItem} key={3}>
+            <li className={`${style.listItem} ${style.thirdLeader}`} key={3}>
               <img src={leaderThree} alt="leader" className={style.leaderImg} />
             </li>
           </ul>
