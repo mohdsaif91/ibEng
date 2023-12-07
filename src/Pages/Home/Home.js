@@ -1,5 +1,4 @@
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
-import Glider from "react-glider";
 import { Animated } from "react-animated-css";
 import Glide from "@glidejs/glide";
 
@@ -11,6 +10,9 @@ import hero3 from "../../Asset/Img/hero3.png";
 import hero4 from "../../Asset/Img/hero4.png";
 import forwardBtn from "../../Asset/Icon/ForwardButton.png";
 import { brandData, serviceData } from "../../utils";
+import heroMobileImg1 from "../../Asset/Img/heroImgMobile1.png";
+import heroMobileImg2 from "../../Asset/Img/heroImgMobile2.png";
+import heroMobileImg3 from "../../Asset/Img/heroImgmobile3.png";
 
 import style from "./home.module.scss";
 import "glider-js/glider.min.css";
@@ -19,10 +21,10 @@ const sliderConfiguration = {
   animationDuration: 500,
   autoplay: 1000,
   dragDistance: false,
-  gap: 3,
+  gap: 2,
   hoverMouse: false,
-  perView: 3,
-  paddings: window.innerWidth <= 700 ? "10%" : "25%",
+  perView: window.innerWidth <= 700 ? 2 : 3,
+  paddings: window.innerWidth <= 700 ? "2%" : "25%",
   reqwind: true,
   startAt: 0,
   type: "carousel",
@@ -35,6 +37,11 @@ function Home() {
   const [missionAnim, setMissionAnim] = useState(false);
   const [serviceAnim, setServiceAnim] = useState(false);
   const [slider] = useState(new Glide(".glide", sliderConfiguration));
+  const [mobile] = useState(
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+      navigator.userAgent.indexOf("Mobi") > -1
+  );
+  console.log(window.innerWidth <= 700 ? 3 : 2);
 
   useLayoutEffect(() => {
     window.scroll(0, 0);
@@ -72,13 +79,18 @@ function Home() {
   return (
     <div className={style.homeContainer}>
       <div className={style.heroContainer}>
-        <img src={hero1} alt="" className={style.heroImg} />
+        <img
+          src={mobile ? heroMobileImg1 : hero1}
+          alt=""
+          className={`${style.heroImg} ${style.firstHeroImg}`}
+        />
+        <div className={style.hero1imgOverlay} />
         <div
-          className={style.heroImageContainer}
+          className={`${style.heroImageContainer} ${style.marginTopHero2}`}
           onMouseEnter={() => setVisionAnim(true)}
         >
           <img
-            src={hero2}
+            src={mobile ? heroMobileImg2 : hero2}
             alt=""
             className={`${style.heroImg} ${
               containerOne ? style.largeImg : style.defaultImg
@@ -196,10 +208,14 @@ function Home() {
           </div>
         </div>
         <div
-          className={style.heroImageContainer}
+          className={`${style.heroImageContainer} ${style.marginTopHero3}`}
           onMouseEnter={() => setMissionAnim(true)}
         >
-          <img src={hero3} alt="" className={style.heroImg} />
+          <img
+            src={mobile ? heroMobileImg3 : hero3}
+            alt=""
+            className={style.heroImg}
+          />
           <div
             className={`${style.linearHighLight}  ${
               containerTwo
@@ -301,7 +317,7 @@ function Home() {
           </div>
         </div>
         <div className={style.heroImageContainer}>
-          <img src={hero4} alt="" className={style.heroImg} />
+          {!mobile && <img src={hero4} alt="" className={style.heroImg} />}
           <div
             className={style.detialsContainerService}
             onMouseEnter={() => setServiceAnim(true)}
@@ -332,6 +348,10 @@ function Home() {
               animationInDuration={1000}
             >
               {serviceData.map((m) => (
+                // <>
+                //   {mobile ? (
+                //     <div className={style.serviceCardMobile}>JACK</div>
+                //   ) : (
                 <div className={style.serviceCard} key={m.id}>
                   <img
                     src={m.icon}
@@ -343,6 +363,8 @@ function Home() {
                     <div className={style.cardLearMore}>Learn More</div>
                   </div>
                 </div>
+                //   )}
+                // </>
               ))}
             </Animated>
           </div>

@@ -5,8 +5,13 @@ import Stefan from "../../Asset/people/stefan.png";
 import container5One from "../../Asset/Img/cont5sing1.jpeg";
 import container5Two from "../../Asset/Img/cont5multi1.jpeg";
 import container5Three from "../../Asset/Img/cont5multi2.jpeg";
+import mobileStefan from "../../Asset/people/mobileStefan.png";
+import mobileContainer4 from "../../Asset/Img/mobilecontainer4.jpeg";
+import mobileContainer4_2 from "../../Asset/Img/mobileContainer4.2.jpeg";
+import mobileContainer4_3 from "../../Asset/Img/mobileContainer4.3.jpeg";
 
 import style from "./theMindBehind.module.scss";
+import { isMobile } from "../../utils/utilFunction";
 
 function TheMindBehind() {
   const [containerOne, setContainerOne] = useState(false);
@@ -66,7 +71,11 @@ function TheMindBehind() {
                 animationInDuration={1000}
                 className={style.protfolioContainer}
               >
-                <img src={Stefan} alt="" className={style.protfolioImg} />
+                <img
+                  src={isMobile ? mobileStefan : Stefan}
+                  alt=""
+                  className={style.protfolioImg}
+                />
               </Animated>
             )}
           </div>
@@ -157,42 +166,82 @@ function TheMindBehind() {
             <div className={style.borderRigthTop} />
             {containerFour && (
               <div className={style.imgContainer}>
-                <div className={style.sigleImageContainer}>
-                  <Animated
-                    animationIn="fadeInUp"
-                    animationOut="fadeOut"
-                    isVisible={true}
-                    animationInDelay={500}
-                    animationInDuration={1000}
-                    className={style.singleImgParentContainer}
-                  >
-                    <img
-                      src={container5One}
-                      alt="img"
-                      className={style.singleImg}
-                    />
-                  </Animated>
-                </div>
-                {/* <div className={style.twoImageContainer}> */}
-                <Animated
-                  animationIn="fadeInUp"
-                  animationOut="fadeOut"
-                  isVisible={true}
-                  animationInDelay={500}
-                  animationInDuration={1000}
-                  className={style.twoImageContainer}
-                >
-                  <img
-                    src={container5Two}
-                    alt="img"
-                    className={style.multiImg}
-                  />
-                  <img
-                    src={container5Three}
-                    alt="img"
-                    className={style.multiImg}
-                  />
-                </Animated>
+                {isMobile ? (
+                  <div className={style.mobileImgeContaine}>
+                    <Animated
+                      animationIn="fadeInUp"
+                      animationOut="fadeOut"
+                      isVisible={true}
+                      animationInDelay={500}
+                      animationInDuration={1000}
+                      className={style.firstImage}
+                    >
+                      <img
+                        src={isMobile ? mobileContainer4 : container5One}
+                        alt="img"
+                        className={style.mobileSingleImg}
+                      />
+                    </Animated>
+                    <Animated
+                      animationIn="fadeInUp"
+                      animationOut="fadeOut"
+                      isVisible={true}
+                      animationInDelay={500}
+                      animationInDuration={1000}
+                      className={style.mobileTwoImageContainer}
+                    >
+                      <img
+                        src={isMobile ? mobileContainer4_2 : container5Two}
+                        alt="img"
+                        className={style.mobileMultiImg}
+                      />
+                      <img
+                        src={isMobile ? mobileContainer4_3 : container5Three}
+                        alt="img"
+                        className={style.mobileMultiImg}
+                      />
+                    </Animated>
+                  </div>
+                ) : (
+                  <>
+                    <div className={style.sigleImageContainer}>
+                      <Animated
+                        animationIn="fadeInUp"
+                        animationOut="fadeOut"
+                        isVisible={true}
+                        animationInDelay={500}
+                        animationInDuration={1000}
+                        className={style.singleImgParentContainer}
+                      >
+                        <img
+                          src={isMobile ? mobileContainer4 : container5One}
+                          alt="img"
+                          className={style.singleImg}
+                        />
+                      </Animated>
+                    </div>
+                    {/* <div className={style.twoImageContainer}> */}
+                    <Animated
+                      animationIn="fadeInUp"
+                      animationOut="fadeOut"
+                      isVisible={true}
+                      animationInDelay={500}
+                      animationInDuration={1000}
+                      className={style.twoImageContainer}
+                    >
+                      <img
+                        src={isMobile ? mobileContainer4_2 : container5Two}
+                        alt="img"
+                        className={style.multiImg}
+                      />
+                      <img
+                        src={isMobile ? mobileContainer4_3 : container5Three}
+                        alt="img"
+                        className={style.multiImg}
+                      />
+                    </Animated>
+                  </>
+                )}
               </div>
             )}
           </div>
@@ -233,7 +282,7 @@ function TheMindBehind() {
                   className={style.borderContainerFiveHeading}
                 >
                   <div
-                    className={`${style.heading} ${style.headingFiveWidth} ${style.marginTop}`}
+                    className={`${style.heading} ${style.headingFiveWidth} ${style.marginTop} ${style.marginBottomMobile}`}
                   >
                     Our founder is passionate about passing on his knowledge and
                     experience to the next generation of engineers and

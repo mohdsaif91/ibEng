@@ -2,9 +2,14 @@
 
 .homeContainer {
   .heroContainer {
+    .firstHeroImg {
+    }
     .heroImageContainer {
       &:last-child {
         height: 880px;
+        @include mobile {
+          height: 740px;
+        }
       }
       .linearHighLight {
         // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
@@ -15,6 +20,9 @@
         justify-content: space-between;
         // position: relative;
         padding: 0 56px 40px 56px;
+        @include mobile {
+          padding: 0 24px 40px 24px;
+        }
 
         .imageTextContainer {
           .mainHeading {
@@ -23,6 +31,9 @@
             font-weight: 800;
             letter-spacing: 6.8px;
             margin-bottom: 18px;
+            @include mobile {
+              font-size: 26px;
+            }
           }
           .imageDescription {
             color: $whiteColor;
@@ -33,10 +44,16 @@
             // font-weight: 700;
             line-height: 120%; /* 31.2px */
             transition-delay: 500ms;
+            @include mobile {
+              font-size: 15px;
+            }
             .highLight {
               font-size: 26px;
               font-weight: 700;
               font-style: italic;
+              @include mobile {
+                font-size: 15px;
+              }
             }
             .moreTextSubText {
               margin-bottom: 24px;
@@ -51,17 +68,27 @@
             font-weight: 700;
             letter-spacing: 2.55px;
             cursor: pointer;
+            @include mobile {
+              display: none;
+            }
           }
           .underline {
             margin-top: 8px;
             height: 2px;
             background-color: $whiteColor;
             width: 170px;
+            @include mobile {
+              display: none;
+            }
           }
         }
         .viewIcon {
           height: 114px;
           cursor: pointer;
+          @include mobile {
+            width: 39px;
+            height: 39px;
+          }
         }
       }
       .detialsContainerService {
@@ -78,17 +105,31 @@
         );
         margin-bottom: -267px;
         bottom: 615px;
+        @include mobile {
+          bottom: 3px;
+          color: $blackColor;
+          background: none;
+        }
         .serviceHeading {
           text-align: center;
           color: $whiteColor;
           margin-bottom: 32px;
+          @include mobile {
+            color: $blackColor;
+          }
           .primaryHeading {
             font-size: 82px;
             font-weight: 700;
             margin-bottom: 16px;
+            @include mobile {
+              font-size: 32px;
+            }
           }
           .secondaryHeading {
             font-size: 60px;
+            @include mobile {
+              font-size: 26px;
+            }
           }
         }
         .serviceContainer {
@@ -98,6 +139,10 @@
           justify-content: space-between;
           border-top: 2px solid $whiteColor;
           padding-top: 64px;
+          @include mobile {
+            border-top: 2px solid $blackColor;
+            flex-direction: column;
+          }
           .serviceCard {
             border-radius: 24px;
             background: $whiteColor;
@@ -111,6 +156,12 @@
             @include smallLaptop {
               width: 264px;
             }
+            @include mobile {
+              width: 340px;
+              height: 83px;
+              flex-direction: row;
+              margin-bottom: 32px;
+            }
             cursor: pointer;
             &:hover {
               background-color: $learnMoreColor;
@@ -118,17 +169,27 @@
             }
             .serviceIcon {
               margin-top: 10%;
+              @include mobile {
+                width: 54.327px;
+                height: 54.327px;
+                margin-top: 0;
+                padding: 0 24px;
+              }
             }
             .cardText {
               max-width: 280px;
               text-align: center;
               text-transform: uppercase;
               margin-top: 15%;
-
               font-size: 20px;
               font-weight: 900;
               line-height: 120%; /* 24px */
               height: 31%;
+              @include mobile {
+                margin-top: 0;
+                font-size: 18px;
+                text-align: left;
+              }
             }
             .cardLearMoreContainer {
               display: flex;
@@ -139,12 +200,17 @@
               border-radius: 0px 0px 24px 24px;
               background: $learnMoreColor;
               width: 100%;
+              @include mobile {
+                display: none;
+              }
               .cardLearMore {
                 color: $whiteColor;
                 font-size: 22px;
                 line-height: 120%; /* 26.4px */
               }
             }
+          }
+          .serviceCardMobile {
           }
         }
       }
@@ -170,12 +236,18 @@
 .heroImg {
   width: 100%;
   margin-bottom: 26px;
+  //   @include mobile {
+  //     margin-bottom: -4px;
+  //   }
 }
 .defaultContainerOne {
   position: relative;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
   margin-bottom: -312px;
   bottom: 343px;
+  @include mobile {
+    bottom: 258px;
+  }
 }
 
 .containerOne {
@@ -197,6 +269,9 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
   bottom: 290px;
   margin-bottom: -260px;
+  @include mobile {
+    bottom: 220px;
+  }
 }
 
 .containerTwo {
@@ -219,6 +294,24 @@
 
 .noOverFlow {
   overflow: hidden;
+}
+
+.hero1imgOverlay {
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  height: 600px;
+  width: 100%;
+  margin-top: -630px;
+}
+
+.marginTopHero2 {
+  margin-top: 40px;
+}
+
+.marginTopHero3 {
+  @include mobile {
+    margin-top: 90px;
+  }
 }
 
 //animation

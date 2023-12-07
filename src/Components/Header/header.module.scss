@@ -6,29 +6,61 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 40px;
-  .pageLinks {
-    width: 75%;
+  @include mobile {
+    padding: 8px 20px;
+  }
+  .logoContainer {
+  }
+}
+.navMobileContainer {
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-bottom: 40px;
+}
+.mobileIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .mobileIcon {
+    margin-right: 8px;
+  }
+  .navCloseIcon {
+    height: 24px;
+  }
+}
+.pageLinks {
+  width: 75%;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0;
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
     display: flex;
-    list-style: none;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 0;
-    .link {
-      color: $pageLinkColor;
-      font-size: 22px;
-      font-weight: 700;
-      text-transform: uppercase;
-      cursor: pointer;
-      @include smallLaptop {
-        font-size: 18px;
-      }
-      &:hover {
-        color: $activePage;
-      }
+    // align-items: flex-start;
+  }
+  .link {
+    color: $pageLinkColor;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    @include smallLaptop {
+      font-size: 18px;
     }
-    .activePage {
+    @include mobile {
+      text-align: left;
+      margin-bottom: 24px;
+    }
+    &:hover {
       color: $activePage;
     }
+  }
+  .activePage {
+    color: $activePage;
   }
 }
 .iconMarginLeft {
@@ -61,4 +93,19 @@
       color: $activePage;
     }
   }
+}
+
+.hidePageRoutes {
+  display: none !important;
+}
+
+.mobileNavDrawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $headerColor;
+  z-index: 999;
+  padding: 40px 64px;
 }

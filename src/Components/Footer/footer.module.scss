@@ -9,6 +9,9 @@
   @include smallLaptop {
     padding: 32px 48px;
   }
+  @include mobile {
+    flex-direction: column;
+  }
   .containerOne {
     .contactListItem {
       display: flex;
@@ -42,6 +45,9 @@
       @include smallLaptop {
         width: 440px;
       }
+      @include mobile {
+        width: 292px;
+      }
     }
     .footerBtn {
       margin-top: 12px;
@@ -55,6 +61,10 @@
       line-height: 120%; /* 24px */
       @include smallLaptop {
         width: 440px;
+      }
+      @include mobile {
+        width: 295px;
+        margin-bottom: 40px;
       }
     }
   }
