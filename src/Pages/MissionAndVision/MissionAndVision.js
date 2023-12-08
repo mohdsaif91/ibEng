@@ -4,6 +4,8 @@ import { Animated } from "react-animated-css";
 import heroImg from "../../Asset/Img/whoAreWeHeroImg.png";
 import intialConOne from "../../Asset/Img/initialConOne.png";
 import intialConTow from "../../Asset/Img/initialConTwo.png";
+import heroImgMobile from "../../Asset/Img/missionAndVIsionMobile.jpeg";
+import { isMobile } from "../../utils/utilFunction";
 
 import style from "./missionAndVision.module.scss";
 
@@ -16,8 +18,12 @@ function MissionAndVision() {
     <div className={style.whoWeAreContaineParent}>
       <div className={style.heroContainer}>
         <div className={style.imgTextContainer}>
-          <img alt="hero img" src={heroImg} className={style.heroImg} />
-
+          <img
+            alt="hero img"
+            src={isMobile ? heroImgMobile : heroImg}
+            className={style.heroImg}
+          />
+          <div className={style.heroImgOverLay} />
           <Animated
             animationIn="slideInLeft"
             animationOut="fadeOut"
@@ -25,7 +31,9 @@ function MissionAndVision() {
             animationInDelay={500}
             animationInDuration={1000}
           >
-            <div className={style.heroText}>MISSION AND VISION</div>
+            <div className={style.heroText}>
+              <div className={style.borderUnderLine}>MISSION AND VISION</div>
+            </div>
           </Animated>
         </div>
         <div className={style.vissionContainer}>
@@ -102,29 +110,21 @@ function MissionAndVision() {
               animationInDuration={1000}
               className={style.imgTextcontainer}
             >
-              {/* <div > */}
-              {/* <Animated
-              animationIn="fadeInUp"
-              animationOut="fadeInUp"
-              isVisible={containerOne}
-              animationInDelay={500}
-              animationInDuration={1000}
-            > */}
               <img
                 src={intialConOne}
                 alt="initial"
                 className={style.initialOneImg}
               />
-              {/* </Animated>
-            <Animated
-              animationIn="fadeInUp"
-              animationOut="fadeInUp"
-              isVisible={containerOne}
-              animationInDelay={500}
-              animationInDuration={1000}
-            > */}
-              <div className={style.blackHighlight}>
-                <div className={style.textContainer}>
+              <div
+                className={
+                  isMobile ? style.mobileBlackHighlight : style.blackHighlight
+                }
+              >
+                <div
+                  className={`${style.textContainer} ${
+                    isMobile && style.mobileText
+                  }`}
+                >
                   <div className={style.text}>
                     Our approach is focused on finding{" "}
                     <span className={style.boldText}> creative solutions</span>{" "}
@@ -221,8 +221,16 @@ function MissionAndVision() {
                 animationInDelay={500}
                 animationInDuration={1000}
               >
-                <div className={style.blackHighlight}>
-                  <div className={style.textContainer}>
+                <div
+                  className={
+                    isMobile ? style.mobileHighlight : style.blackHighlight
+                  }
+                >
+                  <div
+                    className={`${style.textContainer} ${
+                      isMobile && style.mobileText
+                    }`}
+                  >
                     <div className={style.text}>
                       Our commitment extends beyond the drawing board, we
                       actively manage every aspect of your project, keeping a

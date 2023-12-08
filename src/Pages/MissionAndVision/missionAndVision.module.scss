@@ -7,9 +7,23 @@
     justify-content: center;
     flex-direction: column;
     .imgTextContainer {
+      width: 100%;
       //   height: 560px;
+      .heroImgOverLay {
+        position: relative;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        height: 210px;
+        @include mobile {
+          height: 210px;
+          margin-top: -55%;
+        }
+      }
       .heroImg {
         width: 100%;
+        @include mobile {
+          height: 210px;
+        }
       }
       .blackHighlight {
         height: 560px;
@@ -29,15 +43,33 @@
         font-weight: 700;
         border-bottom: 4px solid $borderColor2;
         margin-left: 2%;
+        @include mobile {
+          font-size: 20px;
+          width: 215px;
+          margin-top: -28%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          border-bottom: none;
+        }
+        .borderUnderLine {
+          @include mobile {
+            border-bottom: 4px solid $borderColor2;
+          }
+        }
       }
     }
 
     .verticalLine {
       background: $lineColor;
-      width: 62px;
-      height: 2px;
-      transform: rotate(-90deg);
+      height: 62px;
+      width: 2px;
+      //   transform: rotate(-90deg);
       flex-shrink: 0;
+      @include mobile {
+        height: 27px;
+      }
     }
   }
   .initialParent {
@@ -45,18 +77,31 @@
     @include smallLaptop {
       padding: 0 180px;
     }
+    @include mobile {
+      padding: 0;
+    }
     .initialBorderContainerOne {
       width: 110%;
       margin-top: 200px;
       height: 440px;
       border-right: 2px solid $borderColor;
       border-bottom: 2px solid $borderColor;
+      @include mobile {
+        width: 100%;
+        margin-top: 120px;
+        height: 360px;
+        border-bottom: none;
+        border-right: none;
+      }
       .rightTopBorder {
         position: relative;
         width: 12%;
         height: 2px;
         border-top: 2px solid $borderColor;
         left: 88%;
+        @include mobile {
+          display: none;
+        }
       }
       .initialborderContainerHeadingOne {
         display: flex;
@@ -79,9 +124,38 @@
       flex-direction: column;
       align-items: center;
       z-index: 99;
+      @include mobile {
+        width: 100%;
+        height: 336px;
+        border-bottom: none;
+        border-left: none;
+      }
       .imgTextcontainer {
         position: relative;
         top: -40%;
+        @include mobile {
+          top: -15%;
+        }
+        .mobileBlackHighlight {
+          @include mobile {
+            color: $whiteColor;
+            width: 100% !important;
+            height: 365px;
+            background: rgba(0, 0, 0, 0.55);
+            text-align: center;
+            position: relative;
+            top: -32%;
+            margin-top: -50%;
+          }
+          .mobileText {
+            padding: 40px 24px;
+            font-family: Lato;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 22.4px */
+          }
+        }
         .blackHighlight {
           height: 160px;
           background: linear-gradient(
@@ -91,22 +165,37 @@
           );
           position: relative;
           top: 0%;
+          @include mobile {
+            top: -28%;
+          }
           .textContainer {
             position: relative;
             top: -10%;
             width: 940px;
             margin-top: -16%;
             padding: 0 40px;
+            @include mobile {
+              width: 100%;
+              padding: 0;
+              top: -40%;
+            }
             .text {
               color: $whiteColor;
               text-align: center;
               font-size: 21px;
               line-height: 140%; /* 30.8px */
+              @include mobile {
+                font-size: 16px;
+              }
             }
           }
         }
         .initialOneImg {
           width: 1019px;
+          @include mobile {
+            width: 100%;
+            height: 366px;
+          }
         }
       }
     }
@@ -114,6 +203,10 @@
       width: 110%;
       height: 256px;
       border-right: 2px solid $borderColor;
+      @include mobile {
+        width: 100%;
+        border-right: none;
+      }
       .borderRightBottom {
         position: relative;
         background-color: $borderColor;
@@ -122,6 +215,9 @@
         width: 9%;
         left: 91.1%;
         top: 99.8%;
+        @include mobile {
+          display: none;
+        }
         .headingContainer {
           display: flex;
           align-items: center;
@@ -133,6 +229,9 @@
         margin-top: -9.7%;
         @include smallLaptop {
           margin-top: -10.3%;
+        }
+        @include mobile {
+          margin-top: 1%;
         }
       }
       .lineTextContainer {
@@ -147,9 +246,16 @@
           height: 64px;
           margin-top: 1%;
           background-color: $lineColor;
+          @include mobile {
+            height: 27px;
+          }
         }
         .initialContainerThreeText {
           width: 933px;
+          @include mobile {
+            width: 280px;
+            font-size: 16px;
+          }
         }
       }
     }
@@ -159,12 +265,20 @@
       border-left: 2px solid $borderColor;
       z-index: 99;
       margin-bottom: 400px;
+      @include mobile {
+        width: 100%;
+        border-left: none;
+        margin-bottom: 80px;
+      }
       .topLeftBorder {
         position: relative;
         top: 0;
         left: 0;
         width: 9%;
         border-top: 2px solid $borderColor;
+        @include mobile {
+          display: none;
+        }
       }
       .bottomLeftBorder {
         position: relative;
@@ -172,6 +286,9 @@
         left: 0;
         width: 12%;
         border-bottom: 2px solid $borderColor;
+        @include mobile {
+          display: none;
+        }
       }
       .initialBorderImgContainer {
         position: relative;
@@ -179,8 +296,29 @@
         flex-direction: column;
         align-items: center;
         top: 45%;
+        @include mobile {
+          top: 32%;
+        }
         .heroImg {
           width: 1019px;
+          @include mobile {
+            width: 100%;
+            height: 366px;
+          }
+        }
+        .mobileHighlight {
+          position: relative;
+          background: rgba(0, 0, 0, 0.7);
+          width: 100%;
+          height: 366px;
+          color: $whiteColor;
+          margin-top: -94%;
+          .mobileText {
+            padding: 40px 24px;
+            font-size: 17px;
+            text-align: center;
+            line-height: 150%; /* 22.4px */
+          }
         }
         .blackHighlight {
           height: 200px;
@@ -195,6 +333,10 @@
             text-align: center;
             width: 940px;
             padding: 0 40px;
+            @include mobile {
+              padding: 0;
+              width: 100%;
+            }
             .text {
               color: $whiteColor;
               text-align: center;
@@ -219,11 +361,19 @@
   height: 108px;
   background: $whiteColor;
   border-radius: 13px;
+  @include mobile {
+    height: 64px;
+    width: 264px;
+    margin-top: 1%;
+  }
   .rectBox {
     flex-shrink: 0;
     color: $blackColor;
     font-size: 46px;
     font-weight: 700;
+    @include mobile {
+      font-size: 20px;
+    }
   }
 }
 
@@ -241,12 +391,16 @@
 }
 
 .boldText {
-  font-style: italic;
+  font-style: italic !important;
   font-weight: 700;
 }
 
 .containerTwoHeadingWidth {
   width: 1048px;
+  @include mobile {
+    width: 296px;
+    font-size: 16px;
+  }
 }
 .containerOneHeadingWidth {
   width: 920px;
@@ -260,6 +414,9 @@
   border-left: 2px solid $borderColor;
   border-top: 2px solid $borderColor;
   border-right: 2px solid $borderColor;
+  @include mobile {
+    border: none;
+  }
 }
 
 .smallLaptopMargin {

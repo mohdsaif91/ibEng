@@ -8,6 +8,9 @@ import greyContainer2 from "../../Asset/Img/greyContainer2.png";
 import greyContainer3 from "../../Asset/Img/greyContainer3.png";
 import greyContainer4 from "../../Asset/Img/greyContainer4.png";
 import redDot from "../../Asset/Img/redDot.png";
+import { isMobile } from "../../utils/utilFunction";
+import whatWeDoMobile1 from "../../Asset/Img/whatWedoMobile1.png";
+import whatWeDoMobile2 from "../../Asset/Img/whatWeDoMobile2.png";
 
 import style from "./whatWeDo.module.scss";
 
@@ -22,13 +25,21 @@ function WhatWeDo() {
       <div className={style.twoColumnContainer}>
         <div className={style.containerOne}>
           <div className={style.containerOneCard}>
-            <div className={style.cardHeading}>
-              Build.
-              <br />
-              Solve.
-              <br />
-              Evolve.
-            </div>
+            {isMobile ? (
+              <div className={style.mobileCardHeading}>
+                <div className={style.heading1}>Build.</div>
+                <div className={style.heading2}>Solve.</div>
+                <div className={style.heading3}>Evolve.</div>
+              </div>
+            ) : (
+              <div className={style.cardHeading}>
+                Build.
+                <br />
+                Solve.
+                <br />
+                Evolve.
+              </div>
+            )}
             <Animated
               animationIn="fadeInUp"
               isVisible={true}
@@ -36,7 +47,7 @@ function WhatWeDo() {
               animationInDuration={1000}
             >
               <img
-                src={containerOneImg}
+                src={isMobile ? whatWeDoMobile2 : containerOneImg}
                 alt="containerOneImg"
                 className={style.containerOneImg}
               />
@@ -51,7 +62,7 @@ function WhatWeDo() {
             animationInDuration={1000}
           >
             <img
-              src={containerTwoImg}
+              src={isMobile ? whatWeDoMobile1 : containerTwoImg}
               alt=""
               className={style.containerTwoimg}
             />
