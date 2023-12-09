@@ -35,6 +35,7 @@ function Protfolio() {
             animationInDuration={1000}
             className={style.protfolioHeroContainer}
           >
+            <div className={style.protfolioHeroContainerHighlight} />
             <div className={style.heroText}>
               National Leader in
               <br />

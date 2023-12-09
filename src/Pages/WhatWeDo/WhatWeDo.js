@@ -8,9 +8,9 @@ import greyContainer2 from "../../Asset/Img/greyContainer2.png";
 import greyContainer3 from "../../Asset/Img/greyContainer3.png";
 import greyContainer4 from "../../Asset/Img/greyContainer4.png";
 import redDot from "../../Asset/Img/redDot.png";
-import { isMobile } from "../../utils/utilFunction";
 import whatWeDoMobile1 from "../../Asset/Img/whatWedoMobile1.png";
 import whatWeDoMobile2 from "../../Asset/Img/whatWeDoMobile2.png";
+import mobileRedDot from "../../Asset/Icon/mobileRedDot.png";
 
 import style from "./whatWeDo.module.scss";
 
@@ -19,6 +19,10 @@ function WhatWeDo() {
   const [containerTwo, setContainerTwo] = useState(false);
   const [containerThree, setContainerThree] = useState(false);
   const [containerFour, setContainerFour] = useState(false);
+  const [isMobile] = useState(
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+      navigator.userAgent.indexOf("Mobi") > -1
+  );
 
   return (
     <div className={style.whatWeDoContainer}>
@@ -104,7 +108,11 @@ function WhatWeDo() {
                 animationInDelay={500}
                 animationInDuration={1000}
               >
-                <img src={redDot} alt="red Dot" className={style.redDot} />
+                <img
+                  src={isMobile ? mobileRedDot : redDot}
+                  alt="red Dot"
+                  className={style.redDot}
+                />
               </Animated>
             </div>
           )}
@@ -170,33 +178,35 @@ function WhatWeDo() {
           </div>
         </div>
         <div
-          className={style.imageTextContainerTwo}
+          className={`${style.imageTextContainerTwo} ${style.mobileImageTextContainerTwo}`}
           onMouseEnter={() => setContainerTwo(true)}
         >
           <div className={style.firstColumnContainer}>
-            <div className={style.headingImgContainer}>
-              {containerTwo && (
-                <Animated
-                  animationIn="fadeInDown"
-                  isVisible={true}
-                  animationInDelay={500}
-                  animationInDuration={1000}
-                >
-                  <div className={style.verticalLine} />
-                </Animated>
-              )}
-              {containerTwo && (
-                <Animated
-                  animationIn="slideInLeft"
-                  isVisible={true}
-                  animationInDelay={500}
-                  animationInDuration={1000}
-                  className={style.containerHeadingTwo}
-                >
-                  BUILDING INSPECTION
-                </Animated>
-              )}
-            </div>
+            {!isMobile && (
+              <div className={style.headingImgContainer}>
+                {containerTwo && (
+                  <Animated
+                    animationIn="fadeInDown"
+                    isVisible={true}
+                    animationInDelay={500}
+                    animationInDuration={1000}
+                  >
+                    <div className={style.verticalLine} />
+                  </Animated>
+                )}
+                {containerTwo && (
+                  <Animated
+                    animationIn="slideInLeft"
+                    isVisible={true}
+                    animationInDelay={500}
+                    animationInDuration={1000}
+                    className={style.containerHeadingTwo}
+                  >
+                    BUILDING INSPECTION
+                  </Animated>
+                )}
+              </div>
+            )}
             <div
               className={`${style.subTextContainer} ${style.firstTextContainer} ${style.topMarginTextContainer}`}
             >
@@ -237,6 +247,31 @@ function WhatWeDo() {
             </div>
           </div>
           <div className={style.secondColumnContainer}>
+            {isMobile && (
+              <div className={style.headingImgContainerMobile}>
+                {containerTwo && (
+                  <Animated
+                    animationIn="fadeInDown"
+                    isVisible={true}
+                    animationInDelay={500}
+                    animationInDuration={1000}
+                  >
+                    <div className={style.verticalLine} />
+                  </Animated>
+                )}
+                {containerTwo && (
+                  <Animated
+                    animationIn="slideInLeft"
+                    isVisible={true}
+                    animationInDelay={500}
+                    animationInDuration={1000}
+                    className={style.containerHeadingTwo}
+                  >
+                    BUILDING INSPECTION
+                  </Animated>
+                )}
+              </div>
+            )}
             <div className={`${style.imgShadeContainer} ${style.imgMarginTop}`}>
               {containerTwo && (
                 <Animated
@@ -251,9 +286,9 @@ function WhatWeDo() {
                     alt="img 1"
                     className={`${style.greyImage} `}
                   />
+                  <div className={style.shade} />
                 </Animated>
               )}
-              <div className={style.shade} />
             </div>
           </div>
         </div>
@@ -262,6 +297,32 @@ function WhatWeDo() {
           onMouseEnter={() => setContainerThree(true)}
         >
           <div className={style.firstColumnContainer}>
+            {isMobile && (
+              <div className={style.headingImgContainerMobile}>
+                {containerThree && (
+                  <Animated
+                    animationIn="fadeInDown"
+                    isVisible={true}
+                    animationInDelay={500}
+                    animationInDuration={1000}
+                  >
+                    <div className={style.verticalLine} />
+                  </Animated>
+                )}
+                {containerThree && (
+                  <Animated
+                    animationIn="slideInLeft"
+                    isVisible={true}
+                    animationInDelay={500}
+                    animationInDuration={1000}
+                    className={style.containerHeadingTwo}
+                  >
+                    INTERIOR DESIGN
+                    <span className={style.headingIcon}>IN</span>
+                  </Animated>
+                )}
+              </div>
+            )}
             {containerThree && (
               <Animated
                 animationIn="slideInLeft"
@@ -270,22 +331,18 @@ function WhatWeDo() {
                 animationInDuration={1000}
                 className={`${style.imgShadeContainer} ${style.imgMarginTop}`}
               >
-                {/* <div
-                  className={`${style.imgShadeContainer} ${style.imgMarginTop}`}
-                > */}
                 <img
                   src={greyContainer3}
                   alt="img 1"
                   className={`${style.greyImage} `}
                 />
                 <div className={style.shade} />
-                {/* </div> */}
               </Animated>
             )}
           </div>
           <div className={style.secondColumnContainer}>
             <div className={style.headingImgContainer}>
-              {containerThree && (
+              {containerThree && !isMobile && (
                 <Animated
                   animationIn="fadeInDown"
                   isVisible={true}
@@ -298,7 +355,7 @@ function WhatWeDo() {
               <div
                 className={`${style.imgShadeContainer} ${style.imgMarginTop}`}
               >
-                {containerThree && (
+                {containerThree && !isMobile && (
                   <Animated
                     animationIn="slideInRight"
                     isVisible={true}
@@ -369,33 +426,38 @@ function WhatWeDo() {
           </div>
         </div>
         <div
-          className={style.imageTextContainerTwo}
+          className={`${style.imageTextContainerTwo} ${style.mobilePaddingContainerTwo} ${style.mobileImageTextContainerTwo}`}
+          onClick={() => setContainerFour(true)}
           onMouseEnter={() => setContainerFour(true)}
         >
           <div className={style.firstColumnContainer}>
-            <div className={style.headingImgContainer}>
-              {containerFour && (
-                <Animated
-                  animationIn="fadeInDown"
-                  isVisible={true}
-                  animationInDelay={500}
-                  animationInDuration={1000}
-                >
-                  <div className={style.verticalLine} />
-                </Animated>
-              )}
-              {containerFour && (
-                <Animated
-                  animationIn="slideInLeft"
-                  isVisible={true}
-                  animationInDelay={500}
-                  animationInDuration={1000}
-                  className={`${style.containerHeadingFour} `}
-                >
-                  ENGINEERING CONSULTATION
-                </Animated>
-              )}
-            </div>
+            {!isMobile && (
+              <div
+                className={`${style.headingImgContainer} ${style.additionalContainerFourClass}`}
+              >
+                {containerFour && (
+                  <Animated
+                    animationIn="fadeInDown"
+                    isVisible={true}
+                    animationInDelay={500}
+                    animationInDuration={1000}
+                  >
+                    <div className={style.verticalLine} />
+                  </Animated>
+                )}
+                {containerFour && (
+                  <Animated
+                    animationIn="slideInLeft"
+                    isVisible={true}
+                    animationInDelay={500}
+                    animationInDuration={1000}
+                    className={`${style.containerHeadingFour} `}
+                  >
+                    ENGINEERING CONSULTATION
+                  </Animated>
+                )}
+              </div>
+            )}
             <div
               className={`${style.subTextContainer} ${style.firstTextContainer} ${style.topMarginTextContainer}`}
             >
@@ -446,6 +508,34 @@ function WhatWeDo() {
             </div>
           </div>
           <div className={style.secondColumnContainer}>
+            {isMobile && containerFour && (
+              <div
+                className={`${style.headingImgContainer} ${style.additionalContainerFourClass}`}
+              >
+                {/* {containerFour && ( */}
+                <Animated
+                  className={style.mobileVerticalContainerFour}
+                  animationIn="fadeInDown"
+                  isVisible={true}
+                  animationInDelay={500}
+                  animationInDuration={1000}
+                >
+                  <div className={style.verticalLine} />
+                </Animated>
+                {/* )} */}
+                {/* {containerFour && ( */}
+                <Animated
+                  animationIn="slideInLeft"
+                  isVisible={true}
+                  animationInDelay={500}
+                  animationInDuration={1000}
+                  className={`${style.containerHeadingFour} `}
+                >
+                  ENGINEERING CONSULTATION
+                </Animated>
+                {/* )} */}
+              </div>
+            )}
             {containerFour && (
               <Animated
                 animationIn="slideInRight"
@@ -464,63 +554,6 @@ function WhatWeDo() {
             )}
           </div>
         </div>
-        {/* <div className={style.imageContainer}>
-          <img src={greyContainer2} alt="img 1" className={style.greyImage} />
-          <div className={style.imgText}>
-            <div className={style.containerText}>BUILDING INSPECTION</div>
-            <div className={style.imgTextChild}>
-              Our Planning Services offer comprehensive support for both
-              developers and individuals seeking to build their dream projects.
-            </div>
-            <div className={style.imgTextChild}>
-              We provide a team of expert planning engineers who can oversee
-              every aspect of your project.
-            </div>
-            <div className={style.imgTextChild}>
-              From conceptualization to final plans, our professionals ensure
-              that all necessary engineering components are meticulously
-              designed, making your vision a reality.
-            </div>
-          </div>
-        </div>
-        <div className={style.imageContainer}>
-          <img src={greyContainer3} alt="img 1" className={style.greyImage} />
-          <div className={style.imgText}>
-            <div className={style.containerText}>INTERIOR DESIGN</div>
-            <div className={style.imgTextChild}>
-              Our Planning Services offer comprehensive support for both
-              developers and individuals seeking to build their dream projects.
-            </div>
-            <div className={style.imgTextChild}>
-              We provide a team of expert planning engineers who can oversee
-              every aspect of your project.
-            </div>
-            <div className={style.imgTextChild}>
-              From conceptualization to final plans, our professionals ensure
-              that all necessary engineering components are meticulously
-              designed, making your vision a reality.
-            </div>
-          </div>
-        </div>
-        <div className={style.imageContainer}>
-          <img src={greyContainer4} alt="img 1" className={style.greyImage} />
-          <div className={style.imgText}>
-            <div className={style.containerText}>ENGINEERING CONSULTATION</div>
-            <div className={style.imgTextChild}>
-              Our Planning Services offer comprehensive support for both
-              developers and individuals seeking to build their dream projects.
-            </div>
-            <div className={style.imgTextChild}>
-              We provide a team of expert planning engineers who can oversee
-              every aspect of your project.
-            </div>
-            <div className={style.imgTextChild}>
-              From conceptualization to final plans, our professionals ensure
-              that all necessary engineering components are meticulously
-              designed, making your vision a reality.
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
