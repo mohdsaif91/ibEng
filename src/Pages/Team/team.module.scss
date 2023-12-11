@@ -272,6 +272,12 @@
         padding: 48px 8px 0 8px;
         position: relative;
         margin-top: -176%;
+        @include pixel7 {
+          margin-top: -167%;
+        }
+        @include iPhoneSe {
+          margin-top: -183%;
+        }
         .leadernameImgContainer {
           display: flex;
           align-items: center;

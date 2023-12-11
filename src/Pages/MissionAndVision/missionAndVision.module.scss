@@ -18,11 +18,23 @@
           height: 210px;
           margin-top: -55%;
         }
+        @include iPhoneSe {
+          height: 209px;
+          margin-top: -57%;
+        }
+        @include iPhone14Pro {
+          margin-top: -49%;
+        }
+        @include s20Ultra {
+          margin-top: -51%;
+        }
       }
       .heroImg {
         width: 100%;
         @include mobile {
           height: 210px;
+        }
+        @include iPhoneSe {
         }
       }
       .blackHighlight {
@@ -147,6 +159,15 @@
             top: -32%;
             margin-top: -50%;
           }
+          @include iPhoneSe {
+            top: -33%;
+          }
+          @include iPhone14Pro {
+            top: -30%;
+          }
+          @include s20Ultra {
+            margin-top: -49%;
+          }
           .mobileText {
             padding: 40px 24px;
             font-family: Lato;
@@ -249,6 +270,17 @@
           @include mobile {
             height: 27px;
           }
+          @include iPhone14Pro {
+            padding: 110px 8px 0 8px;
+            margin-top: -160%;
+          }
+          @include s20Ultra {
+            padding: 54px 8px 0 8px;
+            margin-top: -167%;
+          }
+          @include iPhoneSe {
+            margin-top: -184%;
+          }
         }
         .initialContainerThreeText {
           width: 933px;
@@ -313,6 +345,16 @@
           height: 366px;
           color: $whiteColor;
           margin-top: -94%;
+          @include iPhoneSe {
+            height: 373px;
+            margin-top: -99%;
+          }
+          @include iPhone14Pro {
+            margin-top: -85%;
+          }
+          @include s20Ultra {
+            margin-top: -89%;
+          }
           .mobileText {
             padding: 40px 24px;
             font-size: 17px;

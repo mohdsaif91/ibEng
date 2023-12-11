@@ -110,6 +110,9 @@
           @include smallLaptop {
             transform: scale(1.2);
           }
+          @include mobile {
+            transform: none;
+          }
         }
         .projectImg {
           height: 218px;

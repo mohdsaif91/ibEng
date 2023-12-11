@@ -512,7 +512,6 @@ function WhatWeDo() {
               <div
                 className={`${style.headingImgContainer} ${style.additionalContainerFourClass}`}
               >
-                {/* {containerFour && ( */}
                 <Animated
                   className={style.mobileVerticalContainerFour}
                   animationIn="fadeInDown"
@@ -522,8 +521,6 @@ function WhatWeDo() {
                 >
                   <div className={style.verticalLine} />
                 </Animated>
-                {/* )} */}
-                {/* {containerFour && ( */}
                 <Animated
                   animationIn="slideInLeft"
                   isVisible={true}
@@ -533,7 +530,6 @@ function WhatWeDo() {
                 >
                   ENGINEERING CONSULTATION
                 </Animated>
-                {/* )} */}
               </div>
             )}
             {containerFour && (

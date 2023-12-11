@@ -248,6 +248,13 @@
   @include mobile {
     bottom: 258px;
   }
+  @include s20Ultra {
+    bottom: 240px;
+  }
+  @include iPhone14Pro {
+    bottom: 222px;
+    margin-bottom: -280px;
+  }
 }
 
 .containerOne {
@@ -271,6 +278,14 @@
   margin-bottom: -260px;
   @include mobile {
     bottom: 220px;
+  }
+  @include s20Ultra {
+    bottom: 200px;
+    margin-bottom: -216px;
+  }
+  @include iPhone14Pro {
+    bottom: 200px;
+    margin-bottom: -224px;
   }
 }
 
@@ -302,6 +317,22 @@
   height: 600px;
   width: 100%;
   margin-top: -630px;
+  @include iPhone12Pro {
+    height: 646px !important;
+    margin-top: -678px !important;
+  }
+  @include iPhoneSe {
+    margin-top: -654px;
+    height: 624px;
+  }
+  @include s20Ultra {
+    height: 688px;
+    margin-top: -716px;
+  }
+  @include iPhone14Pro {
+    height: 716px;
+    margin-top: -744px;
+  }
 }
 
 .marginTopHero2 {

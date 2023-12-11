@@ -10,6 +10,7 @@ import mobile from "../../Asset/Icon/mobile.png";
 import mail from "../../Asset/Icon/mail.png";
 import map from "../../Asset/Icon/map.png";
 import cityBuldg from "../../Asset/Img/City Buildings.png";
+import cityBuldgMobile from "../../Asset/Img/City BuildingsMobile.png";
 
 import style from "./contactUs.module.scss";
 
@@ -23,6 +24,11 @@ const initialFormData = {
 function ContactUs() {
   const [formData, setFormData] = useState({ ...initialFormData });
   const [contactForm, setContactForm] = useState(false);
+  const [isMobile] = useState(
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+      navigator.userAgent.indexOf("Mobi") > -1
+  );
+
   return (
     <div className={style.contactUsContainer}>
       {contactForm && (
@@ -78,7 +84,7 @@ function ContactUs() {
                   <div className={style.inputLabel}>Message</div>
                   <textarea
                     rows={10}
-                    cols={70}
+                    cols={isMobile ? 45 : 70}
                     className={style.textArea}
                     value={formData.message}
                     onChange={(e) =>
@@ -86,65 +92,76 @@ function ContactUs() {
                     }
                   />
                 </div>
-                <button className={style.submitBtn}>Submit</button>
+                <div className={style.btnImgContainer}>
+                  <button className={style.submitBtn}>Submit</button>
+                  {isMobile && (
+                    <img
+                      src={cityBuldgMobile}
+                      alt="cityBuldgMobile"
+                      className={style.btnCityBuldg}
+                    />
+                  )}
+                </div>
               </div>
             </div>
-            <div className={style.detailsContainer}>
-              <div className={style.iconLabelContainer}>
-                <img
-                  src={mobile}
-                  alt="mobile"
-                  className={`${style.detialsIcon} ${style.borderIcon}`}
-                />
-                <label className={style.detialsLabel}>
-                  Israel Phone: 04-8889810
-                </label>
+            {!isMobile && (
+              <div className={style.detailsContainer}>
+                <div className={style.iconLabelContainer}>
+                  <img
+                    src={mobile}
+                    alt="mobile"
+                    className={`${style.detialsIcon} ${style.borderIcon}`}
+                  />
+                  <label className={style.detialsLabel}>
+                    Israel Phone: 04-8889810
+                  </label>
+                </div>
+                <div className={style.iconLabelContainer}>
+                  <img
+                    src={mail}
+                    alt="mail"
+                    className={`${style.detialsIcon} ${style.borderIcon}`}
+                  />
+                  <label className={style.detialsLabel}>
+                    Office@ibengineer.com
+                  </label>
+                </div>
+                <div className={style.iconLabelContainer}>
+                  <img src={map} alt="map" className={style.detialsIcon} />
+                  <label className={style.detialsLabel}>
+                    Office Address: St. Wadi Alhaj Nazareth
+                  </label>
+                </div>
+                <div className={style.detialsSubText}>
+                  Follow us on social media to stay updated with our latest
+                  projects, industry insights, and company news.
+                </div>
+                <div className={style.socialMediaIconcontainer}>
+                  <img
+                    src={facebook}
+                    alt="facebook"
+                    className={style.mediaIcon}
+                  />
+                  <img
+                    src={instagram}
+                    alt="instagram"
+                    className={style.mediaIcon}
+                  />
+                  <img
+                    src={linkedIn}
+                    alt="facebook"
+                    className={style.mediaIcon}
+                  />
+                </div>
+                <div className={style.cityBuldContainer}>
+                  <img
+                    className={style.cityBuldg}
+                    src={cityBuldg}
+                    alt="city building"
+                  />
+                </div>
               </div>
-              <div className={style.iconLabelContainer}>
-                <img
-                  src={mail}
-                  alt="mail"
-                  className={`${style.detialsIcon} ${style.borderIcon}`}
-                />
-                <label className={style.detialsLabel}>
-                  Office@ibengineer.com
-                </label>
-              </div>
-              <div className={style.iconLabelContainer}>
-                <img src={map} alt="map" className={style.detialsIcon} />
-                <label className={style.detialsLabel}>
-                  Office Address: St. Wadi Alhaj Nazareth
-                </label>
-              </div>
-              <div className={style.detialsSubText}>
-                Follow us on social media to stay updated with our latest
-                projects, industry insights, and company news.
-              </div>
-              <div className={style.socialMediaIconcontainer}>
-                <img
-                  src={facebook}
-                  alt="facebook"
-                  className={style.mediaIcon}
-                />
-                <img
-                  src={instagram}
-                  alt="instagram"
-                  className={style.mediaIcon}
-                />
-                <img
-                  src={linkedIn}
-                  alt="facebook"
-                  className={style.mediaIcon}
-                />
-              </div>
-              <div className={style.cityBuldContainer}>
-                <img
-                  className={style.cityBuldg}
-                  src={cityBuldg}
-                  alt="city building"
-                />
-              </div>
-            </div>
+            )}
           </div>
         </Animated>
       )}
