@@ -18,8 +18,8 @@ import style from "./home.module.scss";
 import "glider-js/glider.min.css";
 
 const sliderConfiguration = {
-  animationDuration: 500,
-  autoplay: 1000,
+  animationDuration: 1000,
+  autoplay: 2000,
   dragDistance: false,
   gap: 2,
   hoverMouse: false,

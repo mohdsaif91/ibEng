@@ -6,10 +6,10 @@ import leftBackIcon from "../../Asset/Icon/backLeftIcon.png";
 import city1 from "../../Asset/Img/City Buildings_1.png";
 import city2 from "../../Asset/Img/City Buildings_2.png";
 import city3 from "../../Asset/Img/City Buildings_3.png";
-import upBtn from "../../Asset/Icon/upArrow.png";
-import downBtn from "../../Asset/Icon/downArrow.png";
-import up from "../../Asset/Icon/up.png";
-import down from "../../Asset/Icon/down.png";
+import upBtn from "../../Asset/Icon/upArrowBlue.png";
+import downBtn from "../../Asset/Icon/downArrowBlue.png";
+import whiteUpArrow from "../../Asset/Icon/whiteUpArrow.png";
+import whiteDownArrow from "../../Asset/Icon/whiteDownArrow.png";
 
 import style from "./protfolio.module.scss";
 
@@ -23,6 +23,10 @@ function Protfolio() {
     ...initialProjectSelectedData,
   });
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [upMouse, setUpMouse] = useState(false);
+  const [downMouse, setDownMouse] = useState(false);
+
+  console.log(upMouse);
 
   return (
     <div className={style.protfolioContainer}>
@@ -174,9 +178,13 @@ function Protfolio() {
                   ))}
                 </div>
                 <div className={style.btnContainer}>
-                  <div className={style.imgContainer}>
+                  <div
+                    onMouseEnter={() => setUpMouse(true)}
+                    onMouseLeave={() => setUpMouse(false)}
+                    className={style.imgContainer}
+                  >
                     <img
-                      src={up}
+                      src={upMouse ? upBtn : whiteUpArrow}
                       onClick={(e) =>
                         currentProjectIndex === 0
                           ? e.preventDefault()
@@ -186,9 +194,13 @@ function Protfolio() {
                       className={style.arrowBtn}
                     />
                   </div>
-                  <div className={style.imgContainer}>
+                  <div
+                    onMouseEnter={() => setDownMouse(true)}
+                    onMouseLeave={() => setDownMouse(false)}
+                    className={style.imgContainer}
+                  >
                     <img
-                      src={down}
+                      src={downMouse ? downBtn : whiteDownArrow}
                       alt="down  btn"
                       onClick={(e) =>
                         currentProjectIndex + 1 ===

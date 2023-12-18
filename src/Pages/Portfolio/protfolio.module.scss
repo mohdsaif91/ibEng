@@ -13,7 +13,7 @@
     }
     .heroText {
       position: relative;
-      top: 171%;
+      top: 25%;
       color: $whiteColor;
       text-align: center;
       font-family: Lato;
@@ -262,16 +262,16 @@
             justify-content: center;
             flex-direction: column;
             .imgContainer {
-              border-radius: 50%;
-              height: 58px;
-              width: 58px;
-              background-color: $whiteColor;
+              // border-radius: 50%;
+              // height: 58px;
+              // width: 58px;
+              // background-color: $whiteColor;
               display: flex;
               align-items: center;
               justify-content: center;
-              &:hover {
-                background-color: $learnMoreColor;
-              }
+              // &:hover {
+              //   background-color: $learnMoreColor;
+              // }
               .arrowBtn {
                 cursor: pointer;
                 height: 40px;
