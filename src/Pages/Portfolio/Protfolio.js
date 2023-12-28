@@ -10,6 +10,7 @@ import upBtn from "../../Asset/Icon/upArrowBlue.png";
 import downBtn from "../../Asset/Icon/downArrowBlue.png";
 import whiteUpArrow from "../../Asset/Icon/whiteUpArrow.png";
 import whiteDownArrow from "../../Asset/Icon/whiteDownArrow.png";
+import mobileBackIcon from "../../Asset/Icon/mobileBackIcon.png";
 
 import style from "./protfolio.module.scss";
 
@@ -25,6 +26,10 @@ function Protfolio() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const [upMouse, setUpMouse] = useState(false);
   const [downMouse, setDownMouse] = useState(false);
+  const [isMobile] = useState(
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+      navigator.userAgent.indexOf("Mobi") > -1
+  );
 
   console.log(upMouse);
 
@@ -95,19 +100,64 @@ function Protfolio() {
           <div className={style.upperActionContainer}>
             <img
               alt=""
-              src={leftBackIcon}
+              src={isMobile ? mobileBackIcon : leftBackIcon}
               className={style.leftIcon}
               onClick={() => {
                 setCurrentProjectIndex(0);
                 setProjectSelected({ projectData: null, showProject: false });
               }}
             />
-          </div>
-          <div className={style.imgtextContainer}>
-            <div className={style.textContainer}>
+            {isMobile && (
               <div className={style.heading}>
                 {projectData[projectSelected.projectData || 0].projectName}
               </div>
+            )}
+          </div>
+          <div className={style.imgtextContainer}>
+            <div className={style.textContainer}>
+              {!isMobile && (
+                <div className={style.heading}>
+                  {projectData[projectSelected.projectData || 0].projectName}
+                </div>
+              )}
+              {isMobile && (
+                <div className={style.btnContainer}>
+                  <div
+                    onMouseEnter={() => setUpMouse(true)}
+                    onMouseLeave={() => setUpMouse(false)}
+                    className={style.imgContainer}
+                  >
+                    <img
+                      src={upMouse ? upBtn : whiteUpArrow}
+                      onClick={(e) =>
+                        currentProjectIndex === 0
+                          ? e.preventDefault()
+                          : setCurrentProjectIndex((data) => data - 1)
+                      }
+                      alt="up btn"
+                      className={style.arrowBtn}
+                    />
+                  </div>
+                  <div
+                    onMouseEnter={() => setDownMouse(true)}
+                    onMouseLeave={() => setDownMouse(false)}
+                    className={style.imgContainer}
+                  >
+                    <img
+                      src={downMouse ? downBtn : whiteDownArrow}
+                      alt="down  btn"
+                      onClick={(e) =>
+                        currentProjectIndex + 1 ===
+                        projectData[projectSelected.projectData || 0]
+                          .imgBackground.length
+                          ? e.preventDefault()
+                          : setCurrentProjectIndex((data) => data + 1)
+                      }
+                      className={style.arrowBtn}
+                    />
+                  </div>
+                </div>
+              )}
               <div className={style.subTextContainer}>
                 <div className={style.subTextItem}>
                   {
@@ -154,66 +204,68 @@ function Protfolio() {
                 )
               )}
 
-              <div className={style.btnAndLineContainer}>
-                <div className={style.lineContainer}>
-                  {projectData[
-                    projectSelected.projectData || 0
-                  ].imgBackground.map((m, imgIndex) => (
-                    <>
-                      {currentProjectIndex === imgIndex ? (
-                        <Animated
-                          animationIn="pulse"
-                          isVisible={true}
-                          animationInDelay={300}
-                          animationInDuration={700}
-                          className={style.activeLine}
-                        ></Animated>
-                      ) : (
-                        <div
-                          className={`${style.line}`}
-                          onClick={() => setCurrentProjectIndex(imgIndex)}
-                        />
-                      )}
-                    </>
-                  ))}
-                </div>
-                <div className={style.btnContainer}>
-                  <div
-                    onMouseEnter={() => setUpMouse(true)}
-                    onMouseLeave={() => setUpMouse(false)}
-                    className={style.imgContainer}
-                  >
-                    <img
-                      src={upMouse ? upBtn : whiteUpArrow}
-                      onClick={(e) =>
-                        currentProjectIndex === 0
-                          ? e.preventDefault()
-                          : setCurrentProjectIndex((data) => data - 1)
-                      }
-                      alt="up btn"
-                      className={style.arrowBtn}
-                    />
+              {!isMobile && (
+                <div className={style.btnAndLineContainer}>
+                  <div className={style.lineContainer}>
+                    {projectData[
+                      projectSelected.projectData || 0
+                    ].imgBackground.map((m, imgIndex) => (
+                      <>
+                        {currentProjectIndex === imgIndex ? (
+                          <Animated
+                            animationIn="pulse"
+                            isVisible={true}
+                            animationInDelay={300}
+                            animationInDuration={700}
+                            className={style.activeLine}
+                          ></Animated>
+                        ) : (
+                          <div
+                            className={`${style.line}`}
+                            onClick={() => setCurrentProjectIndex(imgIndex)}
+                          />
+                        )}
+                      </>
+                    ))}
                   </div>
-                  <div
-                    onMouseEnter={() => setDownMouse(true)}
-                    onMouseLeave={() => setDownMouse(false)}
-                    className={style.imgContainer}
-                  >
-                    <img
-                      src={downMouse ? downBtn : whiteDownArrow}
-                      alt="down  btn"
-                      onClick={(e) =>
-                        currentProjectIndex + 1 ===
-                        projectData[projectSelected.projectData || 0]
-                          .imgBackground.length
-                          ? e.preventDefault()
-                          : setCurrentProjectIndex((data) => data + 1)
-                      }
-                      className={style.arrowBtn}
-                    />
+                  <div className={style.btnContainer}>
+                    <div
+                      onMouseEnter={() => setUpMouse(true)}
+                      onMouseLeave={() => setUpMouse(false)}
+                      className={style.imgContainer}
+                    >
+                      <img
+                        src={upMouse ? upBtn : whiteUpArrow}
+                        onClick={(e) =>
+                          currentProjectIndex === 0
+                            ? e.preventDefault()
+                            : setCurrentProjectIndex((data) => data - 1)
+                        }
+                        alt="up btn"
+                        className={style.arrowBtn}
+                      />
+                    </div>
+                    <div
+                      onMouseEnter={() => setDownMouse(true)}
+                      onMouseLeave={() => setDownMouse(false)}
+                      className={style.imgContainer}
+                    >
+                      <img
+                        src={downMouse ? downBtn : whiteDownArrow}
+                        alt="down  btn"
+                        onClick={(e) =>
+                          currentProjectIndex + 1 ===
+                          projectData[projectSelected.projectData || 0]
+                            .imgBackground.length
+                            ? e.preventDefault()
+                            : setCurrentProjectIndex((data) => data + 1)
+                        }
+                        className={style.arrowBtn}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
