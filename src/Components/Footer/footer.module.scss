@@ -42,6 +42,7 @@
     .formInput {
       margin-bottom: 24px;
       width: 480px;
+      text-align: center;
       @include smallLaptop {
         width: 440px;
       }

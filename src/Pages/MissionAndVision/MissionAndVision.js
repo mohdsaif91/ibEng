@@ -5,7 +5,6 @@ import heroImg from "../../Asset/Img/whoAreWeHeroImg.png";
 import intialConOne from "../../Asset/Img/initialConOne.png";
 import intialConTow from "../../Asset/Img/initialConTwo.png";
 import heroImgMobile from "../../Asset/Img/missionAndVIsionMobile.jpeg";
-import { isMobile } from "../../utils/utilFunction";
 
 import style from "./missionAndVision.module.scss";
 
@@ -13,6 +12,11 @@ function MissionAndVision() {
   const [containerOne, setContainerOne] = useState(false);
   const [containerTwo, setContainerTwo] = useState(false);
   const [containerThree, setContainerThree] = useState(false);
+  const [isMobile] = useState(
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+      navigator.userAgent.indexOf("Mobi") > -1
+  );
+  console.log(isMobile);
 
   return (
     <div className={style.whoWeAreContaineParent}>
@@ -32,7 +36,7 @@ function MissionAndVision() {
             animationInDuration={1000}
           >
             <div className={style.heroText}>
-              <div className={style.borderUnderLine}>MISSION AND VISION</div>
+              <div className={style.borderUnderLine}>החזון והמשימה</div>
             </div>
           </Animated>
         </div>
@@ -44,7 +48,7 @@ function MissionAndVision() {
             animationInDelay={500}
             animationInDuration={1000}
           >
-            <div className={style.rectBox}>IB VISION</div>
+            <div className={style.rectBox}>החזון והמשימה</div>
           </Animated>
         </div>
         <div className={style.verticalLine} />
@@ -63,11 +67,10 @@ function MissionAndVision() {
                 animationInDelay={500}
                 animationInDuration={1000}
               >
-                At <span className={style.boldText}>IB ENG</span> , we are your
-                one-stop-shop for all aspects of the construction process. We
-                offer a full range of services that start with sourcing and
-                checking the potential of the land, all the way through
-                planning, management, construction, and even interior design.
+                ב- איי.ביי הנדסה, אנו החנות הOne-Stop-Shop שלך לכל ההיבטים של
+                תהליך הבנייה. אנו מציעים מגוון רחב של שירותים המתחילים באיתור
+                ובדיקת הפוטנציאל של הקרקע, לאורך כל הדרך באמצעות תכנון, ניהול,
+                בנייה ואפילו עיצובהפנים
               </Animated>
             </div>
             <div
@@ -80,19 +83,8 @@ function MissionAndVision() {
                 animationInDelay={500}
                 animationInDuration={1000}
               >
-                Our team of professionals is there for you every step of the
-                way, providing customized and creative
-                <span className={style.boldText}>
-                  {" "}
-                  engineering solutions{" "}
-                </span>{" "}
-                that meet your specific needs. We are committed to staying
-                up-to-date with the latest technology and using cutting-edge
-                tools like{" "}
-                <span className={style.boldText}>
-                  Building Information Modeling (BIM){" "}
-                </span>
-                to streamline the construction process and increase efficiency.
+                צוות המקצוענים שלנו עומד לרשותכם בכל שלב, ומספק פתרונות הנדסיים
+                מותאמים ויצירתיים העונים על הצרכים הספציפיים שלכם
               </Animated>
             </div>
           </div>
@@ -126,19 +118,14 @@ function MissionAndVision() {
                   }`}
                 >
                   <div className={style.text}>
-                    Our approach is focused on finding{" "}
-                    <span className={style.boldText}> creative solutions</span>{" "}
-                    that optimize both the construction and operational aspects
-                    of each project, ultimately saving our clients time and
-                    money.
+                    Building Information Modeling (BIM) כדי לייעל את תהליך
+                    הבנייה ולהגביר את היעילות אנו מחויבים להישאר מעודכנים
+                    בטכנולוגיה העדכנית ביותר ולהשתמש בכלים מתקדמים כמו
                   </div>
                   <div className={style.text}>
-                    At <span className={style.boldText}> IB ENG</span>, we take
-                    pride in our ability to provide comprehensive and
-                    personalized service to each and every one of our clients.
-                    Whether you are looking to build a new home, renovate an
-                    existing building, or undertake a commercial project, we are
-                    here to help you achieve your goals.
+                    הגישה שלנו מתמקדת במציאת פתרונות יצירתיים המייעלים הן את
+                    ההיבטים הבנייה והן התפעוליים של כל פרויקט, ובסופו של דבר
+                    חוסכים ללקוחותינו זמן וכסף
                   </div>
                 </div>
               </div>
@@ -162,11 +149,7 @@ function MissionAndVision() {
                 animationInDuration={1000}
                 className={`${style.vissionContainer} ${style.withBorderLTR} ${style.containerThreePosition}`}
               >
-                {/* <div
-                className={`${style.vissionContainer} ${style.withBorderLTR} ${style.containerThreePosition}`}
-              > */}
-                <div className={style.rectBox}>IB MISSION</div>
-                {/* </div> */}
+                <div className={style.rectBox}>משימה</div>
               </Animated>
               <div className={style.verticalLine} />
               <Animated
@@ -179,19 +162,19 @@ function MissionAndVision() {
                 <div
                   className={`${style.heading} ${style.initialContainerThreeText} ${style.smallLaptopMargin}`}
                 >
-                  At <span className={style.boldText}> IB Engineering</span>,
-                  our mission is to serve as your comprehensive partner in{" "}
-                  <span className={style.boldText}> construction</span>,
-                  offering a full spectrum of services that seamlessly guide
-                  your projects from inception to realization. We embark on this
-                  mission by beginning with thorough land assessment, ensuring
-                  that your chosen site aligns perfectly with your vision. From
-                  there, our dedicated team employs the latest advancements in
-                  technology to craft meticulous plans that optimize
-                  <span className={style.boldText}>
-                    {" "}
-                    efficiency and precision.
-                  </span>
+                  ב-איי.ביי הנדסה משימתנו היא לשמש שותף מקיף בתחום הבנייה, תוך
+                  הצעת מגוון שירותים המנחים את הפרויקטים שלך מהרגע הראשון ועד
+                  להגשמתם. אנו מתחילים את משימה זו בעריכת הערכה יסודית של הקרקע,
+                  ודואגים שהאתר שבחרת יתאים באופן מושלם לחזון שלך
+                </div>
+                <div
+                  className={`${style.heading} ${style.initialContainerThreeText} ${style.smallLaptopMargin}`}
+                >
+                  משם, צוותנו המסור מעסיק את ההתקדמויות העדכניות ביותר
+                  בטכנולוגיה כדי ליצור תוכניות מדוקדקות הממקסמות יעילות ודיוק.
+                  התחייבותנו נטויה מעבר ללוח השרטוטים, אנו ניהולם באופן פעיל לכל
+                  פקטור בפרויקט שלך, תוך שמירה על עין חדה הן על אלמנטים של
+                  הבנייה והן על ההיבטים התפעוליים
                 </div>
               </Animated>
             </div>
@@ -232,21 +215,15 @@ function MissionAndVision() {
                     }`}
                   >
                     <div className={style.text}>
-                      Our commitment extends beyond the drawing board, we
-                      actively manage every aspect of your project, keeping a
-                      keen eye on both construction and operational elements.
+                      אנו מתגאים באופן עצום בהצעת שירות אישי ומומחיות המותאמים
+                      לצרכים הייחודיים שלך
                     </div>
                     <div className={style.text}>
-                      At <span className={style.boldText}> IB Engineering</span>
-                      , we take immense pride in offering personalized service
-                      and expertise tailored to your unique needs. Whether you
-                      aspire to build a new home, breathe new life into an
-                      existing structure or embark on a commercial venture, we
-                      are your perfect partner, ready to transform your
-                      construction dreams into reality.
+                      בין אם אתה שואף לבנות בית חדש, להנשים חיים חדשים במבנה
+                      קיים או להתחיל ביוזמה מסחרית, אנו השותף המושלם עבורך,
+                      מוכנים להפוך את חלומות הבנייה שלך למציאות
                     </div>
                   </div>
-                  {/* </Animated> */}
                 </div>
               </Animated>
             </div>

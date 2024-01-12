@@ -7,10 +7,8 @@ import greyContainer1 from "../../Asset/Img/greycontainer1.png";
 import greyContainer2 from "../../Asset/Img/greyContainer2.png";
 import greyContainer3 from "../../Asset/Img/greyContainer3.png";
 import greyContainer4 from "../../Asset/Img/greyContainer4.png";
-import redDot from "../../Asset/Img/redDot.png";
 import whatWeDoMobile1 from "../../Asset/Img/whatWedoMobile1.png";
 import whatWeDoMobile2 from "../../Asset/Img/whatWeDoMobile2.png";
-import mobileRedDot from "../../Asset/Icon/mobileRedDot.png";
 
 import style from "./whatWeDo.module.scss";
 
@@ -31,17 +29,17 @@ function WhatWeDo() {
           <div className={style.containerOneCard}>
             {isMobile ? (
               <div className={style.mobileCardHeading}>
-                <div className={style.heading1}>Build.</div>
-                <div className={style.heading2}>Solve.</div>
-                <div className={style.heading3}>Evolve.</div>
+                <div className={style.heading1}>לתכנן</div>
+                <div className={style.heading2}>לבנות</div>
+                <div className={style.heading3}>להתפתח</div>
               </div>
             ) : (
               <div className={style.cardHeading}>
-                Build.
+                לתכנן
                 <br />
-                Solve.
+                לבנות
                 <br />
-                Evolve.
+                להתפתח
               </div>
             )}
             <Animated
@@ -98,10 +96,10 @@ function WhatWeDo() {
                 <div
                   className={`${style.containerHeading} ${style.contatinerTextOne}`}
                 >
-                  PLANNING SERVICES
+                  שירותי תכנון
                 </div>
               </Animated>
-              <Animated
+              {/* <Animated
                 className={style.mainGeadingZIndex}
                 animationIn="fadeInDown"
                 isVisible={true}
@@ -113,7 +111,7 @@ function WhatWeDo() {
                   alt="red Dot"
                   className={style.redDot}
                 />
-              </Animated>
+              </Animated> */}
             </div>
           )}
           <div className={style.imgContainer}>
@@ -146,30 +144,16 @@ function WhatWeDo() {
                     animationInDuration={1000}
                   >
                     <div className={style.imgTextChild}>
-                      Our{" "}
-                      <span className={style.highlightText}>
-                        Planning Services
-                      </span>
-                      offer comprehensive support for both developers and
-                      individuals seeking to build their{" "}
-                      <span className={style.highlightText}>
-                        dream projects.
-                      </span>
+                      חברתנו מתמחה בתכנון קונסטרוקציה ותנועה, אנו מציעים תמיכה
+                      מקיפה ליזמים ויחידים שמטרתם להגשים את החזונות שלהם.
                     </div>
                     <div className={style.imgTextChild}>
-                      We provide a team of expert{" "}
-                      <span className={style.highlightText}>
-                        planning engineers
-                      </span>
-                      who can oversee every aspect of your project.
+                      צוות מהנדסי התכנון המומחים שלנו מצטיין ביצירת תוכניות
+                      בנייה מדוקדקות ועומדות בסטנדרטים הגבוהים של התעשייה.
                     </div>
                     <div className={style.imgTextChild}>
-                      From conceptualization to final plans,
-                      <span className={style.highlightText}>
-                        our professionals
-                      </span>
-                      ensure that all necessary engineering components are
-                      meticulously designed, making your vision a reality.
+                      מעבר לתכנון קונסטרוקציה ותנועה אנו מעניקים גם סיוע בהרכבת
+                      `כל היועצים הנדרשים לתכנן פרויקט החלומות שלכם.
                     </div>
                   </Animated>
                 )}
@@ -202,7 +186,7 @@ function WhatWeDo() {
                     animationInDuration={1000}
                     className={style.containerHeadingTwo}
                   >
-                    BUILDING INSPECTION
+                    פיקוח צמוד
                   </Animated>
                 )}
               </div>
@@ -218,29 +202,16 @@ function WhatWeDo() {
                   animationInDuration={1000}
                 >
                   <div className={style.imgTextChild}>
-                    As part of our commitment to{" "}
-                    <span className={style.highlightText}>
-                      planning and building management
-                    </span>{" "}
-                    , we offer Building Inspection services that ensure the
-                    highest standards of construction quality.
+                    כחלק מהמחויבות שלנו לתכנון וניהול בניה, אנו מציעים שירותי
+                    פיקוח צמוד לבניה שמבטיחים את הסטנדרטים הגבוהים ביותר של
+                    איכות הבנייה.
                   </div>
                   <div className={style.imgTextChild}>
-                    Our{" "}
-                    <span className={style.highlightText}>
-                      qualified inspectors
-                    </span>{" "}
-                    meticulously assess every detail of your project to
-                    guarantee that it meets industry regulations and{" "}
-                    <span className={style.highlightText}>
-                      your expectations.
-                    </span>
+                    המפקחים המוסמכים שלנו מעריכים בקפדנות כל פרט בפרויקט שלך כדי
+                    להבטיח שהוא עומד בתקנות התעשייה ובציפיות שלך.
                   </div>
                   <div className={style.imgTextChild}>
-                    With our expertise, you can confidently achieve{" "}
-                    <span className={style.highlightText}>
-                      superior building quality
-                    </span>
+                    עם המומחיות שלנו, אתה יכול להשיג בביטחון איכות בנייה מעולה.
                   </div>
                 </Animated>
               )}
@@ -267,7 +238,7 @@ function WhatWeDo() {
                     animationInDuration={1000}
                     className={style.containerHeadingTwo}
                   >
-                    BUILDING INSPECTION
+                    <span translate="yes">בדיקת מבנים</span>
                   </Animated>
                 )}
               </div>
@@ -317,7 +288,7 @@ function WhatWeDo() {
                     animationInDuration={1000}
                     className={style.containerHeadingTwo}
                   >
-                    INTERIOR DESIGN
+                    עיצוב פנים
                     <span className={style.headingIcon}>IN</span>
                   </Animated>
                 )}
@@ -364,7 +335,7 @@ function WhatWeDo() {
                     className={`${style.containerHeadingThree} `}
                   >
                     {/* <div > */}
-                    INTERIOR DESIGN
+                    <span translate="yes">עיצוב פנים</span>
                     <span className={style.headingIcon}>IN</span>
                     {/* </div> */}
                   </Animated>
@@ -382,9 +353,9 @@ function WhatWeDo() {
                       animationInDuration={1000}
                       className={style.imgTextChild}
                     >
-                      Transform your space into a masterpiece with our dedicated
-                      <span className={style.highlightText}>
-                        Interior Design department.
+                      <span translate="yes">
+                        הפוך את החלל שלך ליצירת מופת עם מחלקת עיצוב הפנים
+                        הייעודית שלנו.
                       </span>
                     </Animated>
                   )}
@@ -397,10 +368,10 @@ function WhatWeDo() {
                       animationInDuration={1000}
                       className={style.imgTextChild}
                     >
-                      Our team of creative experts collaborates with you to
-                      bring your
-                      <span className={style.highlightText}>
-                        design aspirations to life.
+                      <span translate="yes">
+                        {" "}
+                        צוות המומחים היצירתיים שלנו משתף איתך פעולה כדי להחיות
+                        את שאיפות העיצוב שלך.
                       </span>
                     </Animated>
                   )}
@@ -412,12 +383,11 @@ function WhatWeDo() {
                       animationInDuration={1000}
                       className={style.imgTextChild}
                     >
-                      Whether it's a residential or commercial project, our
-                      <span className={style.highlightText}>
-                        Interior Design services
+                      <span>
+                        {" "}
+                        בין אם מדובר בפרויקט מגורים או מסחרי, שירותי עיצוב הפנים
+                        שלנו יוצר סביבה הרמונית שמתיישרת עם החזון שלך
                       </span>
-                      promise to create a harmonious and captivating environment
-                      that aligns with your vision.
                     </Animated>
                   )}
                 </div>
@@ -453,7 +423,7 @@ function WhatWeDo() {
                     animationInDuration={1000}
                     className={`${style.containerHeadingFour} `}
                   >
-                    ENGINEERING CONSULTATION
+                    ייעוץ הנדסי
                   </Animated>
                 )}
               </div>
@@ -469,40 +439,35 @@ function WhatWeDo() {
                   animationInDuration={1000}
                   className={style.imgTextChild}
                 >
-                  Tap into our wealth of experience with our
-                  <span className={style.highlightText}>
-                    Engineering Consultation services.
-                  </span>{" "}
-                </Animated>
-              )}
-              {containerFour && (
-                <Animated
-                  animationIn="fadeIn"
-                  isVisible={true}
-                  animationInDelay={800}
-                  animationInDuration={1000}
-                  className={style.imgTextChild}
-                >
-                  Whether you're embarking on a new project or seeking insights
-                  to enhance existing plans, our consultants offer
-                  <span className={style.highlightText}>expert guidance.</span>
-                </Animated>
-              )}
-              {containerFour && (
-                <Animated
-                  animationIn="fadeIn"
-                  isVisible={true}
-                  animationInDelay={800}
-                  animationInDuration={1000}
-                  className={style.imgTextChild}
-                >
-                  From project conceptualization to cost analysis, our
-                  consultancy empowers you to navigate your project successfully
-                  and
-                  <span className={style.highlightText}>
-                    {" "}
-                    achieve your objectives.
+                  <span translate="yes">
+                    נצל את הניסיון העשיר שלנו עם שירותי הייעוץ ההנדסי.
                   </span>
+                </Animated>
+              )}
+              {containerFour && (
+                <Animated
+                  animationIn="fadeIn"
+                  isVisible={true}
+                  animationInDelay={800}
+                  animationInDuration={1000}
+                  className={style.imgTextChild}
+                >
+                  <span translate="yes">
+                    בין אם אתה יוצא לפרויקט חדש או מחפש תובנות לשיפור התוכניות
+                    הקיימות, היועצים שלנו מציעים הכוונה מומחית.
+                  </span>
+                </Animated>
+              )}
+              {containerFour && (
+                <Animated
+                  animationIn="fadeIn"
+                  isVisible={true}
+                  animationInDelay={800}
+                  animationInDuration={1000}
+                  className={style.imgTextChild}
+                >
+                  מהמשגה של פרויקט ועד לניתוח עלויות, הייעוץ שלנו מאפשר לך לנווט
+                  בפרויקט שלך בהצלחה ולהשיג את היעדים שלך
                 </Animated>
               )}
             </div>
@@ -528,7 +493,7 @@ function WhatWeDo() {
                   animationInDuration={1000}
                   className={`${style.containerHeadingFour} `}
                 >
-                  ENGINEERING CONSULTATION
+                  ייעוץ הנדסי
                 </Animated>
               </div>
             )}

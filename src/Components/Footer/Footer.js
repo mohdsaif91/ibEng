@@ -29,9 +29,7 @@ function Footer() {
               alt="phone"
               className={`${style.borderIcon} ${style.footerIcon}`}
             />
-            <span className={style.footerIconLabel}>
-              Israel Phone:[04-8889810]
-            </span>
+            <span className={style.footerIconLabel}>טלפון: [04-8889810]</span>
           </li>
           <li className={style.contactListItem}>
             <img
@@ -39,12 +37,14 @@ function Footer() {
               alt="mail"
               className={`${style.borderIcon} ${style.footerIcon}`}
             />
-            <span className={style.footerIconLabel}>Office@ibengineer.com</span>
+            <span className={style.footerIconLabel}>
+              דואר אלקטרוני: [Office@ibengineer.com]
+            </span>
           </li>
           <li className={style.contactListItem}>
             <img src={map} alt="map" className={style.footerIcon} />
             <span className={style.footerIconLabel}>
-              Office Address: St. Wadi Alhaj Nazareth
+              כתובת משרד: ואדי אלחאג' רח׳ נצרת, ישראל
             </span>
           </li>
         </ul>
@@ -54,30 +54,30 @@ function Footer() {
           className={style.formInput}
           value={formData.name}
           onChange={(e) => setFormData({ ...Footer, name: e.target.value })}
-          placeHolder="Your Name"
+          placeHolder="שם"
         />
         <TextInput
           className={style.formInput}
           value={formData.email}
           onChange={(e) => setFormData({ ...Footer, email: e.target.value })}
-          placeHolder="Email Address"
+          placeHolder="דואר אלקטרוני "
         />
         <TextInput
           className={style.formInput}
           value={formData.message}
           onChange={(e) => setFormData({ ...Footer, message: e.target.value })}
-          placeHolder="Your Message"
+          placeHolder="הודעה"
         />
         <Button
           className={style.footerBtn}
-          label="Send"
+          label="לשלוח"
           onClick={() => console.log("clicked")}
         />
       </div>
       <div className={style.containerThree}>
         <label className={style.containerThreeLabel}>
-          Follow us on social media to stay updated with our latest projects,
-          industry insights, and company news.
+          עקבו אחרינו ברשתות החברתיות כדי להישאר מעודכנים בפרויקטים האחרונים
+          שלנו:
         </label>
         <div className={style.iconContainer}>
           <img src={facebook} alt="facebook" className={style.mediaIcon} />

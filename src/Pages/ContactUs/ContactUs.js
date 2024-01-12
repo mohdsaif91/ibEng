@@ -176,27 +176,23 @@ function ContactUs() {
             >
               <div className={style.backgroundShade} />
               <div className={style.herotextContainer}>
-                <h1 className={style.heroMaintext}>Get in Touch</h1>
+                <h1 className={style.heroMaintext}>ליצור קשר</h1>
                 <div className={style.heroSubText}>
-                  Have a specific inquiry or want to discuss a potential
-                  project?
+                  {"ש לך שאלה ספציפית או רוצה לדון בפרויקט פוטנציאלי"}
                 </div>
                 <div className={style.actualSubText}>
-                  Fill out the form when you click on “Contact Us” button, and
-                  one of our representatives will get back to you promptly. We
-                  appreciate your interest in IB Engineering, and we look
-                  forward to working with you to turn your construction and
-                  engineering visions into reality.
+                  תודה ששקלת את איי.ביי הנדסה לצרכי התכנון או הבנייה שלך . אנו
+                  נמצאים כאן כדי להתחבר אליך ולחקור כיצד נוכל לשתף פעולה בפרויקט
+                  הבא שלך. בין אם יש לך שאלות, זקוק לסיוע או מוכן להתחיל, אנחנו
+                  כאן בשבילך.
                 </div>
                 <button
                   className={style.contactUsBtn}
                   onClick={() => setContactForm(true)}
                 >
-                  Contact Us
+                  צור קשר
                 </button>
-                <div className={style.greyTextContainer}>
-                  All Rights Reserved{" "}
-                </div>
+                <div className={style.greyTextContainer}>כל הזכויות שמורות</div>
               </div>
             </Animated>
           )}

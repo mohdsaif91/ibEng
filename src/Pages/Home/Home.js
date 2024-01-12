@@ -116,7 +116,7 @@ function Home() {
                   animationInDelay={500}
                   animationInDuration={1000}
                 >
-                  <h1 className={style.mainHeading}>IB VISION</h1>
+                  <h1 className={style.mainHeading}>חזון</h1>
                 </Animated>
                 <div className={`${style.imageDescription}`}>
                   <Animated
@@ -126,58 +126,43 @@ function Home() {
                     animationInDelay={500}
                     animationInDuration={1000}
                   >
-                    <span className={style.highLight}>At IB Eng, </span> we are
-                    your one-stop-shop for all aspects of the construction
-                    process. We offer a full range of services that start with
-                    sourcing and checking the potential of the land, all the way
-                    through{" "}
+                    <span className={style.highLight}>, אנו ה </span>
+                    ב- איי.ביי הנדסה- One-Stop-Shop שלך לכל ההיבטים של תהליך
+                    הבנייה. אנו מציעים מגוון רחב של שירותים המתחילים באיתור
+                    ובדיקת הפוטנציאל של הקרקע, לאורך כל הדרך באמצעות תכנון,
+                    ניהול, בנייה ואפילו עיצוב הפנים
                     <span className={style.highLight}>
-                      planning, management, construction, and even interior
-                      design.
+                      באמצעות תכנון, ניהול, בנייה ואפילו עיצוב הפנים
                     </span>
                   </Animated>
                   {containerOne && (
-                    <>
+                    <React.Fragment>
                       <div className={style.moreTextSubText}>
-                        Our team of professionals is there for you every step of
-                        the way, providing customized and creative engineering
-                        solutions that meet your specific needs.
+                        צוות המקצוענים שלנו עומד לרשותכם בכל שלב, ומספק פתרונות
+                        הנדסיים מותאמים ויצירתיים העונים על הצרכים הספציפיים
+                        שלכם
                       </div>
                       <div className={style.moreTextSubText}>
-                        <span className={style.highLight}>
-                          We are committed
-                        </span>{" "}
-                        to staying up-to-date with the latest technology and
-                        using cutting-edge tools like{" "}
-                        <span className={style.highLight}>
-                          Building Information Modeling (BIM)
-                        </span>{" "}
-                        to streamline the construction process and increase
-                        efficiency. Our approach is focused on{" "}
-                        <span className={style.highLight}>
-                          finding creative solutions{" "}
-                        </span>{" "}
-                        that optimize both the construction and operational
-                        aspects of each project,{" "}
-                        <span className={style.highLight}>
-                          ultimately saving our clients time and money.
-                        </span>
+                        אנו מחויבים להישאר מעודכנים בטכנולוגיה העדכנית ביותר
+                        ולהשתמש בכלים מתקדמים כמו Building Information Modeling
+                        (BIM) כדי לייעל את תהליך הבנייה ולהגביר את היעילות
                       </div>
                       <div className={style.moreTextSubText}>
-                        <span className={style.highLight}>At IB Eng, </span> we
-                        take pride in our ability to provide comprehensive and
-                        personalized service to each and every one of our
-                        clients. Whether you are looking to build a new home,
-                        renovate an existing building, or undertake a commercial
-                        project,{" "}
-                        <span className={style.highLight}>
-                          we are here to help you achieve your goals.
-                        </span>
+                        הגישה שלנו מתמקדת במציאת פתרונות יצירתיים המייעלים הן את
+                        ההיבטים הבנייה והן התפעוליים של כל פרויקט, ובסופו של דבר
+                        חוסכים ללקוחותינו זמן וכסף
                       </div>
-                    </>
+                      <div className={style.moreTextSubText}>
+                        ב-איי.ביי הנדסה, אנו גאים ביכולתנו לספק שירות מקיף
+                        ומותאם אישית לכל אחד ואחת מלקוחותינו. בין אם אתם מחפשים
+                        לבנות בית חדש, לשפץ בניין קיים או לבצע פרויקט מסחרי,
+                        אנחנו כאן כדי לעזור לכם להשיג את המטרות שלכם
+                      </div>
+                    </React.Fragment>
                   )}
                 </div>
                 <Animated
+                  className={style.showMoreContainer}
                   animationIn="slideInLeft"
                   animationOut="fadeOut"
                   isVisible={visionAnim}
@@ -190,7 +175,7 @@ function Home() {
                       setContainerOne(!containerOne);
                     }}
                   >
-                    Show {containerOne ? "Less" : "More"}
+                    {containerOne ? "פָּחוֹת" : "יותר"} הופעה
                   </div>
                   <div className={style.underline} />
                 </Animated>
@@ -235,7 +220,7 @@ function Home() {
                   animationInDelay={500}
                   animationInDuration={1000}
                 >
-                  <h1 className={style.mainHeading}>IB MISION</h1>
+                  <h1 className={style.mainHeading}>משימה</h1>
                 </Animated>
                 <Animated
                   animationIn="slideInRight"
@@ -246,45 +231,26 @@ function Home() {
                   <div className={style.imageDescription}>
                     {!containerTwo ? (
                       <>
-                        <span className={style.highLight}>At IB Eng, </span> our
-                        mission is to serve as your comprehensive partner in
-                        construction, offering a full spectrum of services that
-                        seamlessly guide your projects from inception to
-                        realization.
+                        <span className={style.highLight}>ב-איי</span> ב-איי.ביי
+                        הנדסה משימתנו היא לשמש שותף מקיף בתחום הבנייה תוך הצעת
+                        מגוון שירותים המנחים את הפרויקטים שלך מהרגע הראשון ועד
+                        להגשמתם
                       </>
                     ) : (
                       <>
                         <div className={style.moreTextSubText}>
-                          <span className={style.highLight}>We embark</span> on
-                          this mission by beginning with thorough land
-                          assessment, ensuring that your chosen site aligns
-                          perfectly with your vision. From there, our dedicated
-                          team employs the latest advancements in technology to
-                          craft meticulous plans that optimize efficiency and
-                          precision.
+                          משם, צוותנו המסור מעסיק את ההתקדמויות העדכניות ביותר
+                          בטכנולוגיה כדי ליצור תוכניות מדוקדקות הממקסמות יעילות
+                          ודיוק. התחייבותנו נטויה מעבר ללוח השרטוטים, אנו ניהולם
+                          באופן פעיל לכל פקטור בפרויקט שלך, תוך שמירה על עין חדה
+                          הן על אלמנטים של הבנייה והן על ההיבטים התפעוליים
                         </div>
                         <div className={style.moreTextSubText}>
-                          <span className={style.highLight}>
-                            Our commitment{" "}
-                          </span>
-                          extends beyond the drawing board; we actively manage
-                          every aspect of your project, keeping a keen eye on
-                          both construction and operational elements.
-                        </div>
-                        <div className={style.moreTextSubText}>
-                          <span className={style.highLight}>
-                            At IB Engineering,
-                          </span>{" "}
-                          we take immense pride in offering personalized service
-                          and expertise tailored to your unique needs. Whether
-                          you aspire to build a new home, breathe new life into
-                          an existing structure or embark on a commercial
-                          venture, we are your perfect partner,{" "}
-                          <span className={style.highLight}>
-                            ready to transform your construction dreams into
-                            reality
-                          </span>
-                          .
+                          אנו מתגאים באופן עצום בהצעת שירות אישי ומומחיות
+                          המותאמים לצרכים הייחודיים שלך בין אם אתה שואף לבנות
+                          בית חדש, להנשים חיים חדשים במבנה קיים או להתחיל ביוזמה
+                          מסחרית, אנו השותף המושלם עבורך, מוכנים להפוך את חלומות
+                          הבנייה שלך למציאות
                         </div>
                       </>
                     )}
@@ -300,7 +266,7 @@ function Home() {
                     className={style.showMore}
                     onClick={() => setContainerTwo(!containerTwo)}
                   >
-                    Show {containerTwo ? "Less" : "More"}
+                    {containerTwo ? "פָּחוֹת" : "יותר"} הופעה
                   </div>
                   <div className={style.underline} />
                 </Animated>
@@ -329,7 +295,7 @@ function Home() {
                 animationInDelay={500}
                 animationInDuration={1000}
               >
-                <div className={style.primaryHeading}>What We DO</div>
+                <div className={style.primaryHeading}>מה אנחנו עושים</div>
               </Animated>
               <Animated
                 animationIn="slideInRight"
@@ -337,7 +303,7 @@ function Home() {
                 animationInDelay={500}
                 animationInDuration={1000}
               >
-                <div className={style.secondaryHeading}>Our Services</div>
+                <div className={style.secondaryHeading}>השירותים שלנו</div>
               </Animated>
             </div>
             <Animated
@@ -360,7 +326,7 @@ function Home() {
                   />
                   <div className={style.cardText}>{m.label}</div>
                   <div className={style.cardLearMoreContainer}>
-                    <div className={style.cardLearMore}>Learn More</div>
+                    <div className={style.cardLearMore}>לראות עוד</div>
                   </div>
                 </div>
                 //   )}

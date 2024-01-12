@@ -2,9 +2,13 @@ import React from "react";
 
 import style from "./button.module.scss";
 
-function Button({ onClick, label, className = "" }) {
+function Button({ onClick, label, className = "", disable = false }) {
   return (
-    <button className={`${style.btn} ${className}`} onClick={onClick}>
+    <button
+      disabled={disable}
+      className={`${style.btn} ${className}`}
+      onClick={onClick}
+    >
       {label}
     </button>
   );

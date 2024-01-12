@@ -1,11 +1,12 @@
 import React, { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import Header from "./Components/Header/Header";
 import Loading from "./utils/Loading/Loading";
 import Footer from "./Components/Footer/Footer";
 
 import style from "./index.module.scss";
+import AdminLogin from "./AdminPages/AdminLogin/AdminLogin";
 
 const Home = React.lazy(() => import("./Pages/Home/Home"));
 // const WhoWeAre = React.lazy(() => import("./Pages/WhoWeAre/WhoWeAre"));
@@ -22,11 +23,18 @@ const TheMindBehind = React.lazy(() =>
   import("./Pages/TheMindBehind/TheMindBehind")
 );
 const Team = React.lazy(() => import("./Pages/Team/Team"));
+// admin Imports
+
+const AdminAddProduct = React.lazy(() =>
+  import("./AdminPages/AdminAddProduct/AdminAddProduct")
+);
 
 function App() {
+  const { pathname } = useLocation();
+
   return (
     <div className={style.pageStyle}>
-      <Header />
+      {!pathname.includes("Login") && <Header />}
       <Routes>
         <Route
           path="/"
@@ -100,8 +108,26 @@ function App() {
             </Suspense>
           }
         />
+        <Route
+          path="/adminLogin"
+          element={
+            <Suspense fallback={<Loading />}>
+              <AdminLogin />
+            </Suspense>
+          }
+        />
+        {/* Admin Routes */}
+
+        <Route
+          path="/admin/addProduct"
+          element={
+            <Suspense fallback={<Loading />}>
+              <AdminAddProduct />
+            </Suspense>
+          }
+        />
       </Routes>
-      <Footer />
+      {!pathname.includes("admin") && <Footer />}
     </div>
   );
 }

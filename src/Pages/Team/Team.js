@@ -13,17 +13,18 @@ import linkedIn from "../../Asset/Icon/LinkedIn.png";
 import leftArrow from "../../Asset/Icon/leftArrow.png";
 import rightArrow from "../../Asset/Icon/rightArrow.png";
 import { leaderData } from "../../utils";
-import mobileLeader1 from "../../Asset/people/mobileLeader1.png";
-import mobileLeader2 from "../../Asset/people/mobileLeader2.png";
-import mobileLeader3 from "../../Asset/people/mobileLeader3.png";
 import project2_5 from "../../Asset/project/project2_5.png";
 
 import style from "./team.module.scss";
-import { isMobile } from "../../utils/utilFunction";
 
 function Team() {
   const [leaderCount, setLeaderCount] = useState(0);
   const [animationFlow, setAnimationFlow] = useState(true);
+  const [isMobile] = useState(
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+      navigator.userAgent.indexOf("Mobi") > -1
+  );
+
   return (
     <div className={style.whoWeAreContaineParent}>
       <div className={style.meetOurLeaderContainer}>
@@ -38,7 +39,7 @@ function Team() {
               className={style.additionalStyle}
             >
               <div className={style.border} />
-              <div className={style.meetLeaderLabel}>MEET THE TEAM</div>
+              <div className={style.meetLeaderLabel}>להכיר את הצוות</div>
             </Animated>
             <Animated
               animationIn="slideInRight"
@@ -52,25 +53,13 @@ function Team() {
           </div>
           <ul className={style.imgContainer}>
             <li className={style.listItem} key={1}>
-              <img
-                src={isMobile ? mobileLeader1 : leaderOne}
-                alt="leader"
-                className={style.leaderImg}
-              />
+              <img src={leaderThree} alt="leader" className={style.leaderImg} />
             </li>
             <li className={`${style.listItem} ${style.secondLeader}`} key={2}>
-              <img
-                src={isMobile ? mobileLeader2 : leaderTwo}
-                alt="leader"
-                className={style.leaderImg}
-              />
+              <img src={leaderOne} alt="leader" className={style.leaderImg} />
             </li>
             <li className={`${style.listItem} ${style.thirdLeader}`} key={3}>
-              <img
-                src={isMobile ? mobileLeader3 : leaderThree}
-                alt="leader"
-                className={style.leaderImg}
-              />
+              <img src={leaderTwo} alt="leader" className={style.leaderImg} />
             </li>
           </ul>
         </div>
@@ -94,6 +83,7 @@ function Team() {
                     animationInDuration={1000}
                   >
                     <img
+                      alt=""
                       src={leaderData[leaderCount].img}
                       className={style.mobileImg}
                     />
@@ -110,6 +100,7 @@ function Team() {
                     animationInDuration={1000}
                   >
                     <img
+                      alt=""
                       src={leaderData[leaderCount].img}
                       className={style.mobileImg}
                     />
@@ -126,6 +117,7 @@ function Team() {
                     animationInDuration={1000}
                   >
                     <img
+                      alt=""
                       src={leaderData[leaderCount].img}
                       className={style.mobileImg}
                     />
@@ -145,81 +137,61 @@ function Team() {
               >
                 {leaderCount === 0 && (
                   <>
-                    A dynamic{" "}
-                    <span className={style.boldText}>professional</span>, serves
-                    as the Business Development Department Manager at{" "}
-                    <span className={style.boldText}>IB Engineering</span>. With
-                    a diverse educational background, including a bachelor's
-                    degree in{" "}
-                    <span className={style.boldText}>
-                      law and business administration
-                    </span>{" "}
-                    from Reichman University and a master's degree in{" "}
-                    <span className={style.boldText}>
-                      business administration
-                    </span>{" "}
-                    specializing in real estate and appraisals, Alaa brings a
-                    unique blend of skills to the team. As a serial{" "}
-                    <span className={style.boldText}>
-                      founder, entrepreneur, and VP of sales
+                    <span>
+                      עלאא בשארה, מנהל מחלקת פיתוח עסקי ב-איי.ביי הנדסה.
                     </span>
-                    , he has played pivotal roles in several successful
-                    companies. His visionary{" "}
-                    <span className={style.boldText}>
-                      leadership and extensive experience
-                    </span>
-                    contribute significantly to{" "}
-                    <span className={style.boldText}>IB Engineering's</span>{" "}
-                    growth and success.
+                    <div className={style.marginTopDesc}>
+                      {" "}
+                      בעל רקע לימודי מגוון הכולל תואר ראשון במשפטים ומנהל עסקים
+                      מאוניברסיטת רייכמן ותואר שני במנהל עסקים בהתמחות בנדל"ן
+                      ושמאות, עלאא מביא לצוות שילוב מיומנויות ייחודי.
+                    </div>
+                    <div className={style.marginTopDesc}>
+                      {" "}
+                      כמייסד סדרתי, יזם וסמנכ"ל מכירות, הוא שיחק תפקידים מרכזיים
+                      במספר חברות מצליחות. מנהיגותו בעלת החזון וניסיונו הרב
+                      תורמים באופן משמעותי לצמיחתה והצלחתה של איי.ביי הנדסה
+                    </div>
                   </>
                 )}
                 {leaderCount === 1 && (
                   <>
-                    Is a rising star at{" "}
-                    <span className={style.boldText}>IB ENG</span>. Started as
-                    an intern, Today he is a licensed{" "}
-                    <span className={style.boldText}>Engineer</span>, he honed
-                    his skills under our founder's guidance. His youthful{" "}
-                    <span className={style.boldText}>
-                      energy and extensive experience{" "}
-                    </span>{" "}
-                    drive our planning department's commitment to excellence,
-                    ensuring that each project is meticulously planned and{" "}
-                    <span className={style.boldText}>
-                      executed with precision.
+                    <span>
+                      מומחד הוא כוכב עולה ב-איי.ביי הנדסה. החל כמתמחה, היום הוא
+                      מהנדס רשוי, הוא חידד את כישוריו בהנחיית המייסד שלנו.
                     </span>
-                    Mohammad's visionary leadership and collaborative. Approach
-                    inspire our team to achieve new heights in the world of{" "}
-                    <span className={style.boldText}>
-                      construction planning.
-                    </span>
+                    <div className={style.marginTopDesc}>
+                      {" "}
+                      האנרגיה הצעירה שלו וניסיונו הרב מניעים את המחויבות של
+                      מחלקת התכנון שלנו למצוינות, ומבטיחים שכל פרויקט מתוכנן
+                      בקפידה ומבוצע בדייקנות.
+                    </div>
+                    <div className={style.marginTopDesc}>
+                      {" "}
+                      המנהיגות בעלת החזון והגישה השיתופית של מוחמד נותנת השראה
+                      לצוות שלנו להגיע לשיאים חדשים בעולם תכנון הבנייה.
+                    </div>
                   </>
                 )}
                 {leaderCount === 2 && (
                   <>
-                    As the{" "}
-                    <span className={style.boldText}>dedicated leader </span> of
-                    our Interior Design Department, Rawan Beshara Sabah brings a
-                    wealth of expertise to IB Engineering. A distinguished
-                    alumna of the Technion with a degree in
-                    <span className={style.boldText}>civil engineering</span>,
-                    specialized in structures, and honored in interior design,
-                    Rawan has been a registered engineer and architect since
-                    2009. With over{" "}
-                    <span className={style.boldText}>
-                      15 years of experience
+                    <span>
+                      בתור המנהיגה המסורה של מחלקת עיצוב הפנים שלנורואן בשארה
+                      סבאח מביאה שפע של מומחיות ל איי.
                     </span>
-                    , she has been the guiding force behind numerous
-                    construction and{" "}
-                    <span className={style.boldText}>
-                      interior design projects
-                    </span>
-                    , particularly in residential towers across central and
-                    northern regions.Rawan's passion
-                    <span className={style.boldText}>for art, fashion</span>,
-                    and a discerning taste infuse her work with creativity and
-                    innovation, elevating every project to new heights of
-                    excellence.
+                    <div className={style.marginTopDesc}>
+                      ביי הנדסה,בוגרת מכובדת של הטכניון, בעלת תואר בהנדסה
+                      אזרחית,
+                    </div>
+                    <div className={style.marginTopDesc}>
+                      מתמחה במבנים ותעודה בעיצוב פנים,רואן היא מהנדסת רשומה משנת
+                      2009.
+                    </div>
+                    <div className={style.marginTopDesc}>
+                      {" "}
+                      עם ניסיון של למעלה מ-15 שנים, התשוקה של רואן לאמנות, אופנה
+                      מעלה כל פרויקט לשיאים חדשים של מצוינות יצירתיות וחדשנות.
+                    </div>
                   </>
                 )}
               </div>
@@ -405,124 +377,66 @@ function Team() {
                     </div>
                     <div className={style.subText}>
                       {leaderCount === 0 ? (
-                        <>
-                          A dynamic{" "}
-                          <span className={style.boldText}>professional</span>,
-                          serves as the Business Development Department Manager
-                          at
-                          <span className={style.boldText}>
-                            {" "}
-                            IB Engineering.
-                          </span>
-                        </>
+                        <>עלאא בשארה, מנהל מחלקת פיתוח עסקי ב-איי.ביי הנדסה.</>
                       ) : leaderCount === 1 ? (
                         <>
-                          Is a rising star at{" "}
-                          <span className={style.boldText}>IB ENG</span>.
-                          Started as an intern, Today he is a licensed{" "}
-                          <span className={style.boldText}>Engineer</span>, he
-                          honed his skills under our founder's guidance.
+                          מומחד הוא כוכב עולה ב-איי.ביי הנדסה. החל כמתמחה, היום
+                          הוא מהנדס רשוי, הוא חידד את כישוריו בהנחיית המייסד
+                          שלנו.
                         </>
                       ) : (
                         <>
-                          As the{" "}
-                          <span className={style.boldText}>
-                            dedicated leader{" "}
-                          </span>{" "}
-                          of our Interior Design Department, Rawan Beshara Sabah
-                          brings a wealth of expertise to IB Engineering.
+                          בתור המנהיגה המסורה של מחלקת עיצוב הפנים שלנורואן
+                          בשארה סבאח מביאה שפע של מומחיות ל איי.
                         </>
                       )}
                     </div>
                     <div className={style.subText}>
                       {leaderCount === 0 ? (
                         <>
-                          With a diverse educational background, including a
-                          bachelor's degree in{" "}
-                          <span className={style.boldText}>
-                            law and business administration{" "}
-                          </span>
-                          from Reichman University and a master's degree in
-                          <span className={style.boldText}>
-                            {" "}
-                            business administration{" "}
-                          </span>{" "}
-                          specializing in real estate and appraisals, Alaa
-                          brings a unique blend of skills to the team.
+                          בעל רקע לימודי מגוון הכולל תואר ראשון במשפטים ומנהל
+                          עסקים מאוניברסיטת רייכמן ותואר שני במנהל עסקים בהתמחות
+                          בנדל"ן ושמאות, עלאא מביא לצוות שילוב מיומנויות ייחודי.
                         </>
                       ) : leaderCount === 1 ? (
                         <>
-                          His youthful{" "}
-                          <span className={style.boldText}>
-                            energy and extensive experience{" "}
-                          </span>{" "}
-                          drive our planning department's commitment to
-                          excellence, ensuring that each project is meticulously
-                          planned and{" "}
-                          <span className={style.boldText}>
-                            executed with precision.
-                          </span>
+                          האנרגיה הצעירה שלו וניסיונו הרב מניעים את המחויבות של
+                          מחלקת התכנון שלנו למצוינות, ומבטיחים שכל פרויקט מתוכנן
+                          בקפידה ומבוצע בדייקנות.
                         </>
                       ) : (
                         <>
-                          A distinguished alumna of the Technion with a degree
-                          in
-                          <span className={style.boldText}>
-                            civil engineering
-                          </span>
-                          , specialized in structures, and honored in interior
-                          design, Rawan has been a registered engineer and
-                          architect since 2009.
+                          ביי הנדסה,בוגרת מכובדת של הטכניון, בעלת תואר בהנדסה
+                          אזרחית,
                         </>
                       )}
                     </div>
                     <div className={style.subText}>
                       {leaderCount === 0 ? (
                         <>
-                          As a
-                          <span className={style.boldText}>
-                            serial founder, entrepreneur, and VP of sales,
-                          </span>{" "}
-                          he has played pivotal roles in several successful
-                          companies. His visionary
-                          <span className={style.boldText}>
-                            leadership and extensive experience{" "}
-                          </span>{" "}
-                          contribute significantly to IB Engineering's growth
-                          and success.
+                          כמייסד סדרתי, יזם וסמנכ"ל מכירות, הוא שיחק תפקידים
+                          מרכזיים במספר חברות מצליחות. מנהיגותו בעלת החזון
+                          וניסיונו הרב תורמים באופן משמעותי לצמיחתה והצלחתה של
+                          איי.ביי הנדסה
                         </>
                       ) : leaderCount === 1 ? (
                         <>
-                          Mohammad's visionary leadership and collaborative.
-                          Approach inspire our team to achieve new heights in
-                          the world of{" "}
-                          <span className={style.boldText}>
-                            construction planning.
-                          </span>
+                          המנהיגות בעלת החזון והגישה השיתופית של מוחמד נותנת
+                          השראה לצוות שלנו להגיע לשיאים חדשים בעולם תכנון
+                          הבנייה.
                         </>
                       ) : (
                         <>
-                          With over{" "}
-                          <span className={style.boldText}>
-                            15 years of experience
-                          </span>
-                          , she has been the guiding force behind numerous
-                          construction and{" "}
-                          <span className={style.boldText}>
-                            interior design projects
-                          </span>
-                          , particularly in residential towers across central
-                          and northern regions.
+                          מתמחה במבנים ותעודה בעיצוב פנים,רואן היא מהנדסת רשומה
+                          משנת 2009.
                         </>
                       )}
                     </div>
                     {leaderCount === 2 && (
                       <div className={style.subText}>
-                        Rawan's passion
-                        <span className={style.boldText}>for art, fashion</span>
-                        , and a discerning taste infuse her work with creativity
-                        and innovation, elevating every project to new heights
-                        of excellence.
+                        עם ניסיון של למעלה מ-15 שנים, התשוקה של רואן לאמנות,
+                        אופנה מעלה כל פרויקט לשיאים חדשים של מצוינות יצירתיות
+                        וחדשנות.
                       </div>
                     )}
                     <div className={style.iconSignatureContainer}>

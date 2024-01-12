@@ -1,26 +1,6 @@
 import React, { useState } from "react";
 
-// import Stefan from "../../Asset/people/stefan.png";
-// import container5One from "../../Asset/Img/cont5sing1.jpeg";
-// import container5Two from "../../Asset/Img/cont5multi1.jpeg";
-// import container5Three from "../../Asset/Img/cont5multi2.jpeg";
-// import heroImg from "../../Asset/Img/whoAreWeHeroImg.png";
-// import intialConOne from "../../Asset/Img/initialConOne.png";
-// import intialConTow from "../../Asset/Img/initialConTwo.png";
-import leaderOne from "../../Asset/Img/leaderOne.png";
-import leaderTwo from "../../Asset/Img/leaderTwo.png";
-import leaderThree from "../../Asset/Img/leaderThree.png";
-import signature1_1 from "../../Asset/Img/signature1.1.png";
-import signature1_2 from "../../Asset/Img/signature1.2.png";
-import signature2_1 from "../../Asset/Img/signature2.png";
-import signature2_2 from "../../Asset/Img/signature2.2.png";
-import signature3 from "../../Asset/Img/signature3.png";
-import linkedIn from "../../Asset/Icon/LinkedIn.png";
-import leftArrow from "../../Asset/Icon/leftArrow.png";
-import rightArrow from "../../Asset/Icon/rightArrow.png";
-
 import style from "./whoWeAre.module.scss";
-import { leaderData } from "../../utils";
 
 function WhoWeAre() {
   const [leaderCount, setLeaderCount] = useState(0);

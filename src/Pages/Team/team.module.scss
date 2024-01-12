@@ -89,12 +89,15 @@
           @include mobile {
             width: auto;
             position: static !important;
-            &:first-child {
-              margin-left: 32px;
-            }
-            &:last-child {
-              margin-right: 32px;
-            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // &:first-child {
+            //   margin-left: 32px;
+            // }
+            // &:last-child {
+            //   margin-right: 32px;
+            // }
           }
           .leaderImg {
             width: 376px;
@@ -102,7 +105,7 @@
               width: 336px;
             }
             @include mobile {
-              width: 85px;
+              width: 136px;
               height: 109px;
             }
           }
@@ -272,6 +275,11 @@
         padding: 48px 8px 0 8px;
         position: relative;
         margin-top: -176%;
+        @include mobile {
+          margin-top: -159.9%;
+          padding: 24px 8px 0 8px;
+          height: 661px;
+        }
         @include pixel7 {
           margin-top: -167%;
         }
@@ -302,6 +310,9 @@
           font-size: 18px;
           line-height: 130%; /* 26px */
           margin-top: 0;
+          @include mobile {
+            text-align: right;
+          }
         }
         .MobileIconSignatureContainer {
           display: flex;
@@ -310,6 +321,9 @@
           .mobileOgSignatureContainer {
             display: flex;
             align-items: center;
+            @include mobile {
+              flex-direction: column;
+            }
             .signatureContainer {
               max-width: 280px;
               .sigImage {
@@ -464,4 +478,8 @@
 }
 .defaultFont {
   font-size: 60px;
+}
+
+.marginTopDesc {
+  margin-top: 12px;
 }

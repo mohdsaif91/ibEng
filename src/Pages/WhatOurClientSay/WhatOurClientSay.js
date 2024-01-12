@@ -34,8 +34,8 @@ const settings = {
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 1,
+        slidesToScroll: 1,
       },
     },
   ],
@@ -43,6 +43,10 @@ const settings = {
 
 function WhatOurClientSay() {
   const [currentClientSay, setcurrentClientSay] = useState(0);
+  const [isMobile] = useState(
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+      navigator.userAgent.indexOf("Mobi") > -1
+  );
 
   return (
     <div className={style.whatOurClientSayContainer}>
@@ -50,7 +54,7 @@ function WhatOurClientSay() {
       <div className={style.greyContainer}>
         <div className={style.imgTextContainer}>
           <div className={style.clientSayParent}>
-            <div className={style.clientSayHeading}>What our clients say</div>
+            <div className={style.clientSayHeading}>ממליצים עלינו</div>
           </div>
           <Slider
             centerPadding="4px"
@@ -59,11 +63,11 @@ function WhatOurClientSay() {
             className={style.slider}
             {...settings}
           >
-            <>
+            {!isMobile && (
               <img alt="client Say" className={`${style.img} imgItem`} />
-            </>
+            )}
             {clientSayData.map((m, index) => (
-              <div className="JACK">
+              <div className={style.imgParent}>
                 <img
                   id={index}
                   key={m.id}
@@ -74,7 +78,11 @@ function WhatOurClientSay() {
                   }}
                   alt="client Say"
                   className={`${style.img} imgItem
-                    ${currentClientSay === index && `${style.opacity1} center `}
+                    ${
+                      !isMobile &&
+                      currentClientSay === index &&
+                      `${style.opacity1} center `
+                    }
                 
                 `}
                 />

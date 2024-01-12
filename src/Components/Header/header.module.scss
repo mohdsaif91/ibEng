@@ -70,6 +70,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .moreIcon {
@@ -79,11 +82,14 @@
   width: 360px;
   border-radius: 8px;
   background-color: $headerColor;
-  position: absolute;
+
   margin-top: 13%;
   z-index: 99;
   @include smallLaptop {
     margin-top: 13%;
+  }
+  @include mobile {
+    margin-top: 0;
   }
   .subLinks {
     color: $pageLinkColor;
@@ -108,4 +114,12 @@
   background-color: $headerColor;
   z-index: 999;
   padding: 40px 64px;
+}
+.marginTopHeader {
+  margin-top: 12%;
+}
+.labelIconContainer {
+  @include mobile {
+    display: flex;
+  }
 }

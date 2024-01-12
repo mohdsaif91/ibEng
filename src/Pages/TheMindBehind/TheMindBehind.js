@@ -11,7 +11,6 @@ import mobileContainer4_2 from "../../Asset/Img/mobileContainer4.2.jpeg";
 import mobileContainer4_3 from "../../Asset/Img/mobileContainer4.3.jpeg";
 
 import style from "./theMindBehind.module.scss";
-import { isMobile } from "../../utils/utilFunction";
 
 function TheMindBehind() {
   const [containerOne, setContainerOne] = useState(false);
@@ -19,6 +18,10 @@ function TheMindBehind() {
   const [containerThree, setContainerThree] = useState(false);
   const [containerFour, setContainerfour] = useState(false);
   const [containerFive, setContainerFive] = useState(false);
+  const [isMobile] = useState(
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+      navigator.userAgent.indexOf("Mobi") > -1
+  );
 
   return (
     <div className={style.whoWeAreContaineParent}>
@@ -31,8 +34,8 @@ function TheMindBehind() {
             animationInDelay={500}
             animationInDuration={1000}
           >
-            <h1 className={style.heading}>THE MIND BEHIND </h1>
-            <h1 className={style.heading}>IB ENG</h1>
+            <h1 className={style.heading}>המוח מאחורי </h1>
+            <h1 className={style.heading}>איי.ביי הנדסה</h1>
           </Animated>
           <div className={style.verticalDevider} />
         </div>
@@ -50,14 +53,9 @@ function TheMindBehind() {
             <div
               className={`${style.heading} ${style.containerOneHeadingWidth}`}
             >
-              Our founder is a highly experienced and qualified construction
-              engineer, with a Master's degree in building engineering and
-              specialized expertise in earthquakes and traffic and
-              transportation engineering. Registered in the register of
-              engineers and architects since 1979,our founder has served as the
-              city engineer of Nazareth from 1992 to 2016 and has been a member
-              of steering committees on behalf of the Ministry of Transportation
-              and the Ministry of Construction and Housing.
+              {
+                "המייסד שלנו הוא המהנדס עיסא בשארה, מהנדס בניין מנוסה ומוכשר ביותר, עיסא בעל תואר שני בהנדסת בניין ומתמחה ברעידות אדמה והנדסת תנועה ותחבורה. רשום בפנקס המהנדסים והאדריכלים משנת 1979, עיסא שימש כמהנדס העיר נצרת בשנים 1992 עד 2016 וחבר בוועדות היגוי מטעם משרד התחבורה ומשרד הבינוי והשיכון"
+              }
             </div>
           </Animated>
           <div className={style.borderContainer}>
@@ -97,23 +95,19 @@ function TheMindBehind() {
                 className={`${style.containerThreeHeadingOne} `}
               >
                 <div
+                  translate="yes"
                   className={`${style.heading} ${style.containerTwoHeadingWidth}`}
                 >
-                  Our founder has also been a key participant in teams for
-                  editing instruction files for planning public transportation
-                  routes, mass transit systems in the Haifa metropolis,
-                  transportation master plans for the Haifa and northern
-                  districts, and other major infrastructure projects.
+                  {
+                    "עיסא היה גם שותף מרכזי בצוותים לעריכת תיקי הנחיות לתכנון נתיבי תחבורה ציבורית, מערכות הסעת המונים במטרופולין חיפה, תוכניות אב תחבורתיות למחוזות חיפה והצפון ופרויקטים של תשתית גדולים נוספים"
+                  }
                 </div>
                 <div
                   className={`${style.heading} ${style.containerTwoHeadingWidth} ${style.marginTop}`}
                 >
-                  With decades of experience in planning, managing, and
-                  supervising projects in the public, residential, commercial,
-                  and infrastructure sectors, our founder has established a
-                  reputation for excellence in the industry. Our founder has
-                  always been passionate about his work in the field of
-                  engineering and construction.
+                  {
+                    " עיסא בשארה תמיד היה נלהב מעבודתו בתחום ההנדסה והבנייה עם עשרות שנות ניסיון בתכנון, ניהול ופיקוח על פרויקטים במגזר הציבורי, המגורים, המסחר והתשתיות, עיסא יצר מוניטין של "
+                  }
                 </div>
               </Animated>
             )}
@@ -134,8 +128,7 @@ function TheMindBehind() {
                   className={`${style.containerThreeHeadingOne} `}
                 >
                   <div className={style.mainHeadingFour}>
-                    Engineering Excellence, Forging Tomorrow's Innovation Today,
-                    in the Heart of Israel.
+                    {"מצויינות בהנדסה, יצירת חדשנות של מחר מהיום, בלב ישראל"}
                   </div>
                 </Animated>
                 <Animated
@@ -147,13 +140,9 @@ function TheMindBehind() {
                   className={`${style.containerThreeHeadingOne} `}
                 >
                   <div className={style.headingFour}>
-                    He has a strong focus on creativity, efficiency, and
-                    customer satisfaction. Additionally, our founder has a
-                    diverse set of hobbies and interests, including hiking,
-                    photography, and gardening. With over four decades of
-                    experience in the industry, our founder has a reputation for
-                    innovative solutions and a deep understanding of complex
-                    construction projects.
+                    {
+                      " יש לו התמקדות חזקה ביצירתיות, יעילות ושביעות רצון לקוחות. בנוסף, יש לו מגוון רחב של תחביבים ותחומי עניין, כמו טיולים, סודוקו וגינון. מצוינות עם למעלה מארבעה עשורים של ניסיון בתעשייה, לעיסא יש מוניטין של פתרונות חדשניים והבנה עמוקה של פרויקטי בנייה מורכבים"
+                    }
                   </div>
                 </Animated>
               </div>
@@ -260,16 +249,13 @@ function TheMindBehind() {
                   animationInDuration={1000}
                   className={style.borderContainerFiveHeading}
                 >
-                  <div className={`${style.heading} ${style.headingFiveWidth}`}>
-                    He has served as the city engineer of Nazareth and has been
-                    involved in multiple steering committees for the Ministry of
-                    Transportation and the Ministry of Construction and Housing.
-                    Our founder is committed to staying up-to-date with the
-                    latest advancements in technology and software in order to
-                    provide the highest quality services to our clients. He
-                    takes a holistic approach to projects, considering not only
-                    the construction aspect but also the functional and
-                    operational aspects.
+                  <div
+                    className={`${style.heading} ${style.headingFiveWidth}`}
+                    translate="yes"
+                  >
+                    {
+                      " שימש כמהנדס העיר נצרת והיה מעורב במספר ועדות היגוי של משרד התחבורה ומשרד הבינוי המייסד שלנו מחויב להישאר מעודכן עם ההתקדמות העדכנית ביותר בטכנולוגיה ובתוכנה על מנת לספק את השירותים האיכותיים ביותר ללקוחותינו. הוא נוקט בגישה הוליסטית לפרויקטים, תוך התחשבות לא רק בהיבט הבנייה אלא גם בהיבטים התפקודיים"
+                    }
                   </div>
                 </Animated>
                 <div className={style.verticalDevider} />
@@ -284,11 +270,9 @@ function TheMindBehind() {
                   <div
                     className={`${style.heading} ${style.headingFiveWidth} ${style.marginTop} ${style.marginBottomMobile}`}
                   >
-                    Our founder is passionate about passing on his knowledge and
-                    experience to the next generation of engineers and
-                    construction professionals. He has been involved in training
-                    and mentoring programs, and is dedicated to creating a
-                    legacy of excellence and professionalism in the industry.
+                    {
+                      "המייסד שלנו עיסא נלהב להעביר את הידע והניסיון שלו לדור הבא של מהנדסים ואנשי מקצוע בתחום הבנייה. הוא היה מעורב בתוכניות הכשרה וליווי ליצירת מורשת של מצוינות ומקצועיות בתעשייה"
+                    }
                   </div>
                 </Animated>
               </div>

@@ -59,62 +59,66 @@ import client6 from "../Asset/Img/client6.png";
 export const pageRoutes = [
   {
     id: 1,
-    label: "Home",
+    label: "בית",
     path: "/",
     icon: null,
   },
   {
     id: 2,
-    label: "who we are",
+    label: "מי אנחנו",
     path: "/whoWeAre",
     icon: DropDownArrow,
   },
   {
     id: 3,
-    label: "What We DO",
+    label: "מה אנו עושים",
     path: "/whatWeDO",
     icon: null,
   },
   {
     id: 4,
-    label: "PORTFOLIO",
+    label: "פורטפוליו",
     path: "/protfolio",
     icon: null,
   },
   {
     id: 5,
-    label: "WHAT OUR CLIENTS SAY",
+    label: "ממליצים עלינו",
     path: "/whatOurClientsSay",
     icon: null,
   },
   {
     id: 6,
-    label: "GET IN TOUCH",
+    label: "צור קשר",
     path: "/getInTouch",
     icon: null,
   },
+];
+export const adminRoutes = [
+  { id: 1, label: "Product", path: "/admin/addProduct", icon: null },
+  { id: 2, label: "Contact Info", path: "/admin/contactInfo", icon: null },
 ];
 
 export const serviceData = [
   {
     id: 1,
     icon: planService,
-    label: "planning services",
+    label: "שירותי תכנון",
   },
   {
     id: 2,
     icon: buildingInspection,
-    label: "BUILDING INSPECTION",
+    label: "פיקוח צמוד",
   },
   {
     id: 3,
     icon: interior,
-    label: "INTERIOR DESIGN",
+    label: "עיצוב פנים",
   },
   {
     id: 4,
     icon: engConsultant,
-    label: "ENGINEERING CONSULTATION",
+    label: "ייעוץ הנדסי",
   },
 ];
 
@@ -149,11 +153,11 @@ export const leaderData = [
   {
     id: 1,
     name: "Alaa Bishara",
-    designation: "Development Department Manager",
+    designation: "מנהל מחלקת פיתוח",
     detailsText: [
-      "A dynamic professional, serves as the Business Development Department Manager at IB Engineering.",
-      "With a diverse educational background, including a bachelor's degree in law and business administration from Reichman University and a master's degree in business administration specializing in real estate and appraisals, Alaa brings a unique blend of skills to the team.",
-      "As a serial founder, entrepreneur, and VP of sales, he has played pivotal roles in several successful companies. His visionary leadership and extensive experience contribute significantly to IB Engineering's growth and success.",
+      `עלאא בשארה, מנהל מחלקת פיתוח עסקי ב-איי.ביי הנדס`,
+      `על רקע לימודי מגוון הכולל תואר ראשון במשפטים ומנהל עסקים מאוניברסיטת רייכמן ותואר שני במנהל עסקים בהתמחות בנדל"ן ושמאות, עלאא מביא לצוות שילוב מיומנויות ייחודי.`,
+      ` כמייסד סדרתי, יזם וסמנכ"ל מכירות, הוא שיחק תפקידים מרכזיים במספר חברות מצליחות. מנהיגותו בעלת החזון וניסיונו הרב תורמים באופן משמעותי לצמיחתה והצלחתה של איי.ביי הנדסה"`,
     ],
     img: leader1,
     backgroundImg: leader1Bg,
@@ -168,7 +172,7 @@ export const leaderData = [
   {
     id: 2,
     name: "Mohammad Daher",
-    designation: "Head of Planning Department",
+    designation: "ראש מחלקת תכנון",
     detailsText: [
       "Is a rising star at IB ENG. Started as an intern, Today he is a licensed engineer, he honed his skills under our founder's guidance.",
       "His youthful energy and extensive experience drive our planning department's commitment to excellence, ensuring that each project is meticulously planned and executed with precision.",
@@ -187,7 +191,7 @@ export const leaderData = [
   {
     id: 3,
     name: "Rawan Bishara Sabbah",
-    designation: "Head of Interior Design Department",
+    designation: "ראש מחלקת עיצוב פנים",
     detailsText: [
       "As the dedicated leader of our Interior Design Department, Rawan Beshara Sabah brings a wealth of expertise to IB Engineering.",
       "A distinguished alumna of the Technion with a degree in civil engineering, specialized in structures, and honored in interior design, Rawan has been a registered engineer and architect since 2009.",
@@ -400,3 +404,11 @@ export const clientSayData = [
   { id: 5, img: client5, name: "EBRAHIM NASSER" },
   { id: 6, img: client6, name: "A.A ABU RAS" },
 ];
+
+export const getFormData = (formDataObj) => {
+  const formData = new FormData();
+  Object.keys(formDataObj).forEach((key) => {
+    formData.append(key, formDataObj[key]);
+  });
+  return formData;
+};

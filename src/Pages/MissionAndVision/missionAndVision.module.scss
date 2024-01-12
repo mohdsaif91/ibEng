@@ -13,17 +13,19 @@
         position: relative;
         width: 100%;
         background: rgba(0, 0, 0, 0.6);
-        height: 210px;
+        height: 400px;
+        margin-bottom: -217px;
+        bottom: 398px;
         @include mobile {
           height: 210px;
-          margin-top: -55%;
+          margin-bottom: -400px;
         }
         @include iPhoneSe {
           height: 209px;
           margin-top: -57%;
         }
         @include iPhone14Pro {
-          margin-top: -49%;
+          margin-top: 43% !important;
         }
         @include s20Ultra {
           margin-top: -51%;
@@ -49,7 +51,7 @@
       .heroText {
         width: 509px;
         position: absolute;
-        margin-top: -15%;
+        margin-top: -24%;
         color: $whiteColor;
         font-size: 50px;
         font-weight: 700;
@@ -394,7 +396,7 @@
 
 .vissionContainer {
   position: relative;
-  margin-top: -3.5%;
+  margin-top: -15.5%;
   z-index: 99;
   display: flex;
   align-items: center;

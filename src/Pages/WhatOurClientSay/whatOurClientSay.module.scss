@@ -22,9 +22,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @include mobile {
+          margin-bottom: 40px;
+        }
         .clientSayHeading {
           text-align: center;
-          width: 514px;
+          width: 320px;
           color: $blackColor;
           font-size: 48px;
           font-weight: 700;
@@ -40,6 +43,12 @@
         @include smallLaptop {
           height: 600px;
           width: 440px;
+        }
+        @include mobile {
+          height: 440px;
+          width: 360px;
+          opacity: 1;
+          margin-top: 0;
         }
       }
       .defaultName {
@@ -194,4 +203,12 @@
 .product-actions {
   display: flex;
   justify-content: space-between;
+}
+.imgParent {
+  @include mobile {
+    display: flex !important;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+  }
 }
