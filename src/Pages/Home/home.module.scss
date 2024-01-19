@@ -240,15 +240,12 @@
 .heroImg {
   width: 100%;
   margin-bottom: 26px;
-  //   @include mobile {
-  //     margin-bottom: -4px;
-  //   }
 }
 .defaultContainerOne {
   position: relative;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
   margin-bottom: -312px;
-  bottom: 320px;
+  bottom: 312px;
   @include mobile {
     bottom: 258px;
   }
@@ -294,7 +291,6 @@
 }
 
 .containerTwo {
-  height: 514px;
   position: relative;
   bottom: 543px;
   margin-bottom: -522px;
@@ -344,6 +340,7 @@
 }
 
 .marginTopHero3 {
+  margin-top: 40px;
   @include mobile {
     margin-top: 90px;
   }
@@ -410,6 +407,13 @@
   100% {
     transform: translateY(0%);
   }
+}
+
+.increaseHeight {
+  height: 620px;
+}
+.normalHeight {
+  height: 514px;
 }
 
 //

@@ -111,10 +111,10 @@
       .textIconContainer {
         position: relative;
         top: 130px;
-        left: 415px;
-        width: 956px;
+        left: 320px;
+        width: 980px;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         @include smallLaptop {
           width: 780px;
         }
@@ -379,6 +379,9 @@
 }
 
 .redDot {
+  margin-left: 8px;
+  margin-right: 24px;
+
   @include mobile {
     margin-left: 8px;
     margin-bottom: 8px;
@@ -504,4 +507,8 @@
       height: 32px;
     }
   }
+}
+
+.textRight {
+  text-align: right;
 }

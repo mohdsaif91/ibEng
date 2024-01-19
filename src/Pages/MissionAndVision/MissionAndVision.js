@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Animated } from "react-animated-css";
+import { useTranslation } from "react-i18next";
 
 import heroImg from "../../Asset/Img/whoAreWeHeroImg.png";
 import intialConOne from "../../Asset/Img/initialConOne.png";
@@ -16,7 +17,7 @@ function MissionAndVision() {
     Math.min(window.screen.width, window.screen.height) < 768 ||
       navigator.userAgent.indexOf("Mobi") > -1
   );
-  console.log(isMobile);
+  const { i18n, t } = useTranslation();
 
   return (
     <div className={style.whoWeAreContaineParent}>
@@ -36,7 +37,13 @@ function MissionAndVision() {
             animationInDuration={1000}
           >
             <div className={style.heroText}>
-              <div className={style.borderUnderLine}>החזון והמשימה</div>
+              <div
+                className={`${style.borderUnderLine} ${
+                  i18n.language === "he" && style.textCenter
+                }`}
+              >
+                {t("missionVissionHeading")}
+              </div>
             </div>
           </Animated>
         </div>
@@ -48,7 +55,7 @@ function MissionAndVision() {
             animationInDelay={500}
             animationInDuration={1000}
           >
-            <div className={style.rectBox}>החזון והמשימה</div>
+            <div className={style.rectBox}>{t("visionLabel")}</div>
           </Animated>
         </div>
         <div className={style.verticalLine} />
@@ -67,10 +74,7 @@ function MissionAndVision() {
                 animationInDelay={500}
                 animationInDuration={1000}
               >
-                ב- איי.ביי הנדסה, אנו החנות הOne-Stop-Shop שלך לכל ההיבטים של
-                תהליך הבנייה. אנו מציעים מגוון רחב של שירותים המתחילים באיתור
-                ובדיקת הפוטנציאל של הקרקע, לאורך כל הדרך באמצעות תכנון, ניהול,
-                בנייה ואפילו עיצובהפנים
+                {t("visionTextOne")}
               </Animated>
             </div>
             <div
@@ -83,8 +87,7 @@ function MissionAndVision() {
                 animationInDelay={500}
                 animationInDuration={1000}
               >
-                צוות המקצוענים שלנו עומד לרשותכם בכל שלב, ומספק פתרונות הנדסיים
-                מותאמים ויצירתיים העונים על הצרכים הספציפיים שלכם
+                {t("visionTextTwo")}
               </Animated>
             </div>
           </div>
@@ -117,16 +120,8 @@ function MissionAndVision() {
                     isMobile && style.mobileText
                   }`}
                 >
-                  <div className={style.text}>
-                    Building Information Modeling (BIM) כדי לייעל את תהליך
-                    הבנייה ולהגביר את היעילות אנו מחויבים להישאר מעודכנים
-                    בטכנולוגיה העדכנית ביותר ולהשתמש בכלים מתקדמים כמו
-                  </div>
-                  <div className={style.text}>
-                    הגישה שלנו מתמקדת במציאת פתרונות יצירתיים המייעלים הן את
-                    ההיבטים הבנייה והן התפעוליים של כל פרויקט, ובסופו של דבר
-                    חוסכים ללקוחותינו זמן וכסף
-                  </div>
+                  <div className={style.text}>{t("visionTextThree")}</div>
+                  <div className={style.text}>{t("visionTextFour")}</div>
                 </div>
               </div>
               {/* </Animated> */}
@@ -149,7 +144,7 @@ function MissionAndVision() {
                 animationInDuration={1000}
                 className={`${style.vissionContainer} ${style.withBorderLTR} ${style.containerThreePosition}`}
               >
-                <div className={style.rectBox}>משימה</div>
+                <div className={style.rectBox}>{t("missionTitle")}</div>
               </Animated>
               <div className={style.verticalLine} />
               <Animated
@@ -162,19 +157,12 @@ function MissionAndVision() {
                 <div
                   className={`${style.heading} ${style.initialContainerThreeText} ${style.smallLaptopMargin}`}
                 >
-                  ב-איי.ביי הנדסה משימתנו היא לשמש שותף מקיף בתחום הבנייה, תוך
-                  הצעת מגוון שירותים המנחים את הפרויקטים שלך מהרגע הראשון ועד
-                  להגשמתם. אנו מתחילים את משימה זו בעריכת הערכה יסודית של הקרקע,
-                  ודואגים שהאתר שבחרת יתאים באופן מושלם לחזון שלך
+                  {t("missionTextOne")}
                 </div>
                 <div
                   className={`${style.heading} ${style.initialContainerThreeText} ${style.smallLaptopMargin}`}
                 >
-                  משם, צוותנו המסור מעסיק את ההתקדמויות העדכניות ביותר
-                  בטכנולוגיה כדי ליצור תוכניות מדוקדקות הממקסמות יעילות ודיוק.
-                  התחייבותנו נטויה מעבר ללוח השרטוטים, אנו ניהולם באופן פעיל לכל
-                  פקטור בפרויקט שלך, תוך שמירה על עין חדה הן על אלמנטים של
-                  הבנייה והן על ההיבטים התפעוליים
+                  {t("missionTextTwo")}
                 </div>
               </Animated>
             </div>
@@ -214,15 +202,8 @@ function MissionAndVision() {
                       isMobile && style.mobileText
                     }`}
                   >
-                    <div className={style.text}>
-                      אנו מתגאים באופן עצום בהצעת שירות אישי ומומחיות המותאמים
-                      לצרכים הייחודיים שלך
-                    </div>
-                    <div className={style.text}>
-                      בין אם אתה שואף לבנות בית חדש, להנשים חיים חדשים במבנה
-                      קיים או להתחיל ביוזמה מסחרית, אנו השותף המושלם עבורך,
-                      מוכנים להפוך את חלומות הבנייה שלך למציאות
-                    </div>
+                    <div className={style.text}>{t("missionTextThree")}</div>
+                    <div className={style.text}>{t("missionTextFour")}</div>
                   </div>
                 </div>
               </Animated>

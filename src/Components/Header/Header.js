@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Animated } from "react-animated-css";
+import { useTranslation } from "react-i18next";
 
 import Logo from "../../Asset/Icon/logo.png";
-import { adminRoutes, pageRoutes } from "../../utils";
+import {
+  adminRoutes,
+  pageRoutes,
+  pageRoutesEng,
+  pageRoutesHebrew,
+} from "../../utils";
 import navIcon from "../../Asset/Icon/navIcon.png";
 import mobileIcon1 from "../../Asset/Icon/mobileLogo1.png";
 import mobileIcon2 from "../../Asset/Icon/mobileLogo2.png";
@@ -19,10 +25,16 @@ function Header() {
   );
   const [openNavDrawer, setOpenNavDrawer] = useState(false);
 
+  const { i18n, t } = useTranslation();
+
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(mobile, " is Mobile <>? ");
+  const onChangeLang = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
+
+  const pageRoutes = i18n.language === "he" ? pageRoutesHebrew : pageRoutesEng;
 
   return (
     <div className={style.headerContainer}>
@@ -80,45 +92,47 @@ function Header() {
                     } ${style.withIcon}`}
                     key={m.id}
                   >
-                    {m.label}
-                    {m.icon && !openDrawer && (
-                      <span
-                        className={style.iconMarginLeft}
-                        onClick={() => setOpenDrawer(true)}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="28"
-                          height="28"
-                          viewBox="0 0 28 28"
-                          fill="none"
+                    <div className={style.dropDownList}>
+                      {m.label}
+                      {m.icon && !openDrawer && (
+                        <span
+                          className={style.iconMarginLeft}
+                          onClick={() => setOpenDrawer(true)}
                         >
-                          <path
-                            d="M14 0C6.272 0 0 6.272 0 14C0 21.728 6.272 28 14 28C21.728 28 28 21.728 28 14C28 6.272 21.728 0 14 0ZM14 16.8L8.4 11.2H19.6L14 16.8Z"
-                            fill="#BBC4D0"
-                          />
-                        </svg>
-                      </span>
-                    )}
-                    {m.icon && openDrawer && (
-                      <span
-                        className={style.iconMarginLeft}
-                        onClick={() => setOpenDrawer(false)}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="28"
-                          height="28"
-                          viewBox="0 0 28 28"
-                          fill="none"
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="28"
+                            height="28"
+                            viewBox="0 0 28 28"
+                            fill="none"
+                          >
+                            <path
+                              d="M14 0C6.272 0 0 6.272 0 14C0 21.728 6.272 28 14 28C21.728 28 28 21.728 28 14C28 6.272 21.728 0 14 0ZM14 16.8L8.4 11.2H19.6L14 16.8Z"
+                              fill="#BBC4D0"
+                            />
+                          </svg>
+                        </span>
+                      )}
+                      {m.icon && openDrawer && (
+                        <span
+                          className={style.iconMarginLeft}
+                          onClick={() => setOpenDrawer(false)}
                         >
-                          <path
-                            d="M14 0C6.272 0 0 6.272 0 14C0 21.728 6.272 28 14 28C21.728 28 28 21.728 28 14C28 6.272 21.728 0 14 0ZM14 16.8L8.4 11.2H19.6L14 16.8Z"
-                            fill="#397ce2"
-                          />
-                        </svg>
-                      </span>
-                    )}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="28"
+                            height="28"
+                            viewBox="0 0 28 28"
+                            fill="none"
+                          >
+                            <path
+                              d="M14 0C6.272 0 0 6.272 0 14C0 21.728 6.272 28 14 28C21.728 28 28 21.728 28 14C28 6.272 21.728 0 14 0ZM14 16.8L8.4 11.2H19.6L14 16.8Z"
+                              fill="#397ce2"
+                            />
+                          </svg>
+                        </span>
+                      )}
+                    </div>
                     {openDrawer && (
                       <Animated
                         animationIn="fadeInDown"
@@ -132,19 +146,19 @@ function Header() {
                             navigate("/missionAndVision");
                           }}
                         >
-                          משימה וחזון
+                          {t("missionVission")}
                         </div>
                         <div
                           className={style.subLinks}
                           onClick={() => navigate("/theMindBehind")}
                         >
-                          IB ENG המוח מאחורי
+                          {t("theBrainBehind")}
                         </div>
                         <div
                           className={style.subLinks}
                           onClick={() => navigate("/team")}
                         >
-                          קְבוּצָה
+                          {t("meetTheLeaders")}
                         </div>
                       </Animated>
                     )}
@@ -153,6 +167,18 @@ function Header() {
               </>
             ))}
       </ul>
+      <select
+        className={style.languageDropdown}
+        defaultValue={i18n.language}
+        onChange={onChangeLang}
+      >
+        <option className={style.langOption} value="en">
+          EN
+        </option>
+        <option className={style.langOption} value="he">
+          HE
+        </option>
+      </select>
       {mobile && (
         <img
           src={navIcon}

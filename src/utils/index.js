@@ -56,7 +56,46 @@ import client4 from "../Asset/Img/client4.png";
 import client5 from "../Asset/Img/client5.png";
 import client6 from "../Asset/Img/client6.png";
 
-export const pageRoutes = [
+export const pageRoutesEng = [
+  {
+    id: 1,
+    label: "home",
+    path: "/",
+    icon: null,
+  },
+  {
+    id: 2,
+    label: "who we are",
+    path: "/whoWeAre",
+    icon: DropDownArrow,
+  },
+  {
+    id: 3,
+    label: "what we do",
+    path: "/whatWeDO",
+    icon: null,
+  },
+  {
+    id: 4,
+    label: "portfolio",
+    path: "/protfolio",
+    icon: null,
+  },
+  {
+    id: 5,
+    label: "what our client say",
+    path: "/whatOurClientsSay",
+    icon: null,
+  },
+  {
+    id: 6,
+    label: "get in touch",
+    path: "/getInTouch",
+    icon: null,
+  },
+];
+
+export const pageRoutesHebrew = [
   {
     id: 1,
     label: "בית",
@@ -99,7 +138,30 @@ export const adminRoutes = [
   { id: 2, label: "Contact Info", path: "/admin/contactInfo", icon: null },
 ];
 
-export const serviceData = [
+export const serviceDataEng = [
+  {
+    id: 1,
+    icon: planService,
+    label: "PLANNING SERVICES",
+  },
+  {
+    id: 2,
+    icon: buildingInspection,
+    label: "BUILDING INSPECTION",
+  },
+  {
+    id: 3,
+    icon: interior,
+    label: "INTERIOR DESIGN",
+  },
+  {
+    id: 4,
+    icon: engConsultant,
+    label: "ENGINEERING CONSULTATION",
+  },
+];
+
+export const serviceDataHebrew = [
   {
     id: 1,
     icon: planService,

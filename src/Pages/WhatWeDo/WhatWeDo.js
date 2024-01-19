@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Animated } from "react-animated-css";
+import { useTranslation } from "react-i18next";
 
 import containerOneImg from "../../Asset/Img/containeroneImg.png";
 import containerTwoImg from "../../Asset/Img/containerTwoImg.png";
@@ -9,6 +10,8 @@ import greyContainer3 from "../../Asset/Img/greyContainer3.png";
 import greyContainer4 from "../../Asset/Img/greyContainer4.png";
 import whatWeDoMobile1 from "../../Asset/Img/whatWedoMobile1.png";
 import whatWeDoMobile2 from "../../Asset/Img/whatWeDoMobile2.png";
+import mobileRedDot from "../../Asset/Icon/mobileRedDot.png";
+import redDot from "../../Asset/Img/redDot.png";
 
 import style from "./whatWeDo.module.scss";
 
@@ -22,6 +25,8 @@ function WhatWeDo() {
       navigator.userAgent.indexOf("Mobi") > -1
   );
 
+  const { i18n, t } = useTranslation();
+
   return (
     <div className={style.whatWeDoContainer}>
       <div className={style.twoColumnContainer}>
@@ -29,17 +34,17 @@ function WhatWeDo() {
           <div className={style.containerOneCard}>
             {isMobile ? (
               <div className={style.mobileCardHeading}>
-                <div className={style.heading1}>לתכנן</div>
-                <div className={style.heading2}>לבנות</div>
-                <div className={style.heading3}>להתפתח</div>
+                <div className={style.heading}>{t("whatWeDoTitleOne")}</div>
+                <div className={style.heading}>{t("whatWeDoTitleTwo")}</div>
+                <div className={style.heading}>{t("whatWeDoTitleThree")}</div>
               </div>
             ) : (
               <div className={style.cardHeading}>
-                לתכנן
+                {t("whatWeDoTitleOne")}
                 <br />
-                לבנות
+                {t("whatWeDoTitleTwo")}
                 <br />
-                להתפתח
+                {t("whatWeDoTitleThree")}
               </div>
             )}
             <Animated
@@ -86,6 +91,21 @@ function WhatWeDo() {
         >
           {containerOne && (
             <div className={style.textIconContainer}>
+              {i18n.language === "he" && (
+                <Animated
+                  className={style.mainGeadingZIndex}
+                  animationIn="fadeInDown"
+                  isVisible={true}
+                  animationInDelay={500}
+                  animationInDuration={1000}
+                >
+                  <img
+                    src={isMobile ? mobileRedDot : redDot}
+                    alt="red Dot"
+                    className={style.redDot}
+                  />
+                </Animated>
+              )}
               <Animated
                 className={style.mainGeadingZIndex}
                 animationIn="fadeInDown"
@@ -96,22 +116,24 @@ function WhatWeDo() {
                 <div
                   className={`${style.containerHeading} ${style.contatinerTextOne}`}
                 >
-                  שירותי תכנון
+                  {t("whatWeDoContainerTitle")}
                 </div>
               </Animated>
-              {/* <Animated
-                className={style.mainGeadingZIndex}
-                animationIn="fadeInDown"
-                isVisible={true}
-                animationInDelay={500}
-                animationInDuration={1000}
-              >
-                <img
-                  src={isMobile ? mobileRedDot : redDot}
-                  alt="red Dot"
-                  className={style.redDot}
-                />
-              </Animated> */}
+              {i18n.language === "en" && (
+                <Animated
+                  className={style.mainGeadingZIndex}
+                  animationIn="fadeInDown"
+                  isVisible={true}
+                  animationInDelay={500}
+                  animationInDuration={1000}
+                >
+                  <img
+                    src={isMobile ? mobileRedDot : redDot}
+                    alt="red Dot"
+                    className={style.redDot}
+                  />
+                </Animated>
+              )}
             </div>
           )}
           <div className={style.imgContainer}>
@@ -142,18 +164,16 @@ function WhatWeDo() {
                     isVisible={true}
                     animationInDelay={500}
                     animationInDuration={1000}
+                    className={i18n.language === "he" && style.textRight}
                   >
                     <div className={style.imgTextChild}>
-                      חברתנו מתמחה בתכנון קונסטרוקציה ותנועה, אנו מציעים תמיכה
-                      מקיפה ליזמים ויחידים שמטרתם להגשים את החזונות שלהם.
+                      {t("whatWeDoContainerOne")}
                     </div>
                     <div className={style.imgTextChild}>
-                      צוות מהנדסי התכנון המומחים שלנו מצטיין ביצירת תוכניות
-                      בנייה מדוקדקות ועומדות בסטנדרטים הגבוהים של התעשייה.
+                      {t("whatWeDoContainerTwo")}
                     </div>
                     <div className={style.imgTextChild}>
-                      מעבר לתכנון קונסטרוקציה ותנועה אנו מעניקים גם סיוע בהרכבת
-                      `כל היועצים הנדרשים לתכנן פרויקט החלומות שלכם.
+                      {t("whatWeDoContainerThree")}
                     </div>
                   </Animated>
                 )}
@@ -186,7 +206,7 @@ function WhatWeDo() {
                     animationInDuration={1000}
                     className={style.containerHeadingTwo}
                   >
-                    פיקוח צמוד
+                    {t("whatWeDoContainerFour")}
                   </Animated>
                 )}
               </div>
@@ -200,18 +220,16 @@ function WhatWeDo() {
                   isVisible={true}
                   animationInDelay={500}
                   animationInDuration={1000}
+                  className={i18n.language === "he" && style.textRight}
                 >
                   <div className={style.imgTextChild}>
-                    כחלק מהמחויבות שלנו לתכנון וניהול בניה, אנו מציעים שירותי
-                    פיקוח צמוד לבניה שמבטיחים את הסטנדרטים הגבוהים ביותר של
-                    איכות הבנייה.
+                    {t("whatWedoContainerFive")}
                   </div>
                   <div className={style.imgTextChild}>
-                    המפקחים המוסמכים שלנו מעריכים בקפדנות כל פרט בפרויקט שלך כדי
-                    להבטיח שהוא עומד בתקנות התעשייה ובציפיות שלך.
+                    {t("whatWedoContainerSix")}
                   </div>
                   <div className={style.imgTextChild}>
-                    עם המומחיות שלנו, אתה יכול להשיג בביטחון איכות בנייה מעולה.
+                    {t("whatWedoContainerSeven")}
                   </div>
                 </Animated>
               )}
@@ -334,15 +352,25 @@ function WhatWeDo() {
                     animationInDuration={1000}
                     className={`${style.containerHeadingThree} `}
                   >
-                    {/* <div > */}
-                    <span translate="yes">עיצוב פנים</span>
-                    <span className={style.headingIcon}>IN</span>
-                    {/* </div> */}
+                    <span translate="yes">{t("whatWedoContainerEight")}</span>
+                    {i18n.language === "he" ? (
+                      <img
+                        src={isMobile ? mobileRedDot : redDot}
+                        alt="red Dot"
+                        className={style.redDot}
+                      />
+                    ) : (
+                      <span className={style.headingIcon}>IN</span>
+                    )}
                   </Animated>
                 )}
 
                 <div
-                  className={`${style.subTextContainer} ${style.thirdTextContainer} ${style.topMarginTextContainer}`}
+                  className={`${style.subTextContainer} ${
+                    style.thirdTextContainer
+                  } ${style.topMarginTextContainer} ${
+                    i18n.language === "he" && style.textRight
+                  }`}
                 >
                   {/* <div className={style.imgTextChild}> */}
                   {containerThree && (
@@ -353,10 +381,7 @@ function WhatWeDo() {
                       animationInDuration={1000}
                       className={style.imgTextChild}
                     >
-                      <span translate="yes">
-                        הפוך את החלל שלך ליצירת מופת עם מחלקת עיצוב הפנים
-                        הייעודית שלנו.
-                      </span>
+                      <span translate="yes">{t("whatWedoContainerNine")}</span>
                     </Animated>
                   )}
                   {/* </div> */}
@@ -368,11 +393,7 @@ function WhatWeDo() {
                       animationInDuration={1000}
                       className={style.imgTextChild}
                     >
-                      <span translate="yes">
-                        {" "}
-                        צוות המומחים היצירתיים שלנו משתף איתך פעולה כדי להחיות
-                        את שאיפות העיצוב שלך.
-                      </span>
+                      <span>{t("whatWedoContainerTen")}</span>
                     </Animated>
                   )}
                   {containerThree && (
@@ -383,11 +404,7 @@ function WhatWeDo() {
                       animationInDuration={1000}
                       className={style.imgTextChild}
                     >
-                      <span>
-                        {" "}
-                        בין אם מדובר בפרויקט מגורים או מסחרי, שירותי עיצוב הפנים
-                        שלנו יוצר סביבה הרמונית שמתיישרת עם החזון שלך
-                      </span>
+                      <span>{t("whatWeDoContainerEleven")}</span>
                     </Animated>
                   )}
                 </div>
@@ -423,7 +440,7 @@ function WhatWeDo() {
                     animationInDuration={1000}
                     className={`${style.containerHeadingFour} `}
                   >
-                    ייעוץ הנדסי
+                    {t("whatWeDoTwelve")}
                   </Animated>
                 )}
               </div>
@@ -439,9 +456,7 @@ function WhatWeDo() {
                   animationInDuration={1000}
                   className={style.imgTextChild}
                 >
-                  <span translate="yes">
-                    נצל את הניסיון העשיר שלנו עם שירותי הייעוץ ההנדסי.
-                  </span>
+                  <span translate="yes">{t("whatWeDoContainerThirteen")}</span>
                 </Animated>
               )}
               {containerFour && (
@@ -452,10 +467,7 @@ function WhatWeDo() {
                   animationInDuration={1000}
                   className={style.imgTextChild}
                 >
-                  <span translate="yes">
-                    בין אם אתה יוצא לפרויקט חדש או מחפש תובנות לשיפור התוכניות
-                    הקיימות, היועצים שלנו מציעים הכוונה מומחית.
-                  </span>
+                  <span translate="yes">{t("whatWeDoContainerFourteen")}</span>
                 </Animated>
               )}
               {containerFour && (
@@ -466,8 +478,7 @@ function WhatWeDo() {
                   animationInDuration={1000}
                   className={style.imgTextChild}
                 >
-                  מהמשגה של פרויקט ועד לניתוח עלויות, הייעוץ שלנו מאפשר לך לנווט
-                  בפרויקט שלך בהצלחה ולהשיג את היעדים שלך
+                  {t("whatWeDoContainerFifteen")}
                 </Animated>
               )}
             </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import mobile from "../../Asset/Icon/mobile.png";
 import mail from "../../Asset/Icon/mail.png";
@@ -19,6 +20,8 @@ const initialFormData = {
 
 function Footer() {
   const [formData, setFormData] = useState({ ...initialFormData });
+  const { i18n, t } = useTranslation();
+
   return (
     <div className={style.footerContainer}>
       <div className={style.containerOne}>
@@ -29,7 +32,12 @@ function Footer() {
               alt="phone"
               className={`${style.borderIcon} ${style.footerIcon}`}
             />
-            <span className={style.footerIconLabel}>טלפון: [04-8889810]</span>
+            <a
+              href="tele:04-8889810"
+              className={`${style.footerIconLabel} ${style.phoneLink}`}
+            >
+              {t("phoneLabel")} 04-8889810
+            </a>
           </li>
           <li className={style.contactListItem}>
             <img
@@ -38,13 +46,16 @@ function Footer() {
               className={`${style.borderIcon} ${style.footerIcon}`}
             />
             <span className={style.footerIconLabel}>
-              דואר אלקטרוני: [Office@ibengineer.com]
+              {i18n.language === "en" && t("emailLabel")}
+              Office@ibengineer.com {i18n.language === "he" && t("officeLabel")}
             </span>
           </li>
           <li className={style.contactListItem}>
             <img src={map} alt="map" className={style.footerIcon} />
             <span className={style.footerIconLabel}>
-              כתובת משרד: ואדי אלחאג' רח׳ נצרת, ישראל
+              {i18n.language === "en" && t("officeLabel")}
+              {t("officeAddressValue")}
+              {i18n.language === "he" && t("officeLabel")}
             </span>
           </li>
         </ul>
@@ -54,35 +65,50 @@ function Footer() {
           className={style.formInput}
           value={formData.name}
           onChange={(e) => setFormData({ ...Footer, name: e.target.value })}
-          placeHolder="שם"
+          placeHolder={`${t("nameLabel")}`}
         />
         <TextInput
           className={style.formInput}
           value={formData.email}
           onChange={(e) => setFormData({ ...Footer, email: e.target.value })}
-          placeHolder="דואר אלקטרוני "
+          placeHolder={`${t("footerEmailLabel")}`}
         />
         <TextInput
           className={style.formInput}
           value={formData.message}
           onChange={(e) => setFormData({ ...Footer, message: e.target.value })}
-          placeHolder="הודעה"
+          placeHolder={`${t("footerMessageLabel")}`}
         />
         <Button
           className={style.footerBtn}
-          label="לשלוח"
+          label={`${t("btnSendLabel")}`}
           onClick={() => console.log("clicked")}
         />
       </div>
       <div className={style.containerThree}>
         <label className={style.containerThreeLabel}>
-          עקבו אחרינו ברשתות החברתיות כדי להישאר מעודכנים בפרויקטים האחרונים
-          שלנו:
+          {t("socialMediaLabel")}
         </label>
         <div className={style.iconContainer}>
-          <img src={facebook} alt="facebook" className={style.mediaIcon} />
+          <img
+            onClick={() => {
+              window.location.href =
+                "https://www.facebook.com/profile.php?id=61550946452760";
+            }}
+            src={facebook}
+            alt="facebook"
+            className={style.mediaIcon}
+          />
           <img src={instagram} alt="instagram" className={style.mediaIcon} />
-          <img src={linkedIn} alt="facebook" className={style.mediaIcon} />
+          <img
+            onClick={() => {
+              window.location.href =
+                "https://www.linkedin.com/company/ibeng/about/";
+            }}
+            src={linkedIn}
+            alt="facebook"
+            className={style.mediaIcon}
+          />
         </div>
       </div>
     </div>
