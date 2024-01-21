@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Animated } from "react-animated-css";
+import { useTranslation } from "react-i18next";
 
 import TextInput from "../../Components/Input/TextInput";
 import MailIcon from "../../Asset/Icon/mainIcon.png";
@@ -28,6 +29,7 @@ function ContactUs() {
     Math.min(window.screen.width, window.screen.height) < 768 ||
       navigator.userAgent.indexOf("Mobi") > -1
   );
+  const { i18n, t } = useTranslation();
 
   return (
     <div className={style.contactUsContainer}>
@@ -42,9 +44,13 @@ function ContactUs() {
           <div className={style.blackLine}></div>
           <div className={style.contactForm}>
             <div className={style.formContainer}>
-              <div className={style.headingContainer}>
+              <div
+                className={`${style.headingContainer} ${
+                  i18n.language === "he" && style.rowReverse
+                }`}
+              >
                 <div className={style.actualHeading}>
-                  <h1 className={style.heading}>Contact</h1>
+                  <h1 className={style.heading}>{t("contactUsTitleTwo")}</h1>
                   <div className={style.underline} />
                 </div>
                 <div>
@@ -57,31 +63,43 @@ function ContactUs() {
               </div>
               <div className={style.form}>
                 <TextInput
-                  placeHolder="Name"
-                  className={style.contactInput}
+                  placeHolder={t("contactInputName")}
+                  className={`${style.contactInput} ${
+                    i18n.language === "he" && style.hebrewTextEnd
+                  }`}
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
                 />
                 <TextInput
-                  placeHolder="Email"
-                  className={style.contactInput}
+                  placeHolder={t("contactInputEmail")}
+                  className={`${style.contactInput} ${
+                    i18n.language === "he" && style.hebrewTextEnd
+                  }`}
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
                 />
                 <TextInput
-                  placeHolder="Phone"
-                  className={style.contactInput}
+                  placeHolder={t("contactInputMobile")}
+                  className={`${style.contactInput} ${
+                    i18n.language === "he" && style.hebrewTextEnd
+                  }`}
                   value={formData.phone}
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
                 />
                 <div className={style.inputContainer}>
-                  <div className={style.inputLabel}>Message</div>
+                  <div
+                    className={`${style.inputLabel} ${
+                      i18n.language === "he" && style.hebrewTextEnd
+                    }`}
+                  >
+                    {t("contactInputMessage")}
+                  </div>
                   <textarea
                     rows={10}
                     cols={isMobile ? 45 : 70}
@@ -112,9 +130,17 @@ function ContactUs() {
                     alt="mobile"
                     className={`${style.detialsIcon} ${style.borderIcon}`}
                   />
-                  <label className={style.detialsLabel}>
-                    Israel Phone: 04-8889810
-                  </label>
+                  <a
+                    href="tele:04-8889810"
+                    className={`${style.footerIconLabel} ${style.detialsLabel} ${style.phoneLink}`}
+                  >
+                    {i18n.language === "en" && t("phoneLabel")} 04-8889810
+                    {i18n.language === "he" && t("phoneLabel")}
+                  </a>
+                  {/* <label >
+                    {i18n.language === "en" && t("phoneLabel")} 04-8889810{" "}
+                    {i18n.language === "he" && t("phoneLabel")}
+                  </label> */}
                 </div>
                 <div className={style.iconLabelContainer}>
                   <img
@@ -122,22 +148,30 @@ function ContactUs() {
                     alt="mail"
                     className={`${style.detialsIcon} ${style.borderIcon}`}
                   />
+
                   <label className={style.detialsLabel}>
-                    Office@ibengineer.com
+                    {i18n.language === "en" && t("emailLabel")}{" "}
+                    Office@ibengineer.com{" "}
+                    {i18n.language === "he" && t("emailLabel")}
                   </label>
                 </div>
                 <div className={style.iconLabelContainer}>
                   <img src={map} alt="map" className={style.detialsIcon} />
                   <label className={style.detialsLabel}>
-                    Office Address: St. Wadi Alhaj Nazareth
+                    {i18n.language === "en" && t("officeLabel")}
+                    {t("officeAddressValue")}
+                    {i18n.language === "he" && t("officeLabel")}
                   </label>
                 </div>
                 <div className={style.detialsSubText}>
-                  Follow us on social media to stay updated with our latest
-                  projects, industry insights, and company news.
+                  {t("socialMediaLabel")}
                 </div>
                 <div className={style.socialMediaIconcontainer}>
                   <img
+                    onClick={() => {
+                      window.location.href =
+                        "https://www.facebook.com/profile.php?id=61550946452760";
+                    }}
                     src={facebook}
                     alt="facebook"
                     className={style.mediaIcon}
@@ -148,6 +182,10 @@ function ContactUs() {
                     className={style.mediaIcon}
                   />
                   <img
+                    onClick={() => {
+                      window.location.href =
+                        "https://www.linkedin.com/company/ibeng/about/";
+                    }}
                     src={linkedIn}
                     alt="facebook"
                     className={style.mediaIcon}
@@ -176,23 +214,22 @@ function ContactUs() {
             >
               <div className={style.backgroundShade} />
               <div className={style.herotextContainer}>
-                <h1 className={style.heroMaintext}>ליצור קשר</h1>
+                <h1 className={style.heroMaintext}>{t("contactUsTitle")}</h1>
                 <div className={style.heroSubText}>
-                  {"ש לך שאלה ספציפית או רוצה לדון בפרויקט פוטנציאלי"}
+                  {t("contactSubTitleOne")}
                 </div>
                 <div className={style.actualSubText}>
-                  תודה ששקלת את איי.ביי הנדסה לצרכי התכנון או הבנייה שלך . אנו
-                  נמצאים כאן כדי להתחבר אליך ולחקור כיצד נוכל לשתף פעולה בפרויקט
-                  הבא שלך. בין אם יש לך שאלות, זקוק לסיוע או מוכן להתחיל, אנחנו
-                  כאן בשבילך.
+                  {t("contactSubTitleTwo")}
                 </div>
                 <button
                   className={style.contactUsBtn}
                   onClick={() => setContactForm(true)}
                 >
-                  צור קשר
+                  {t("contactUsBtnText")}
                 </button>
-                <div className={style.greyTextContainer}>כל הזכויות שמורות</div>
+                <div className={style.greyTextContainer}>
+                  {t("allRightsReserved")}
+                </div>
               </div>
             </Animated>
           )}

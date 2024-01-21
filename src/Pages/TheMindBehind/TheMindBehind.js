@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Animated } from "react-animated-css";
 
 import Stefan from "../../Asset/people/stefan.png";
@@ -23,6 +24,8 @@ function TheMindBehind() {
       navigator.userAgent.indexOf("Mobi") > -1
   );
 
+  const { i18n, t } = useTranslation();
+
   return (
     <div className={style.whoWeAreContaineParent}>
       <div className={style.whoWeAreContaine}>
@@ -34,8 +37,8 @@ function TheMindBehind() {
             animationInDelay={500}
             animationInDuration={1000}
           >
-            <h1 className={style.heading}>המוח מאחורי </h1>
-            <h1 className={style.heading}>איי.ביי הנדסה</h1>
+            <h1 className={style.heading}>{t("theMindBehindeTitleOne")}</h1>
+            <h1 className={style.heading}>{t("theMindBehindeTitleTwo")}</h1>
           </Animated>
           <div className={style.verticalDevider} />
         </div>
@@ -53,9 +56,7 @@ function TheMindBehind() {
             <div
               className={`${style.heading} ${style.containerOneHeadingWidth}`}
             >
-              {
-                "המייסד שלנו הוא המהנדס עיסא בשארה, מהנדס בניין מנוסה ומוכשר ביותר, עיסא בעל תואר שני בהנדסת בניין ומתמחה ברעידות אדמה והנדסת תנועה ותחבורה. רשום בפנקס המהנדסים והאדריכלים משנת 1979, עיסא שימש כמהנדס העיר נצרת בשנים 1992 עד 2016 וחבר בוועדות היגוי מטעם משרד התחבורה ומשרד הבינוי והשיכון"
-              }
+              {t("theMindBehindSubTitleOne")}
             </div>
           </Animated>
           <div className={style.borderContainer}>
@@ -98,16 +99,12 @@ function TheMindBehind() {
                   translate="yes"
                   className={`${style.heading} ${style.containerTwoHeadingWidth}`}
                 >
-                  {
-                    "עיסא היה גם שותף מרכזי בצוותים לעריכת תיקי הנחיות לתכנון נתיבי תחבורה ציבורית, מערכות הסעת המונים במטרופולין חיפה, תוכניות אב תחבורתיות למחוזות חיפה והצפון ופרויקטים של תשתית גדולים נוספים"
-                  }
+                  {t("theMindBehindSubTitleTwo")}
                 </div>
                 <div
                   className={`${style.heading} ${style.containerTwoHeadingWidth} ${style.marginTop}`}
                 >
-                  {
-                    " עיסא בשארה תמיד היה נלהב מעבודתו בתחום ההנדסה והבנייה עם עשרות שנות ניסיון בתכנון, ניהול ופיקוח על פרויקטים במגזר הציבורי, המגורים, המסחר והתשתיות, עיסא יצר מוניטין של "
-                  }
+                  {t("theMindBehindSubTitleTHree")}
                 </div>
               </Animated>
             )}
@@ -128,7 +125,7 @@ function TheMindBehind() {
                   className={`${style.containerThreeHeadingOne} `}
                 >
                   <div className={style.mainHeadingFour}>
-                    {"מצויינות בהנדסה, יצירת חדשנות של מחר מהיום, בלב ישראל"}
+                    {t("theMindBehindSubTitleFour")}
                   </div>
                 </Animated>
                 <Animated
@@ -140,9 +137,7 @@ function TheMindBehind() {
                   className={`${style.containerThreeHeadingOne} `}
                 >
                   <div className={style.headingFour}>
-                    {
-                      " יש לו התמקדות חזקה ביצירתיות, יעילות ושביעות רצון לקוחות. בנוסף, יש לו מגוון רחב של תחביבים ותחומי עניין, כמו טיולים, סודוקו וגינון. מצוינות עם למעלה מארבעה עשורים של ניסיון בתעשייה, לעיסא יש מוניטין של פתרונות חדשניים והבנה עמוקה של פרויקטי בנייה מורכבים"
-                    }
+                    {t("theMindBehindSubTitleFive")}
                   </div>
                 </Animated>
               </div>
@@ -253,9 +248,7 @@ function TheMindBehind() {
                     className={`${style.heading} ${style.headingFiveWidth}`}
                     translate="yes"
                   >
-                    {
-                      " שימש כמהנדס העיר נצרת והיה מעורב במספר ועדות היגוי של משרד התחבורה ומשרד הבינוי המייסד שלנו מחויב להישאר מעודכן עם ההתקדמות העדכנית ביותר בטכנולוגיה ובתוכנה על מנת לספק את השירותים האיכותיים ביותר ללקוחותינו. הוא נוקט בגישה הוליסטית לפרויקטים, תוך התחשבות לא רק בהיבט הבנייה אלא גם בהיבטים התפקודיים"
-                    }
+                    {t("theMindBehindSubTitleSix")}
                   </div>
                 </Animated>
                 <div className={style.verticalDevider} />
@@ -270,9 +263,7 @@ function TheMindBehind() {
                   <div
                     className={`${style.heading} ${style.headingFiveWidth} ${style.marginTop} ${style.marginBottomMobile}`}
                   >
-                    {
-                      "המייסד שלנו עיסא נלהב להעביר את הידע והניסיון שלו לדור הבא של מהנדסים ואנשי מקצוע בתחום הבנייה. הוא היה מעורב בתוכניות הכשרה וליווי ליצירת מורשת של מצוינות ומקצועיות בתעשייה"
-                    }
+                    {t("theMindBehindSubTitleFive")}
                   </div>
                 </Animated>
               </div>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Animated } from "react-animated-css";
+import { useTranslation } from "react-i18next";
 
-import { projectData } from "../../utils";
+import { projectDataHebrew, projectDataEnglish } from "../../utils";
 import leftBackIcon from "../../Asset/Icon/backLeftIcon.png";
 import city1 from "../../Asset/Img/City Buildings_1.png";
 import city2 from "../../Asset/Img/City Buildings_2.png";
@@ -36,6 +37,8 @@ function Protfolio() {
   const [project, setProject] = useState(null);
   const [pageLoading, setPageLoading] = useState(false);
 
+  const { i18n, t } = useTranslation();
+
   useEffect(() => {
     if (!project) {
       const getProject = async () => {
@@ -55,6 +58,9 @@ function Protfolio() {
     return descArr.map((m) => <div className={style.subTextItem}>{m}</div>);
   };
 
+  const projectData =
+    i18n.language === "he" ? projectDataHebrew : projectDataEnglish;
+
   return (
     <div className={style.protfolioContainer}>
       {pageLoading ? (
@@ -72,45 +78,49 @@ function Protfolio() {
               >
                 <div className={style.protfolioHeroContainerHighlight} />
                 <div className={style.heroText}>
-                  חברה מובילה
+                  {t("protfoliHeadingOne")}
                   <br />
-                  בתחום ההנדסה
+                  {t("protfoliHeadingTwo")}
                 </div>
               </Animated>
               <div className={style.ourProjectContainer}>
                 <div className={style.headingContainer}>
-                  <div className={style.mainHeading}>פורטפוליו</div>
+                  <div className={style.mainHeading}>
+                    {t("protfoliSubHeadingOne")}
+                  </div>
                   <div className={style.subHeading}>
                     <span className={style.dash} />
-                    <span className={style.dashText}>פרוייקטים</span>
+                    <span className={style.dashText}>
+                      {t("protfoliSubHeadingTwo")}
+                    </span>
                     <span className={style.dash} />
                   </div>
                 </div>
               </div>
               <div className={style.actualprojectContainer}>
                 <div className={style.projectCardContainer}>
-                  {Array.isArray(project) &&
-                    project.map((m, index) => (
-                      <div
-                        key={m._id}
-                        className={style.projectCard}
-                        onClick={() => {
-                          setProjectSelected({
-                            showProject: true,
-                            projectData: index,
-                          });
-                          window.scroll(0, 0);
-                        }}
-                      >
-                        <img
-                          src={`https://ibeng.s3.ap-south-1.amazonaws.com/${m.mainImage}`}
-                          alt="project1"
-                          className={style.projectImg}
-                        />
-                        <div className={style.imgOverLay} />
-                        <div className={style.projectText}>{m.projectName}</div>
-                      </div>
-                    ))}
+                  {/* Array.isArray(project) && */}
+                  {projectData.map((m, index) => (
+                    <div
+                      key={m._id}
+                      className={style.projectCard}
+                      onClick={() => {
+                        setProjectSelected({
+                          showProject: true,
+                          projectData: index,
+                        });
+                        window.scroll(0, 0);
+                      }}
+                    >
+                      <img
+                        src={m.mainProject}
+                        alt="project1"
+                        className={style.projectImg}
+                      />
+                      <div className={style.imgOverLay} />
+                      <div className={style.projectText}>{m.projectName}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </>
@@ -148,7 +158,10 @@ function Protfolio() {
                 <div className={style.textContainer}>
                   {!isMobile && (
                     <div className={style.heading}>
-                      {project[projectSelected.projectData || 0].projectName}
+                      {
+                        projectData[projectSelected.projectData || 0]
+                          .projectName
+                      }
                     </div>
                   )}
                   {isMobile && (
@@ -190,16 +203,22 @@ function Protfolio() {
                     </div>
                   )}
                   <div className={style.subTextContainer}>
-                    {generateDescription(
-                      project[projectSelected.projectData || 0].description
-                    )}
+                    {/* {generateDescription(
+                      projectData[projectSelected.projectData || 0]
+                        .projectDetails
+                    )} */}
+                    {projectData[
+                      projectSelected.projectData || 0
+                    ].projectDetails.map((m) => (
+                      <div
+                        className={`${style.subTextItem} ${
+                          i18n.language === "en" && style.textLeft
+                        }`}
+                      >
+                        {m}
+                      </div>
+                    ))}
                     {/* <div className={style.subTextItem}>
-                      {
-                        projectData[projectSelected.projectData || 0]
-                          .projectDetails[0]
-                      }
-                    </div>
-                    <div className={style.subTextItem}>
                       {
                         projectData[projectSelected.projectData || 0]
                           .projectDetails[1]
@@ -213,7 +232,7 @@ function Protfolio() {
                   </div>
                 </div>
                 <div className={style.imgContainer}>
-                  {project[projectSelected.projectData].images.map(
+                  {projectData[projectSelected.projectData].imgBackground.map(
                     (imgdata, imgIndex) => (
                       <>
                         {imgIndex === currentProjectIndex && (
@@ -225,11 +244,10 @@ function Protfolio() {
                             animationInDuration={700}
                           >
                             <img
-                              src={`https://ibeng.s3.ap-south-1.amazonaws.com/${
-                                project[projectSelected.projectData].images[
-                                  currentProjectIndex
-                                ]
-                              }`}
+                              src={
+                                projectData[projectSelected.projectData]
+                                  .imgBackground[currentProjectIndex].img
+                              }
                               className={style.projectImg}
                               alt="project Image"
                             />

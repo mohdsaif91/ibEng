@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next";
 
 import { clientSayData } from "../../utils";
 
@@ -47,6 +48,7 @@ function WhatOurClientSay() {
     Math.min(window.screen.width, window.screen.height) < 768 ||
       navigator.userAgent.indexOf("Mobi") > -1
   );
+  const { i18n, t } = useTranslation();
 
   return (
     <div className={style.whatOurClientSayContainer}>
@@ -54,7 +56,9 @@ function WhatOurClientSay() {
       <div className={style.greyContainer}>
         <div className={style.imgTextContainer}>
           <div className={style.clientSayParent}>
-            <div className={style.clientSayHeading}>ממליצים עלינו</div>
+            <div className={style.clientSayHeading}>
+              {t("whatOurClientSays")}
+            </div>
           </div>
           <Slider
             centerPadding="4px"

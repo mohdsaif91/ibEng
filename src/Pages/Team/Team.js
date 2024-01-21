@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Animated } from "react-animated-css";
+import { useTranslation } from "react-i18next";
 
 import leaderOne from "../../Asset/Img/leaderOne.png";
 import leaderTwo from "../../Asset/Img/leaderTwo.png";
@@ -24,6 +25,7 @@ function Team() {
     Math.min(window.screen.width, window.screen.height) < 768 ||
       navigator.userAgent.indexOf("Mobi") > -1
   );
+  const { i18n, t } = useTranslation();
 
   return (
     <div className={style.whoWeAreContaineParent}>
@@ -39,7 +41,7 @@ function Team() {
               className={style.additionalStyle}
             >
               <div className={style.border} />
-              <div className={style.meetLeaderLabel}>להכיר את הצוות</div>
+              <div className={style.meetLeaderLabel}>{t("teamTitle")}</div>
             </Animated>
             <Animated
               animationIn="slideInRight"
@@ -373,70 +375,42 @@ function Team() {
                       {leaderData[leaderCount].name}
                     </div>
                     <div className={style.designationLabel}>
-                      {leaderData[leaderCount].designation}
+                      {leaderCount === 0
+                        ? t("leaderOneMainText")
+                        : leaderCount === 1
+                        ? t("leaderTwoMainText")
+                        : t("leaderThreeMainText")}
                     </div>
                     <div className={style.subText}>
                       {leaderCount === 0 ? (
-                        <>עלאא בשארה, מנהל מחלקת פיתוח עסקי ב-איי.ביי הנדסה.</>
+                        <>{t("leaderTextOne")}</>
                       ) : leaderCount === 1 ? (
-                        <>
-                          מומחד הוא כוכב עולה ב-איי.ביי הנדסה. החל כמתמחה, היום
-                          הוא מהנדס רשוי, הוא חידד את כישוריו בהנחיית המייסד
-                          שלנו.
-                        </>
+                        <>{t("leaderTextTwoOne")}</>
                       ) : (
-                        <>
-                          בתור המנהיגה המסורה של מחלקת עיצוב הפנים שלנורואן
-                          בשארה סבאח מביאה שפע של מומחיות ל איי.
-                        </>
+                        <>{t("leaderTextThreeOne")}</>
                       )}
                     </div>
                     <div className={style.subText}>
                       {leaderCount === 0 ? (
-                        <>
-                          בעל רקע לימודי מגוון הכולל תואר ראשון במשפטים ומנהל
-                          עסקים מאוניברסיטת רייכמן ותואר שני במנהל עסקים בהתמחות
-                          בנדל"ן ושמאות, עלאא מביא לצוות שילוב מיומנויות ייחודי.
-                        </>
+                        <>{t("leaderTextTwo")}</>
                       ) : leaderCount === 1 ? (
-                        <>
-                          האנרגיה הצעירה שלו וניסיונו הרב מניעים את המחויבות של
-                          מחלקת התכנון שלנו למצוינות, ומבטיחים שכל פרויקט מתוכנן
-                          בקפידה ומבוצע בדייקנות.
-                        </>
+                        <>{t("leaderTextTwoTwo")}</>
                       ) : (
-                        <>
-                          ביי הנדסה,בוגרת מכובדת של הטכניון, בעלת תואר בהנדסה
-                          אזרחית,
-                        </>
+                        <>{t("leaderTextThreeTwo")}</>
                       )}
                     </div>
                     <div className={style.subText}>
                       {leaderCount === 0 ? (
-                        <>
-                          כמייסד סדרתי, יזם וסמנכ"ל מכירות, הוא שיחק תפקידים
-                          מרכזיים במספר חברות מצליחות. מנהיגותו בעלת החזון
-                          וניסיונו הרב תורמים באופן משמעותי לצמיחתה והצלחתה של
-                          איי.ביי הנדסה
-                        </>
+                        <>{t("leaderTextThree")}</>
                       ) : leaderCount === 1 ? (
-                        <>
-                          המנהיגות בעלת החזון והגישה השיתופית של מוחמד נותנת
-                          השראה לצוות שלנו להגיע לשיאים חדשים בעולם תכנון
-                          הבנייה.
-                        </>
+                        <>{t("leaderTextTwoThree")}</>
                       ) : (
-                        <>
-                          מתמחה במבנים ותעודה בעיצוב פנים,רואן היא מהנדסת רשומה
-                          משנת 2009.
-                        </>
+                        <>{t("leaderTextThreeThree")}</>
                       )}
                     </div>
                     {leaderCount === 2 && (
                       <div className={style.subText}>
-                        עם ניסיון של למעלה מ-15 שנים, התשוקה של רואן לאמנות,
-                        אופנה מעלה כל פרויקט לשיאים חדשים של מצוינות יצירתיות
-                        וחדשנות.
+                        {t("leaderTextThreeFour")}
                       </div>
                     )}
                     <div className={style.iconSignatureContainer}>

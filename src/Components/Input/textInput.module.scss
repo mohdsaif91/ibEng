@@ -1,5 +1,12 @@
 @import "../../variable.module.scss";
 
+.errorText {
+  color: red;
+  text-align: center;
+  margin-top: -12px;
+  margin-bottom: 8px;
+}
+
 .input {
   border-top: none;
   border-left: none;

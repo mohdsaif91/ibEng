@@ -204,6 +204,7 @@
             }
             .textArea {
               border: 1px solid $textAreaborder;
+              width: 100%;
             }
           }
           .submitBtn {
@@ -269,6 +270,9 @@
           margin-top: 24px;
           display: flex;
           align-items: center;
+          .mediaIcon {
+            cursor: pointer;
+          }
         }
         .cityBuldContainer {
           margin-top: 120px;
@@ -287,4 +291,18 @@
   border-radius: 50%;
   width: 26px;
   height: 24px;
+}
+
+.rowReverse {
+  flex-direction: row-reverse;
+}
+
+.hebrewTextEnd {
+  text-align: end;
+}
+
+.phoneLink {
+  cursor: pointer;
+  text-decoration: none;
+  color: $whiteColor;
 }

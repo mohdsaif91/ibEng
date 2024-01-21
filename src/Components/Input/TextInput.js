@@ -11,6 +11,9 @@ function TextInput({
   placeHolder = "",
   multiple = false,
   label = "",
+  onBlur,
+  validation,
+  validationData,
 }) {
   return (
     <div className={label !== "" && style.flexBox}>
@@ -23,7 +26,11 @@ function TextInput({
         className={`${style.input} ${className}`}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
       />
+      {validation && validationData.show && (
+        <div className={style.errorText}>{validationData.message}</div>
+      )}
     </div>
   );
 }

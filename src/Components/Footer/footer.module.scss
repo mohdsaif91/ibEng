@@ -60,6 +60,9 @@
       color: $whiteColor;
       font-size: 20px;
       line-height: 120%; /* 24px */
+      display: flex;
+      align-items: center;
+      justify-content: center;
       @include smallLaptop {
         width: 440px;
       }
@@ -93,6 +96,15 @@
       }
     }
   }
+}
+.btnCursorDisable {
+  cursor: not-allowed;
+}
+
+.errorText {
+  color: red;
+  text-align: center;
+  margin-top: 8px;
 }
 
 .phoneLink {
