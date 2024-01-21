@@ -203,8 +203,15 @@
               margin-bottom: 8px;
             }
             .textArea {
+              padding: 8px;
               border: 1px solid $textAreaborder;
               width: 100%;
+            }
+            .errorText {
+              color: red;
+              text-align: center;
+              // margin-top: -12px;
+              // margin-bottom: 8px;
             }
           }
           .submitBtn {
@@ -305,4 +312,21 @@
   cursor: pointer;
   text-decoration: none;
   color: $whiteColor;
+}
+
+.leftToRight {
+  flex-direction: row-reverse;
+}
+
+.marginLeft {
+  margin-left: 16px;
+}
+
+.justifyEnd {
+  display: flex;
+  justify-content: end;
+}
+
+.textEnd {
+  text-align: end;
 }

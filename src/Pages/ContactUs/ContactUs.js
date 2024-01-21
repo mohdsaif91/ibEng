@@ -14,6 +14,7 @@ import cityBuldg from "../../Asset/Img/City Buildings.png";
 import cityBuldgMobile from "../../Asset/Img/City BuildingsMobile.png";
 
 import style from "./contactUs.module.scss";
+import { validateEmail, validateMobile } from "../../utils";
 
 const initialFormData = {
   name: "",
@@ -29,6 +30,12 @@ function ContactUs() {
     Math.min(window.screen.width, window.screen.height) < 768 ||
       navigator.userAgent.indexOf("Mobi") > -1
   );
+  const [validation, setvalidation] = useState({
+    name: { show: false, message: "" },
+    email: { show: false, message: "" },
+    message: { show: false, message: "" },
+    phone: { show: false, message: "" },
+  });
   const { i18n, t } = useTranslation();
 
   return (
@@ -71,6 +78,17 @@ function ContactUs() {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
+                  onBlur={() => {
+                    setvalidation({
+                      ...validation,
+                      name:
+                        formData.name === ""
+                          ? { show: true, message: t("contactNameRequired") }
+                          : { show: false, message: "" },
+                    });
+                  }}
+                  validation={true}
+                  validationData={validation.name}
                 />
                 <TextInput
                   placeHolder={t("contactInputEmail")}
@@ -78,9 +96,28 @@ function ContactUs() {
                     i18n.language === "he" && style.hebrewTextEnd
                   }`}
                   value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
+                  onChange={(e) => {
+                    setvalidation({
+                      ...validation,
+                      email: !validateEmail(e.target.value)
+                        ? { show: true, message: t("contactNotEmailRequired") }
+                        : { show: false, message: "" },
+                    });
+                    setFormData({ ...formData, email: e.target.value });
+                  }}
+                  onBlur={() => {
+                    if (formData.email === "") {
+                      setvalidation({
+                        ...validation,
+                        email: {
+                          show: true,
+                          message: t("contactEmailRequired"),
+                        },
+                      });
+                    }
+                  }}
+                  validation={true}
+                  validationData={validation.email}
                 />
                 <TextInput
                   placeHolder={t("contactInputMobile")}
@@ -88,9 +125,29 @@ function ContactUs() {
                     i18n.language === "he" && style.hebrewTextEnd
                   }`}
                   value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
-                  }
+                  onChange={(e) => {
+                    if (validateMobile(e.target.value)) {
+                      setvalidation({
+                        ...validation,
+                        phone: {
+                          show: true,
+                          message: t("mobileValidationMsg"),
+                        },
+                      });
+                    }
+                    setFormData({ ...formData, phone: e.target.value });
+                  }}
+                  onBlur={() => {
+                    setvalidation({
+                      ...validation,
+                      phone:
+                        formData.phone === ""
+                          ? { show: true, message: t("emptyMobileNumber") }
+                          : { show: false, message: "" },
+                    });
+                  }}
+                  validation={true}
+                  validationData={validation.phone}
                 />
                 <div className={style.inputContainer}>
                   <div
@@ -103,15 +160,42 @@ function ContactUs() {
                   <textarea
                     rows={10}
                     cols={isMobile ? 45 : 70}
-                    className={style.textArea}
+                    className={`${style.textArea} ${
+                      i18n.language === "he" && style.textEnd
+                    }`}
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
+                    onBlur={() => {
+                      setvalidation({
+                        ...validation,
+                        message:
+                          formData.message === ""
+                            ? {
+                                show: true,
+                                message: t("contactMessageRequired"),
+                              }
+                            : { show: false, message: "" },
+                      });
+                    }}
+                    validation={true}
+                    validationData={validation.message}
                   />
+                  {validation.phone.show && (
+                    <div className={style.errorText}>
+                      {validation.message.message}
+                    </div>
+                  )}
                 </div>
-                <div className={style.btnImgContainer}>
-                  <button className={style.submitBtn}>Submit</button>
+                <div
+                  className={`${i18n.language === "he" && style.justifyEnd} ${
+                    style.btnImgContainer
+                  }`}
+                >
+                  <button className={style.submitBtn}>
+                    {t("contactUsSubmitBtn")}
+                  </button>
                   {isMobile && (
                     <img
                       src={cityBuldgMobile}
@@ -124,29 +208,37 @@ function ContactUs() {
             </div>
             {!isMobile && (
               <div className={style.detailsContainer}>
-                <div className={style.iconLabelContainer}>
+                <div
+                  className={`${style.iconLabelContainer} ${
+                    i18n.language === "he" && style.leftToRight
+                  }`}
+                >
                   <img
                     src={mobile}
                     alt="mobile"
-                    className={`${style.detialsIcon} ${style.borderIcon}`}
+                    className={`${style.detialsIcon} ${style.borderIcon} ${
+                      i18n.language === "he" && style.marginLeft
+                    }`}
                   />
                   <a
                     href="tele:04-8889810"
-                    className={`${style.footerIconLabel} ${style.detialsLabel} ${style.phoneLink}`}
+                    className={`${style.footerIconLabel} ${style.detialsLabel} ${style.phoneLink} `}
                   >
-                    {i18n.language === "en" && t("phoneLabel")} 04-8889810
-                    {i18n.language === "he" && t("phoneLabel")}
-                  </a>
-                  {/* <label >
                     {i18n.language === "en" && t("phoneLabel")} 04-8889810{" "}
                     {i18n.language === "he" && t("phoneLabel")}
-                  </label> */}
+                  </a>
                 </div>
-                <div className={style.iconLabelContainer}>
+                <div
+                  className={`${style.iconLabelContainer} ${
+                    i18n.language === "he" && style.leftToRight
+                  }`}
+                >
                   <img
                     src={mail}
                     alt="mail"
-                    className={`${style.detialsIcon} ${style.borderIcon}`}
+                    className={`${style.detialsIcon} ${style.borderIcon} ${
+                      i18n.language === "he" && style.marginLeft
+                    }`}
                   />
 
                   <label className={style.detialsLabel}>
@@ -155,8 +247,18 @@ function ContactUs() {
                     {i18n.language === "he" && t("emailLabel")}
                   </label>
                 </div>
-                <div className={style.iconLabelContainer}>
-                  <img src={map} alt="map" className={style.detialsIcon} />
+                <div
+                  className={`${style.iconLabelContainer} ${
+                    i18n.language === "he" && style.leftToRight
+                  }`}
+                >
+                  <img
+                    src={map}
+                    alt="map"
+                    className={`${style.detialsIcon} ${
+                      i18n.language === "he" && style.marginLeft
+                    }`}
+                  />
                   <label className={style.detialsLabel}>
                     {i18n.language === "en" && t("officeLabel")}
                     {t("officeAddressValue")}
@@ -166,7 +268,11 @@ function ContactUs() {
                 <div className={style.detialsSubText}>
                   {t("socialMediaLabel")}
                 </div>
-                <div className={style.socialMediaIconcontainer}>
+                <div
+                  className={`${style.socialMediaIconcontainer} ${
+                    i18n.language === "he" && style.justifyEnd
+                  }`}
+                >
                   <img
                     onClick={() => {
                       window.location.href =
