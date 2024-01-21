@@ -12,9 +12,11 @@ import mail from "../../Asset/Icon/mail.png";
 import map from "../../Asset/Icon/map.png";
 import cityBuldg from "../../Asset/Img/City Buildings.png";
 import cityBuldgMobile from "../../Asset/Img/City BuildingsMobile.png";
+import { validateEmail, validateMobile } from "../../utils";
+import { onAuthenticated } from "../../API/Axios";
+import { apiV1 } from "../../API/apiList";
 
 import style from "./contactUs.module.scss";
-import { validateEmail, validateMobile } from "../../utils";
 
 const initialFormData = {
   name: "",
@@ -36,7 +38,42 @@ function ContactUs() {
     message: { show: false, message: "" },
     phone: { show: false, message: "" },
   });
+  const [formError, setFormError] = useState("");
+  const [pageLoading, setPageLoading] = useState(false);
+
   const { i18n, t } = useTranslation();
+
+  const sendInquery = async () => {
+    if (
+      validation.name.show ||
+      validation.email.show ||
+      validation.message.show ||
+      validation.phone.show ||
+      formData.email === "" ||
+      formData.name === "" ||
+      formData.message === "" ||
+      formData.phone === ""
+    ) {
+      setFormError(t("contactFormError"));
+    } else {
+      setPageLoading(true);
+      setFormError("");
+      const payload = {
+        url: `${apiV1}/inquery`,
+        method: "post",
+        data: formData,
+      };
+      await onAuthenticated(payload)
+        .then((apiRes) => {
+          setPageLoading(false);
+          console.log("got res 200 ", apiRes);
+        })
+        .catch((err) => {
+          setPageLoading(false);
+          console.log(err);
+        });
+    }
+  };
 
   return (
     <div className={style.contactUsContainer}>
@@ -126,7 +163,7 @@ function ContactUs() {
                   }`}
                   value={formData.phone}
                   onChange={(e) => {
-                    if (validateMobile(e.target.value)) {
+                    if (!validateMobile(e.target.value)) {
                       setvalidation({
                         ...validation,
                         phone: {
@@ -143,6 +180,11 @@ function ContactUs() {
                       phone:
                         formData.phone === ""
                           ? { show: true, message: t("emptyMobileNumber") }
+                          : !validateMobile(formData.phone)
+                          ? {
+                              show: true,
+                              message: t("mobileValidationMsg"),
+                            }
                           : { show: false, message: "" },
                     });
                   }}
@@ -193,9 +235,15 @@ function ContactUs() {
                     style.btnImgContainer
                   }`}
                 >
-                  <button className={style.submitBtn}>
+                  <button
+                    className={style.submitBtn}
+                    onClick={(e) => sendInquery(e)}
+                  >
                     {t("contactUsSubmitBtn")}
                   </button>
+                  {formError !== "" && (
+                    <div className={style.errorText}>{formError}</div>
+                  )}
                   {isMobile && (
                     <img
                       src={cityBuldgMobile}
