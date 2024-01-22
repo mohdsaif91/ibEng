@@ -9,7 +9,6 @@ import { Animated } from "react-animated-css";
 import Glide from "@glidejs/glide";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { Shimmer } from "react-shimmer";
 
 import hero1 from "../../Asset/Img/hero1.png";
 import hero2 from "../../Asset/Img/hero2.png";
@@ -20,7 +19,6 @@ import { brandData, serviceDataEng, serviceDataHebrew } from "../../utils";
 import heroMobileImg1 from "../../Asset/Img/heroImgMobile1.png";
 import heroMobileImg2 from "../../Asset/Img/heroImgMobile2.png";
 import heroMobileImg3 from "../../Asset/Img/heroImgmobile3.png";
-import heroVideo from "../../Asset/video/ibEngHeroVideo.mp4";
 
 import style from "./home.module.scss";
 import "glider-js/glider.min.css";
