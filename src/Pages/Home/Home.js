@@ -1,8 +1,15 @@
-import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, {
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Animated } from "react-animated-css";
 import Glide from "@glidejs/glide";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { Shimmer } from "react-shimmer";
 
 import hero1 from "../../Asset/Img/hero1.png";
 import hero2 from "../../Asset/Img/hero2.png";
@@ -13,6 +20,7 @@ import { brandData, serviceDataEng, serviceDataHebrew } from "../../utils";
 import heroMobileImg1 from "../../Asset/Img/heroImgMobile1.png";
 import heroMobileImg2 from "../../Asset/Img/heroImgMobile2.png";
 import heroMobileImg3 from "../../Asset/Img/heroImgmobile3.png";
+import heroVideo from "../../Asset/video/ibEngHeroVideo.mp4";
 
 import style from "./home.module.scss";
 import "glider-js/glider.min.css";
@@ -41,7 +49,9 @@ function Home() {
     Math.min(window.screen.width, window.screen.height) < 768 ||
       navigator.userAgent.indexOf("Mobi") > -1
   );
+  const [playVideo, setPlayVideo] = useState(false);
 
+  const videoRef = useRef(null);
   const navigate = useNavigate();
   const { i18n, t } = useTranslation();
 
@@ -84,11 +94,32 @@ function Home() {
   return (
     <div className={style.homeContainer}>
       <div className={style.heroContainer}>
-        <img
-          src={mobile ? heroMobileImg1 : hero1}
-          alt=""
-          className={`${style.heroImg} ${style.firstHeroImg}`}
-        />
+        <video
+          ref={videoRef}
+          poster={mobile ? heroMobileImg1 : hero1}
+          controls={false}
+          className={style.videoPlayer}
+          loop={true}
+          muted={true}
+          onLoadedData={() => {
+            const promise = videoRef.current.play();
+            if (promise !== undefined) {
+              promise
+                .then(() => {})
+                .catch((err) => {
+                  videoRef.current.muted();
+                  videoRef.current.play();
+                });
+            }
+          }}
+        >
+          <source
+            src="https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo.mp4"
+            type="video/mp4"
+          />
+
+          {/* <source src={heroVideo} type="video/mp4" /> */}
+        </video>
         <div className={style.hero1imgOverlay} />
         <div
           className={`${style.heroImageContainer} ${style.marginTopHero2}`}
