@@ -512,3 +512,21 @@
 .textRight {
   text-align: right;
 }
+
+.headingOne {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 120%; /* 30px */
+}
+.headingTwo {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%; /* 38.4px */
+  letter-spacing: 0.96px;
+}
+.headingThree {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 120%; /* 43.2px */
+  letter-spacing: 2.88px;
+}

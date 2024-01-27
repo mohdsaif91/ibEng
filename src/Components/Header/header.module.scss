@@ -85,7 +85,7 @@
   background-color: $headerColor;
   position: absolute;
   margin-top: 13%;
-  z-index: 99;
+  z-index: 999;
   @include smallLaptop {
     margin-top: 13%;
   }

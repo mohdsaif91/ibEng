@@ -10,9 +10,9 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
-        missionVission: "MISSION AND VISION",
-        theBrainBehind: "the brain behind IB ENG",
-        meetTheLeaders: "Meet the leaders",
+        missionVission: "Vision & Mission",
+        theBrainBehind: "The Mind Behind IB",
+        meetTheLeaders: "Meet The Team",
         homeVisionTitle: "IB VISION",
         homeContainerOneShow: "Show",
         homeContainerOneShowLess: "Less",
@@ -140,11 +140,13 @@ i18n.use(initReactI18next).init({
         emptyMobileNumber: "Mobile number is required",
       },
     },
+    // send footer btn שלח
+    //sent footer btn נשלח
     he: {
       translation: {
-        missionVission: "החזון והמשימה",
-        theBrainBehind: "המוח מאחורי",
-        meetTheLeaders: "תכירו את המנהיגים",
+        missionVission: "חזון ומשימה",
+        theBrainBehind: "המוח מאחורי איי.ביי",
+        meetTheLeaders: "פגוש את הצוות",
         homeVisionTitle: " חזון",
         homeContainerOneShow: "הופעה",
         homeContainerOneShowLess: "פָּחוֹת",

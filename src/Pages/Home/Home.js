@@ -47,11 +47,11 @@ function Home() {
     Math.min(window.screen.width, window.screen.height) < 768 ||
       navigator.userAgent.indexOf("Mobi") > -1
   );
-  const [playVideo, setPlayVideo] = useState(false);
 
-  const videoRef = useRef(null);
   const navigate = useNavigate();
   const { i18n, t } = useTranslation();
+
+  const videoRef = useRef(null);
 
   useLayoutEffect(() => {
     window.scroll(0, 0);
@@ -112,7 +112,8 @@ function Home() {
           }}
         >
           <source
-            src="https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo.mp4"
+            // src={localHeroVideo}
+            src="https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo+(1).mp4"
             type="video/mp4"
           />
 
@@ -341,12 +342,6 @@ function Home() {
                               advancements in technology to craft meticulous
                               plans that optimize efficiency and precision.
                             </div>
-                            {/* <div className={style.moreTextSubText}>
-                              Our commitment extends beyond the drawing board;
-                              we actively manage every aspect of your project,
-                              keeping a keen eye on both construction and
-                              operational elements.
-                            </div> */}
                             <div className={style.moreTextSubText}>
                               At IB Engineering, we take immense pride in
                               offering personalized service and expertise

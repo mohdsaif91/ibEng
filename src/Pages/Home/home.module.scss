@@ -240,6 +240,9 @@
 .heroImg {
   width: 100%;
   margin-bottom: 26px;
+  @include mobile {
+    margin-bottom: 48px;
+  }
 }
 .defaultContainerOne {
   position: relative;
@@ -317,21 +320,26 @@
   height: 855px;
   width: 100%;
   margin-top: -858px;
+  @include mobile {
+    height: 242px;
+    margin-top: -244px;
+    z-index: 99;
+  }
   @include iPhone12Pro {
-    height: 646px !important;
-    margin-top: -678px !important;
+    height: 242px;
+    margin-top: -244px;
   }
   @include iPhoneSe {
-    margin-top: -654px;
-    height: 624px;
+    height: 242px;
+    margin-top: -244px;
   }
   @include s20Ultra {
-    height: 688px;
-    margin-top: -716px;
+    height: 236px !important;
+    margin-top: -236px !important;
   }
   @include iPhone14Pro {
-    height: 716px;
-    margin-top: -744px;
+    height: 242px;
+    margin-top: -244px;
   }
 }
 

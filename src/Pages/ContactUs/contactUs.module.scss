@@ -224,6 +224,9 @@
             font-size: 20px;
             line-height: 120%; /* 24px */
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             @include mobile {
               width: 150px;
             }
@@ -325,6 +328,8 @@
 .justifyEnd {
   display: flex;
   justify-content: end;
+  align-items: flex-end;
+  flex-direction: column;
 }
 
 .textEnd {

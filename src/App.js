@@ -29,6 +29,10 @@ const AdminAddProduct = React.lazy(() =>
   import("./AdminPages/AdminAddProduct/AdminAddProduct")
 );
 
+const InqueryEmail = React.lazy(() =>
+  import("./AdminPages/EmailInquery/EmailInquery")
+);
+
 function App() {
   const { pathname } = useLocation();
 
@@ -123,6 +127,14 @@ function App() {
           element={
             <Suspense fallback={<Loading />}>
               <AdminAddProduct />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/admin/Inquery"
+          element={
+            <Suspense fallback={<Loading />}>
+              <InqueryEmail />
             </Suspense>
           }
         />

@@ -17,6 +17,7 @@ import { onAuthenticated } from "../../API/Axios";
 import { apiV1 } from "../../API/apiList";
 
 import style from "./contactUs.module.scss";
+import Button from "../../Components/Button/Button";
 
 const initialFormData = {
   name: "",
@@ -235,12 +236,12 @@ function ContactUs() {
                     style.btnImgContainer
                   }`}
                 >
-                  <button
+                  <Button
                     className={style.submitBtn}
                     onClick={(e) => sendInquery(e)}
-                  >
-                    {t("contactUsSubmitBtn")}
-                  </button>
+                    loading={pageLoading}
+                    label={t("contactUsSubmitBtn")}
+                  />
                   {formError !== "" && (
                     <div className={style.errorText}>{formError}</div>
                   )}

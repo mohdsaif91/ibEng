@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { Animated } from "react-animated-css";
 import { useTranslation } from "react-i18next";
 
@@ -25,6 +25,10 @@ function WhatWeDo() {
       navigator.userAgent.indexOf("Mobi") > -1
   );
 
+  useLayoutEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
   const { i18n, t } = useTranslation();
 
   return (
@@ -34,9 +38,11 @@ function WhatWeDo() {
           <div className={style.containerOneCard}>
             {isMobile ? (
               <div className={style.mobileCardHeading}>
-                <div className={style.heading}>{t("whatWeDoTitleOne")}</div>
-                <div className={style.heading}>{t("whatWeDoTitleTwo")}</div>
-                <div className={style.heading}>{t("whatWeDoTitleThree")}</div>
+                <div className={style.headingOne}>{t("whatWeDoTitleOne")}</div>
+                <div className={style.headingTwo}>{t("whatWeDoTitleTwo")}</div>
+                <div className={style.headingThree}>
+                  {t("whatWeDoTitleThree")}
+                </div>
               </div>
             ) : (
               <div className={style.cardHeading}>

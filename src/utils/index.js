@@ -3,9 +3,9 @@ import buildingInspection from "../Asset/Img/buildingInspection.png";
 import engConsultant from "../Asset/Img/engConsultant.png";
 import interior from "../Asset/Img/interior.png";
 import planService from "../Asset/Img/planService.png";
-import brand1 from "../Asset/brand/brand1.png";
+import brand1 from "../Asset/brand/brand1.jpeg";
 import brand2 from "../Asset/brand/brand2.png";
-import brand3 from "../Asset/brand/brand3.png";
+import brand3 from "../Asset/brand/brand3.jpeg";
 import brand4 from "../Asset/brand/brand4.png";
 import brand5 from "../Asset/brand/brand5.png";
 import brand6 from "../Asset/brand/brand6.png";
@@ -136,6 +136,7 @@ export const pageRoutesHebrew = [
 export const adminRoutes = [
   { id: 1, label: "Product", path: "/admin/addProduct", icon: null },
   { id: 2, label: "Contact Info", path: "/admin/contactInfo", icon: null },
+  { id: 3, label: "Inquery", path: "/admin/Inquery", icon: null },
 ];
 
 export const serviceDataEng = [
