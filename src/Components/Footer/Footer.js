@@ -30,6 +30,7 @@ function Footer() {
     message: { show: false, message: "" },
   });
   const [formError, setFormError] = useState("");
+  const [btnResponse, setbtnResponse] = useState(false);
 
   const { i18n, t } = useTranslation();
 
@@ -54,6 +55,7 @@ function Footer() {
       await onAuthenticated(payload)
         .then((apiRes) => {
           setPageLoading(false);
+          setbtnResponse(true);
           console.log("got res 200 ", apiRes);
         })
         .catch((err) => {
@@ -165,7 +167,9 @@ function Footer() {
         />
         <Button
           className={style.footerBtn}
-          label={`${t("btnSendLabel")}`}
+          label={
+            btnResponse ? t("contactUsSubmitBtnSuccess") : t("btnSendLabel")
+          }
           loading={pageLoading}
           onClick={(e) => sendInquery(e)}
         />
@@ -176,25 +180,23 @@ function Footer() {
           {t("socialMediaLabel")}
         </label>
         <div className={style.iconContainer}>
-          <img
-            onClick={() => {
-              window.location.href =
-                "https://www.facebook.com/profile.php?id=61550946452760";
-            }}
-            src={facebook}
-            alt="facebook"
+          <a
+            target="_blank"
+            href="https://www.facebook.com/profile.php?id=61550946452760"
             className={style.mediaIcon}
-          />
-          <img src={instagram} alt="instagram" className={style.mediaIcon} />
-          <img
-            onClick={() => {
-              window.location.href =
-                "https://www.linkedin.com/company/ibeng/about/";
-            }}
-            src={linkedIn}
-            alt="facebook"
+          >
+            <img src={facebook} alt="facebook" />
+          </a>
+          <a className={style.mediaIcon}>
+            <img src={instagram} alt="instagram" />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/company/ibeng/about/"
             className={style.mediaIcon}
-          />
+          >
+            <img src={linkedIn} alt="facebook" />
+          </a>
         </div>
       </div>
     </div>

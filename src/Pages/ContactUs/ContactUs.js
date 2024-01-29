@@ -41,6 +41,7 @@ function ContactUs() {
   });
   const [formError, setFormError] = useState("");
   const [pageLoading, setPageLoading] = useState(false);
+  const [btnResponse, setBtnResponse] = useState(false);
 
   const { i18n, t } = useTranslation();
 
@@ -67,6 +68,7 @@ function ContactUs() {
       await onAuthenticated(payload)
         .then((apiRes) => {
           setPageLoading(false);
+          setBtnResponse(true);
           console.log("got res 200 ", apiRes);
         })
         .catch((err) => {
@@ -240,7 +242,11 @@ function ContactUs() {
                     className={style.submitBtn}
                     onClick={(e) => sendInquery(e)}
                     loading={pageLoading}
-                    label={t("contactUsSubmitBtn")}
+                    label={
+                      btnResponse
+                        ? t("contactUsSubmitBtnSuccess")
+                        : t("contactUsSubmitBtn")
+                    }
                   />
                   {formError !== "" && (
                     <div className={style.errorText}>{formError}</div>

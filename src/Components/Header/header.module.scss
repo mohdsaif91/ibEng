@@ -74,12 +74,26 @@
   @include mobile {
     flex-direction: column;
   }
+  &:hover .DrawerOpen {
+    display: block;
+  }
+
+  // &:active {
+  //   display: block;
+  // }
+}
+
+.DrawerOpen {
+  &:hover .DrawerOpen {
+    display: block;
+  }
 }
 
 .moreIcon {
   margin-left: 16px;
 }
 .DrawerOpen {
+  display: none;
   width: 360px;
   border-radius: 8px;
   background-color: $headerColor;

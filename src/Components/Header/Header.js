@@ -133,35 +133,35 @@ function Header() {
                         </span>
                       )}
                     </div>
-                    {openDrawer && (
-                      <Animated
-                        animationIn="fadeInDown"
-                        isVisible={openDrawer}
-                        animationInDuration={1000}
-                        className={style.DrawerOpen}
+                    {/* {openDrawer && ( */}
+                    <Animated
+                      animationIn="fadeInDown"
+                      // isVisible={openDrawer}
+                      animationInDuration={1000}
+                      className={style.DrawerOpen}
+                    >
+                      <div
+                        className={style.subLinks}
+                        onClick={() => {
+                          navigate("/missionAndVision");
+                        }}
                       >
-                        <div
-                          className={style.subLinks}
-                          onClick={() => {
-                            navigate("/missionAndVision");
-                          }}
-                        >
-                          {t("missionVission")}
-                        </div>
-                        <div
-                          className={style.subLinks}
-                          onClick={() => navigate("/theMindBehind")}
-                        >
-                          {t("theBrainBehind")}
-                        </div>
-                        <div
-                          className={style.subLinks}
-                          onClick={() => navigate("/team")}
-                        >
-                          {t("meetTheLeaders")}
-                        </div>
-                      </Animated>
-                    )}
+                        {t("missionVission")}
+                      </div>
+                      <div
+                        className={style.subLinks}
+                        onClick={() => navigate("/theMindBehind")}
+                      >
+                        {t("theBrainBehind")}
+                      </div>
+                      <div
+                        className={style.subLinks}
+                        onClick={() => navigate("/team")}
+                      >
+                        {t("meetTheLeaders")}
+                      </div>
+                    </Animated>
+                    {/* )} */}
                   </li>
                 )}
               </>
