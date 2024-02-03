@@ -11,8 +11,8 @@ import signature2_1 from "../../Asset/Img/signature2.png";
 import signature2_2 from "../../Asset/Img/signature2.2.png";
 import signature3 from "../../Asset/Img/signature3.png";
 import linkedIn from "../../Asset/Icon/LinkedIn.png";
-import leftArrow from "../../Asset/Icon/leftArrow.png";
-import rightArrow from "../../Asset/Icon/rightArrow.png";
+import leftArrow from "../../Asset/Icon/leftArrowIcon.png";
+import rightArrow from "../../Asset/Icon/rightArrowIcon.png";
 import { leaderData } from "../../utils";
 import project2_5 from "../../Asset/project/project2_5.png";
 

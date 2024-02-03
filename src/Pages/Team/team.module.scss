@@ -222,6 +222,19 @@
                 position: absolute;
                 margin-left: 456px;
                 .arrowContainer {
+                  height: 56px;
+                  border-radius: 50%;
+                  background-color: $teamIconBackgroundColor;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  &:first-child {
+                    margin-bottom: 16px;
+                  }
+                  .icon {
+                    padding: 16px;
+                    animation: leftRight 2s ease infinite;
+                  }
                 }
               }
             }
@@ -482,4 +495,18 @@
 
 .marginTopDesc {
   margin-top: 12px;
+}
+
+@keyframes leftRight {
+  0% {
+    transform: translateX(-15%);
+  }
+
+  50% {
+    transform: translateX(15%);
+  }
+
+  100% {
+    transform: translateX(-15%);
+  }
 }

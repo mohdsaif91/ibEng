@@ -9,8 +9,8 @@ import city2 from "../../Asset/Img/City Buildings_2.png";
 import city3 from "../../Asset/Img/City Buildings_3.png";
 import upBtn from "../../Asset/Icon/upArrowBlue.png";
 import downBtn from "../../Asset/Icon/downArrowBlue.png";
-import whiteUpArrow from "../../Asset/Icon/whiteUpArrow.png";
-import whiteDownArrow from "../../Asset/Icon/whiteDownArrow.png";
+import whiteUpArrow from "../../Asset/Icon/upAarrowProtfolio.png";
+import whiteDownArrow from "../../Asset/Icon/downArrowProtfolio.png";
 import mobileBackIcon from "../../Asset/Icon/mobileBackIcon.png";
 import { onAuthenticated } from "../../API/Axios";
 import Loading from "../../utils/Loading/Loading";
@@ -284,15 +284,15 @@ function Protfolio() {
                         <div
                           onMouseEnter={() => setUpMouse(true)}
                           onMouseLeave={() => setUpMouse(false)}
-                          className={style.imgContainer}
+                          className={style.iconImgContainer}
+                          onClick={(e) =>
+                            currentProjectIndex === 0
+                              ? e.preventDefault()
+                              : setCurrentProjectIndex((data) => data - 1)
+                          }
                         >
                           <img
-                            src={upMouse ? upBtn : whiteUpArrow}
-                            onClick={(e) =>
-                              currentProjectIndex === 0
-                                ? e.preventDefault()
-                                : setCurrentProjectIndex((data) => data - 1)
-                            }
+                            src={whiteUpArrow}
                             alt="up btn"
                             className={style.arrowBtn}
                           />
@@ -300,18 +300,18 @@ function Protfolio() {
                         <div
                           onMouseEnter={() => setDownMouse(true)}
                           onMouseLeave={() => setDownMouse(false)}
-                          className={style.imgContainer}
+                          className={style.iconImgContainer}
+                          onClick={(e) =>
+                            currentProjectIndex + 1 ===
+                            projectData[projectSelected.projectData || 0]
+                              .imgBackground.length
+                              ? e.preventDefault()
+                              : setCurrentProjectIndex((data) => data + 1)
+                          }
                         >
                           <img
-                            src={downMouse ? downBtn : whiteDownArrow}
+                            src={whiteDownArrow}
                             alt="down  btn"
-                            onClick={(e) =>
-                              currentProjectIndex + 1 ===
-                              projectData[projectSelected.projectData || 0]
-                                .imgBackground.length
-                                ? e.preventDefault()
-                                : setCurrentProjectIndex((data) => data + 1)
-                            }
                             className={style.arrowBtn}
                           />
                         </div>

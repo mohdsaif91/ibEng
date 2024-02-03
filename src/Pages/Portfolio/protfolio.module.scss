@@ -288,15 +288,6 @@
               display: flex;
               align-items: center;
               justify-content: center;
-              .arrowBtn {
-                cursor: pointer;
-                height: 40px;
-                margin-bottom: 4px;
-                @include mobile {
-                  width: 29.379px;
-                  height: 29.379px;
-                }
-              }
             }
           }
         }
@@ -338,4 +329,42 @@
 }
 .textLeft {
   text-align: left !important;
+}
+
+.iconImgContainer {
+  border-radius: 50%;
+  background-color: $whiteColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:first-child {
+    margin-bottom: 8px;
+  }
+  &:hover {
+    background-color: $activePage;
+  }
+  .arrowBtn {
+    cursor: pointer;
+    margin: 24px;
+    animation: leftRight 2s ease infinite;
+    @include mobile {
+      width: 29.379px;
+      height: 29.379px;
+    }
+  }
+}
+
+@keyframes leftRight {
+  0% {
+    transform: translateX(-15%);
+  }
+
+  50% {
+    transform: translateX(15%);
+  }
+
+  100% {
+    transform: translateX(-15%);
+  }
 }

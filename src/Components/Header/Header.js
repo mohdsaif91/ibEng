@@ -167,18 +167,20 @@ function Header() {
               </>
             ))}
       </ul>
-      <select
-        className={style.languageDropdown}
-        defaultValue={i18n.language}
-        onChange={onChangeLang}
-      >
-        <option className={style.langOption} value="en">
-          EN
-        </option>
-        <option className={style.langOption} value="he">
-          HE
-        </option>
-      </select>
+      {!mobile && (
+        <select
+          className={style.languageDropdown}
+          defaultValue={i18n.language}
+          onChange={onChangeLang}
+        >
+          <option className={style.langOption} value="en">
+            EN
+          </option>
+          <option className={style.langOption} value="he">
+            HE
+          </option>
+        </select>
+      )}
       {mobile && (
         <img
           src={navIcon}
@@ -334,6 +336,20 @@ function Header() {
                 )}
               </>
             ))}
+            <li className={`${style.link}`}>
+              <select
+                className={style.languageDropdown}
+                defaultValue={i18n.language}
+                onChange={onChangeLang}
+              >
+                <option className={style.langOption} value="en">
+                  EN
+                </option>
+                <option className={style.langOption} value="he">
+                  HE
+                </option>
+              </select>
+            </li>
           </ul>
         </Animated>
       )}
