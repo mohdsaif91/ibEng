@@ -173,6 +173,7 @@
             align-items: start;
             justify-content: space-between;
             .detailsContainer {
+              width: 440px;
               display: flex;
               justify-content: flex-end;
               flex-direction: column;
@@ -190,22 +191,6 @@
                 }
               }
 
-              .subText {
-                max-width: 449px;
-                margin-bottom: 16px;
-                color: $whiteColor;
-                text-align: right;
-                font-family: Lato;
-                font-size: 18px;
-                line-height: 130%; /* 26px */
-                margin-top: 0;
-                &:last-child {
-                  margin-bottom: 0;
-                }
-                &:nth-child(1) {
-                  margin-top: 32px;
-                }
-              }
               .iconSignatureContainer {
                 display: flex;
                 align-items: center;
@@ -221,21 +206,6 @@
               .btnContainer {
                 position: absolute;
                 margin-left: 456px;
-                .arrowContainer {
-                  height: 56px;
-                  border-radius: 50%;
-                  background-color: $teamIconBackgroundColor;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  &:first-child {
-                    margin-bottom: 16px;
-                  }
-                  .icon {
-                    padding: 16px;
-                    animation: leftRight 2s ease infinite;
-                  }
-                }
               }
             }
           }
@@ -291,7 +261,7 @@
         @include mobile {
           margin-top: -159.9%;
           padding: 24px 8px 0 8px;
-          height: 661px;
+          max-height: 880px;
         }
         @include pixel7 {
           margin-top: -167%;
@@ -318,13 +288,13 @@
         .leaderMobileDiscription {
           padding: 0 22px;
           color: $whiteColor;
-          text-align: center;
+          // text-align: center;
           font-family: Lato;
           font-size: 18px;
           line-height: 130%; /* 26px */
           margin-top: 0;
           @include mobile {
-            text-align: right;
+            // text-align: right;
           }
         }
         .MobileIconSignatureContainer {
@@ -346,16 +316,55 @@
             }
           }
           .mobilBtnContainer {
-            margin-top: 8px;
+            margin: 8px 24px 16px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 16px;
           }
         }
       }
     }
   }
+}
+
+.subText {
+  max-width: 449px;
+  margin-bottom: 16px;
+  color: $whiteColor;
+  // text-align: right;
+  font-family: Lato;
+  font-size: 18px;
+  line-height: 130%; /* 26px */
+  margin-top: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:nth-child(1) {
+    margin-top: 16px;
+  }
+}
+
+.arrowContainer {
+  height: 56px;
+  border-radius: 50%;
+  background-color: $teamIconBackgroundColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:first-child {
+    margin-bottom: 16px;
+  }
+  .icon {
+    padding: 16px;
+    animation: leftRight 2s ease infinite;
+  }
+}
+
+.textLeft {
+  text-align: left;
+}
+.textRight {
+  text-align: right;
 }
 
 .leaderNameLabel {

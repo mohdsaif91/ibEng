@@ -27,6 +27,8 @@ function Team() {
   );
   const { i18n, t } = useTranslation();
 
+  console.log(i18n.language);
+
   return (
     <div className={style.whoWeAreContaineParent}>
       <div className={style.meetOurLeaderContainer}>
@@ -135,9 +137,43 @@ function Team() {
                 </div>
               </div>
               <div
-                className={`${style.leaderMobileDiscription} ${style.subText}`}
+                className={`${style.leaderMobileDiscription} ${style.subText} ${
+                  i18n.language === "en" ? style.textLeft : style.textRight
+                }`}
               >
-                {leaderCount === 0 && (
+                <div className={style.subText}>
+                  {leaderCount === 0 ? (
+                    <>{t("leaderTextOne")}</>
+                  ) : leaderCount === 1 ? (
+                    <>{t("leaderTextTwoOne")}</>
+                  ) : (
+                    <>{t("leaderTextThreeOne")}</>
+                  )}
+                </div>
+                <div className={style.subText}>
+                  {leaderCount === 0 ? (
+                    <>{t("leaderTextTwo")}</>
+                  ) : leaderCount === 1 ? (
+                    <>{t("leaderTextTwoTwo")}</>
+                  ) : (
+                    <>{t("leaderTextThreeTwo")}</>
+                  )}
+                </div>
+                <div className={style.subText}>
+                  {leaderCount === 0 ? (
+                    <>{t("leaderTextThree")}</>
+                  ) : leaderCount === 1 ? (
+                    <>{t("leaderTextTwoThree")}</>
+                  ) : (
+                    <>{t("leaderTextThreeThree")}</>
+                  )}
+                </div>
+                {leaderCount === 2 && (
+                  <div className={style.subText}>
+                    {t("leaderTextThreeFour")}
+                  </div>
+                )}
+                {/* {leaderCount === 0 && (
                   <>
                     <span>
                       עלאא בשארה, מנהל מחלקת פיתוח עסקי ב-איי.ביי הנדסה.
@@ -195,7 +231,7 @@ function Team() {
                       מעלה כל פרויקט לשיאים חדשים של מצוינות יצירתיות וחדשנות.
                     </div>
                   </>
-                )}
+                )} */}
               </div>
               <div className={style.MobileIconSignatureContainer}>
                 <div className={style.mobileOgSignatureContainer}>

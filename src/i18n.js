@@ -139,6 +139,10 @@ i18n.use(initReactI18next).init({
         contactUsSubmitBtnSuccess: "Sent",
         mobileValidationMsg: "Not a valid Mobile number",
         emptyMobileNumber: "Mobile number is required",
+        meetingTime: "Activity Time:",
+        meetingTimeText: `Monday - Friday: 8:00 AM - 16:00 PM`,
+        followMsg:
+          "Follow us on social media to stay updated on our latest projects:",
       },
     },
     // send footer btn שלח
@@ -269,6 +273,10 @@ i18n.use(initReactI18next).init({
         contactUsSubmitBtnSuccess: "נשלח",
         mobileValidationMsg: "לא מספר נייד חוקי",
         emptyMobileNumber: "נדרש מספר נייד",
+        meetingTime: ":שעות פעילות",
+        meetingTimeText: `PM 16:00 -AM 8:00:שני - שישי`,
+        followMsg:
+          ":עקבו אחרינו ברשתות החברתיות כדי להישאר מעודכנים בפרויקטים האחרונים שלנו",
       },
     },
   },

@@ -10,6 +10,8 @@ import instagram from "../../Asset/Icon/Instagram.png";
 import mobile from "../../Asset/Icon/mobile.png";
 import mail from "../../Asset/Icon/mail.png";
 import map from "../../Asset/Icon/map.png";
+import MettingPeople from "../../Asset/Icon/MeetingTime.png";
+import SearchChat from "../../Asset/Icon/SearchChat.png";
 import cityBuldg from "../../Asset/Img/City Buildings.png";
 import cityBuldgMobile from "../../Asset/Img/City BuildingsMobile.png";
 import { validateEmail, validateMobile } from "../../utils";
@@ -319,6 +321,38 @@ function ContactUs() {
                     {t("officeAddressValue")}
                     {i18n.language === "he" && t("officeLabel")}
                   </label>
+                </div>
+                <div
+                  className={`${style.iconLabelContainer} ${
+                    i18n.language === "he" && style.leftToRight
+                  }`}
+                >
+                  <img
+                    src={MettingPeople}
+                    alt="MettingPeople"
+                    className={`${style.detialsIcon} ${
+                      i18n.language === "he" && style.marginLeft
+                    }`}
+                  />
+                  <label className={style.detialsLabel}>
+                    {i18n.language === "en" && t("meetingTime")}
+                    {t("meetingTimeText")}
+                    {i18n.language === "he" && t("meetingTime")}
+                  </label>
+                </div>
+                <div
+                  className={`${style.iconLabelContainer} ${
+                    i18n.language === "he" && style.leftToRight
+                  }`}
+                >
+                  <img
+                    src={SearchChat}
+                    alt="SearchChat"
+                    className={`${style.detialsIcon} ${
+                      i18n.language === "he" && style.marginLeft
+                    }`}
+                  />
+                  <label className={style.detialsLabel}>{t("followMsg")}</label>
                 </div>
                 <div className={style.detialsSubText}>
                   {t("socialMediaLabel")}
