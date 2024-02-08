@@ -70,7 +70,7 @@ function Team() {
         {isMobile ? (
           <div className={style.mobileLeaderContainer}>
             <img
-              src={project2_5}
+              src={leaderData[leaderCount].backgroundImg2}
               alt="bcakground"
               className={style.mobileBackgroundImage}
             />
@@ -173,65 +173,6 @@ function Team() {
                     {t("leaderTextThreeFour")}
                   </div>
                 )}
-                {/* {leaderCount === 0 && (
-                  <>
-                    <span>
-                      עלאא בשארה, מנהל מחלקת פיתוח עסקי ב-איי.ביי הנדסה.
-                    </span>
-                    <div className={style.marginTopDesc}>
-                      {" "}
-                      בעל רקע לימודי מגוון הכולל תואר ראשון במשפטים ומנהל עסקים
-                      מאוניברסיטת רייכמן ותואר שני במנהל עסקים בהתמחות בנדל"ן
-                      ושמאות, עלאא מביא לצוות שילוב מיומנויות ייחודי.
-                    </div>
-                    <div className={style.marginTopDesc}>
-                      {" "}
-                      כמייסד סדרתי, יזם וסמנכ"ל מכירות, הוא שיחק תפקידים מרכזיים
-                      במספר חברות מצליחות. מנהיגותו בעלת החזון וניסיונו הרב
-                      תורמים באופן משמעותי לצמיחתה והצלחתה של איי.ביי הנדסה
-                    </div>
-                  </>
-                )}
-                {leaderCount === 1 && (
-                  <>
-                    <span>
-                      מומחד הוא כוכב עולה ב-איי.ביי הנדסה. החל כמתמחה, היום הוא
-                      מהנדס רשוי, הוא חידד את כישוריו בהנחיית המייסד שלנו.
-                    </span>
-                    <div className={style.marginTopDesc}>
-                      {" "}
-                      האנרגיה הצעירה שלו וניסיונו הרב מניעים את המחויבות של
-                      מחלקת התכנון שלנו למצוינות, ומבטיחים שכל פרויקט מתוכנן
-                      בקפידה ומבוצע בדייקנות.
-                    </div>
-                    <div className={style.marginTopDesc}>
-                      {" "}
-                      המנהיגות בעלת החזון והגישה השיתופית של מוחמד נותנת השראה
-                      לצוות שלנו להגיע לשיאים חדשים בעולם תכנון הבנייה.
-                    </div>
-                  </>
-                )}
-                {leaderCount === 2 && (
-                  <>
-                    <span>
-                      בתור המנהיגה המסורה של מחלקת עיצוב הפנים שלנורואן בשארה
-                      סבאח מביאה שפע של מומחיות ל איי.
-                    </span>
-                    <div className={style.marginTopDesc}>
-                      ביי הנדסה,בוגרת מכובדת של הטכניון, בעלת תואר בהנדסה
-                      אזרחית,
-                    </div>
-                    <div className={style.marginTopDesc}>
-                      מתמחה במבנים ותעודה בעיצוב פנים,רואן היא מהנדסת רשומה משנת
-                      2009.
-                    </div>
-                    <div className={style.marginTopDesc}>
-                      {" "}
-                      עם ניסיון של למעלה מ-15 שנים, התשוקה של רואן לאמנות, אופנה
-                      מעלה כל פרויקט לשיאים חדשים של מצוינות יצירתיות וחדשנות.
-                    </div>
-                  </>
-                )} */}
               </div>
               <div className={style.MobileIconSignatureContainer}>
                 <div className={style.mobileOgSignatureContainer}>

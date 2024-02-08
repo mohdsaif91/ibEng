@@ -263,6 +263,12 @@
           padding: 24px 8px 0 8px;
           max-height: 880px;
         }
+        @include samsungS8 {
+          margin-top: -190.9%;
+        }
+        @include iPhone12Pro {
+          margin-top: -175.9%;
+        }
         @include pixel7 {
           margin-top: -167%;
         }

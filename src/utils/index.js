@@ -55,6 +55,9 @@ import client3 from "../Asset/Img/client3.png";
 import client4 from "../Asset/Img/client4.png";
 import client5 from "../Asset/Img/client5.png";
 import client6 from "../Asset/Img/client6.png";
+import leaderOneBackground from "../Asset/Img/mobileTeamone.png";
+import leaderTwoBackground from "../Asset/Img/mobileTeamtwo.png";
+import leaderThreeBackground from "../Asset/Img/mobileteamthree.png";
 
 export const pageRoutesEng = [
   {
@@ -224,6 +227,7 @@ export const leaderData = [
     ],
     img: leader1,
     backgroundImg: leader1Bg,
+    backgroundImg2: leaderOneBackground,
     signature: `${(
       <div className="dflex_center">
         <img src={signature1_1} alt="sig1" />
@@ -242,6 +246,7 @@ export const leaderData = [
       "Mohammad's visionary leadership and collaborative. Approach inspire our team to achieve new heights in the world of construction planning.",
     ],
     backgroundImg: leader2Bg,
+    backgroundImg2: leaderTwoBackground,
     img: leader2,
     signature: `${(
       <div className="">
@@ -262,6 +267,7 @@ export const leaderData = [
       "Rawan's passion for art, fashion, and a discerning taste infuse her work with creativity and innovation, elevating every project to new heights of excellence.",
     ],
     backgroundImg: leader3Bg,
+    backgroundImg2: leaderThreeBackground,
     img: leader3,
     signature: `${(
       <div className="">
