@@ -143,6 +143,7 @@ i18n.use(initReactI18next).init({
         meetingTimeText: `Monday - Friday: 8:00 AM - 16:00 PM`,
         followMsg:
           "Follow us on social media to stay updated on our latest projects:",
+        languageLabel: "Select Language",
       },
     },
     // send footer btn שלח
@@ -277,6 +278,7 @@ i18n.use(initReactI18next).init({
         meetingTimeText: `PM 16:00 -AM 8:00:שני - שישי`,
         followMsg:
           ":עקבו אחרינו ברשתות החברתיות כדי להישאר מעודכנים בפרויקטים האחרונים שלנו",
+        languageLabel: "בחר שפה",
       },
     },
   },

@@ -347,7 +347,7 @@
   .arrowBtn {
     cursor: pointer;
     margin: 24px;
-    animation: leftRight 2s ease infinite;
+    animation: topBottom 2s ease infinite;
     @include mobile {
       width: 29.379px;
       height: 29.379px;
@@ -355,16 +355,16 @@
   }
 }
 
-@keyframes leftRight {
+@keyframes topBottom {
   0% {
-    transform: translateX(-15%);
+    transform: translateY(-30%);
   }
 
   50% {
-    transform: translateX(15%);
+    transform: translateY(30%);
   }
 
   100% {
-    transform: translateX(-15%);
+    transform: translateY(-30%);
   }
 }

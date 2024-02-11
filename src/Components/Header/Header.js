@@ -4,16 +4,15 @@ import { Animated } from "react-animated-css";
 import { useTranslation } from "react-i18next";
 
 import Logo from "../../Asset/Icon/logo.png";
-import {
-  adminRoutes,
-  pageRoutes,
-  pageRoutesEng,
-  pageRoutesHebrew,
-} from "../../utils";
+import { adminRoutes, pageRoutesEng, pageRoutesHebrew } from "../../utils";
 import navIcon from "../../Asset/Icon/navIcon.png";
 import mobileIcon1 from "../../Asset/Icon/mobileLogo1.png";
 import mobileIcon2 from "../../Asset/Icon/mobileLogo2.png";
 import closeIcon from "../../Asset/Icon/close.png";
+import englishIcon from "../../Asset/Icon/eng.png";
+import hebrewIcon from "../../Asset/Icon/he.png";
+import worldIcon from "../../Asset/Icon/worldIcon.png";
+import lngDownArrow from "../../Asset/Icon/languageIcon.png";
 
 import style from "./header.module.scss";
 
@@ -24,6 +23,7 @@ function Header() {
       navigator.userAgent.indexOf("Mobi") > -1
   );
   const [openNavDrawer, setOpenNavDrawer] = useState(false);
+  const [openLang, setOpenLng] = useState(false);
 
   const { i18n, t } = useTranslation();
 
@@ -31,7 +31,7 @@ function Header() {
   const location = useLocation();
 
   const onChangeLang = (e) => {
-    i18n.changeLanguage(e.target.value);
+    i18n.changeLanguage(e);
   };
 
   const pageRoutes = i18n.language === "he" ? pageRoutesHebrew : pageRoutesEng;
@@ -56,6 +56,79 @@ function Header() {
           <img src={Logo} alt="" className={style.logo} />
         )}
       </div>
+      {!mobile && (
+        <div
+          className={style.languageSelectLabel}
+          onClick={() => setOpenLng((state) => !state)}
+          onBlur={() => setOpenLng(false)}
+        >
+          <div className={style.parentLabel}>
+            <img src={worldIcon} className={style.langIconParent} />
+            <div className={style.label}>{t("languageLabel")}</div>
+            <img src={lngDownArrow} className={style.dropDownIcon} />
+          </div>
+          {openLang && (
+            <Animated
+              animationIn="fadeInDown"
+              isVisible={openLang}
+              animationInDuration={1000}
+              className={`${style.lngOptionContainer} ${
+                i18n.language === "he" && style.rmLeftMargin
+              }`}
+            >
+              <li
+                className={`${style.langOption} ${
+                  i18n.language === "en" && style.langActive
+                }`}
+                value="en"
+                onClick={() => onChangeLang("en")}
+              >
+                <div
+                  className={`${i18n.language === "en" && style.langActive} ${
+                    style.langLiItem
+                  }`}
+                >
+                  English
+                  <img src={englishIcon} className={style.langIcon} />
+                </div>
+              </li>
+              <li
+                className={`${style.langOption} ${
+                  i18n.language === "he" && style.langActive
+                }`}
+                value="he"
+                onClick={() => onChangeLang("he")}
+              >
+                <div
+                  className={`${i18n.language === "en" && style.langActive} ${
+                    style.langLiItem
+                  }`}
+                >
+                  Hebrew
+                  <img src={hebrewIcon} className={style.langIcon} />
+                </div>
+              </li>
+            </Animated>
+          )}
+        </div>
+        // <select
+        //   className={style.languageDropdown}
+        //   defaultValue={i18n.language}
+        //   onChange={onChangeLang}
+        // >
+        //   <option className={style.langOption}>
+        //     <img src={worldIcon} className={style.langIcon} />
+        //     Select Language
+        //   </option>
+        //   <option className={style.langOption} value="en">
+        //     English
+        //     <img src={englishIcon} className={style.langIcon} />
+        //   </option>
+        //   <option className={style.langOption} value="he">
+        //     Hebrew <img src={hebrewIcon} className={style.langIcon} />
+        //   </option>
+        // </select>
+      )}
       <ul className={`${style.pageLinks} ${mobile && style.hidePageRoutes}`}>
         {location.pathname.includes("admin")
           ? adminRoutes.map((m) => (
@@ -167,20 +240,7 @@ function Header() {
               </>
             ))}
       </ul>
-      {!mobile && (
-        <select
-          className={style.languageDropdown}
-          defaultValue={i18n.language}
-          onChange={onChangeLang}
-        >
-          <option className={style.langOption} value="en">
-            EN
-          </option>
-          <option className={style.langOption} value="he">
-            HE
-          </option>
-        </select>
-      )}
+
       {mobile && (
         <img
           src={navIcon}

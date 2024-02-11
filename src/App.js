@@ -139,7 +139,9 @@ function App() {
           }
         />
       </Routes>
-      {!pathname.includes("admin") && <Footer />}
+      {!pathname.includes("admin") && !pathname.includes("getInTouch") && (
+        <Footer />
+      )}
     </div>
   );
 }
