@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Animated } from "react-animated-css";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import TextInput from "../../Components/Input/TextInput";
 import MailIcon from "../../Asset/Icon/mainIcon.png";
@@ -17,9 +18,12 @@ import cityBuldgMobile from "../../Asset/Img/City BuildingsMobile.png";
 import { validateEmail, validateMobile } from "../../utils";
 import { onAuthenticated } from "../../API/Axios";
 import { apiV1 } from "../../API/apiList";
+import Button from "../../Components/Button/Button";
+import Confirm from "../../Asset/Img/confirm.png";
+import Logo from "../../Asset/Icon/logo.png";
+import CloseIcon from "../../Asset/Icon/CloseWindow.png";
 
 import style from "./contactUs.module.scss";
-import Button from "../../Components/Button/Button";
 
 const initialFormData = {
   name: "",
@@ -44,6 +48,9 @@ function ContactUs() {
   const [formError, setFormError] = useState("");
   const [pageLoading, setPageLoading] = useState(false);
   const [btnResponse, setBtnResponse] = useState(false);
+  const [thankYou, setThankyou] = useState(true);
+
+  const navigate = useNavigate();
 
   const { i18n, t } = useTranslation();
 
@@ -78,6 +85,7 @@ function ContactUs() {
           console.log(err);
         });
     }
+    setThankyou(true);
   };
 
   return (
@@ -422,12 +430,45 @@ function ContactUs() {
                 >
                   {t("contactUsBtnText")}
                 </button>
-                <div className={style.greyTextContainer}>
-                  {t("allRightsReserved")}
-                </div>
               </div>
             </Animated>
           )}
+        </>
+      )}
+      <div
+        className={`${style.greyTextContainer} ${contactForm && style.mt24}`}
+      >
+        {t("allRightsReserved")}
+      </div>
+      {thankYou && (
+        <>
+          <div className={style.thankYouContainerParent}>
+            <div className={style.cloIconContainer}>
+              <img
+                src={CloseIcon}
+                alt=""
+                onClick={() => setThankyou(false)}
+                className={style.closeIcon}
+              />
+            </div>
+            <div className={style.confirmationBox}>
+              <img
+                src={Confirm}
+                alt="confirm"
+                className={style.rightTickIcon}
+              />
+              <label className={style.confrimTitle}>Thank You!</label>
+              <p className={style.confirmSubTitle}>
+                We received your request. We’ll get back to you soon!
+              </p>
+              <img src={Logo} alt="logo" className={style.logo} />
+              <Button
+                label="Get back to Home Page"
+                onClick={() => navigate("/")}
+                className={style.homeBtn}
+              />
+            </div>
+          </div>
         </>
       )}
     </div>

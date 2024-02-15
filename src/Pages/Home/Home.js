@@ -112,12 +112,9 @@ function Home() {
           }}
         >
           <source
-            // src={localHeroVideo}
             src="https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo+(1).mp4"
             type="video/mp4"
           />
-
-          {/* <source src={heroVideo} type="video/mp4" /> */}
         </video>
         <div className={style.hero1imgOverlay} />
         <div
@@ -140,10 +137,14 @@ function Home() {
           >
             <div
               className={`${style.detialsContainer} ${
-                containerOne ? style.slide_out : style.slide_in
+                i18n.language === "he" ? style.reverseCol : style.forwardCol
               }`}
             >
-              <div className={style.imageTextContainer}>
+              <div
+                className={`${style.imageTextContainer} ${
+                  containerOne ? style.slide_out : style.slide_in
+                } `}
+              >
                 <Animated
                   animationIn="slideInLeft"
                   animationOut="fadeOut"
@@ -296,12 +297,12 @@ function Home() {
                 : `${style.defaultContainerTwo}`
             } `}
           >
-            <div
-              className={`${style.detialsContainer}  ${
-                containerTwo ? style.slide_in2 : style.slide_out2
-              }`}
-            >
-              <div className={style.imageTextContainer}>
+            <div className={`${style.detialsContainer} `}>
+              <div
+                className={`${style.imageTextContainer}  ${
+                  containerTwo ? style.slide_in2 : style.slide_out2
+                } `}
+              >
                 <Animated
                   animationIn="slideInLeft"
                   isVisible={missionAnim}

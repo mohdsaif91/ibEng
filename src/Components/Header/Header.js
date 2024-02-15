@@ -111,23 +111,6 @@ function Header() {
             </Animated>
           )}
         </div>
-        // <select
-        //   className={style.languageDropdown}
-        //   defaultValue={i18n.language}
-        //   onChange={onChangeLang}
-        // >
-        //   <option className={style.langOption}>
-        //     <img src={worldIcon} className={style.langIcon} />
-        //     Select Language
-        //   </option>
-        //   <option className={style.langOption} value="en">
-        //     English
-        //     <img src={englishIcon} className={style.langIcon} />
-        //   </option>
-        //   <option className={style.langOption} value="he">
-        //     Hebrew <img src={hebrewIcon} className={style.langIcon} />
-        //   </option>
-        // </select>
       )}
       <ul className={`${style.pageLinks} ${mobile && style.hidePageRoutes}`}>
         {location.pathname.includes("admin")
@@ -163,12 +146,14 @@ function Header() {
                         location.pathname === "/team") &&
                       style.activePage
                     } ${style.withIcon}`}
+                    onMouseEnter={() => setOpenDrawer(true)}
+                    onMouseLeave={() => setOpenDrawer(false)}
                     key={m.id}
                   >
                     <div className={style.dropDownList}>
-                      {m.label}
+                      <div>{m.label}</div>
                       {m.icon && !openDrawer && (
-                        <span
+                        <div
                           className={style.iconMarginLeft}
                           onClick={() => setOpenDrawer(true)}
                         >
@@ -184,13 +169,10 @@ function Header() {
                               fill="#BBC4D0"
                             />
                           </svg>
-                        </span>
+                        </div>
                       )}
                       {m.icon && openDrawer && (
-                        <span
-                          className={style.iconMarginLeft}
-                          onClick={() => setOpenDrawer(false)}
-                        >
+                        <span className={style.iconMarginLeft}>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="28"
@@ -206,35 +188,37 @@ function Header() {
                         </span>
                       )}
                     </div>
-                    {/* {openDrawer && ( */}
-                    <Animated
-                      animationIn="fadeInDown"
-                      // isVisible={openDrawer}
-                      animationInDuration={1000}
-                      className={style.DrawerOpen}
-                    >
-                      <div
-                        className={style.subLinks}
-                        onClick={() => {
-                          navigate("/missionAndVision");
-                        }}
+                    {openDrawer && (
+                      <Animated
+                        animationIn="fadeInDown"
+                        isVisible={openDrawer}
+                        animationInDuration={1000}
+                        className={style.DrawerOpen}
                       >
-                        {t("missionVission")}
-                      </div>
-                      <div
-                        className={style.subLinks}
-                        onClick={() => navigate("/theMindBehind")}
-                      >
-                        {t("theBrainBehind")}
-                      </div>
-                      <div
-                        className={style.subLinks}
-                        onClick={() => navigate("/team")}
-                      >
-                        {t("meetTheLeaders")}
-                      </div>
-                    </Animated>
-                    {/* )} */}
+                        <div onMouseEnter={() => setOpenDrawer(true)}>
+                          <div
+                            className={style.subLinks}
+                            onClick={() => {
+                              navigate("/missionAndVision");
+                            }}
+                          >
+                            {t("missionVission")}
+                          </div>
+                          <div
+                            className={style.subLinks}
+                            onClick={() => navigate("/theMindBehind")}
+                          >
+                            {t("theBrainBehind")}
+                          </div>
+                          <div
+                            className={style.subLinks}
+                            onClick={() => navigate("/team")}
+                          >
+                            {t("meetTheLeaders")}
+                          </div>
+                        </div>
+                      </Animated>
+                    )}
                   </li>
                 )}
               </>

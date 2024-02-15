@@ -85,24 +85,6 @@
           font-size: 18px;
         }
       }
-      .greyTextContainer {
-        margin-top: 128px;
-        width: 100%;
-        height: 88px;
-        background: $footerbackgroundColor;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-family: Roboto;
-        font-size: 22px;
-        line-height: 120%; /* 26.4px */
-        @include mobile {
-          font-size: 14px;
-          margin-top: 159px;
-          height: 40px;
-        }
-      }
     }
   }
   .outerContainer {
@@ -340,4 +322,90 @@
   color: red;
   text-align: center;
   margin-top: 8px;
+}
+
+.mt24 {
+  margin-top: 23px;
+}
+
+.thankYouContainerParent {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 200ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .cloIconContainer {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    .closeIcon {
+      z-index: 999;
+      cursor: pointer;
+    }
+  }
+  .confirmationBox {
+    margin-top: 5%;
+    background-color: $whiteColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 640px;
+    height: 360px;
+    .rightTickIcon {
+      position: relative;
+      margin-top: -188px;
+      width: 195px;
+      height: 195px;
+    }
+    .confrimTitle {
+      margin-top: 24px;
+      font-size: 48px;
+      color: $confirmMainTextColor;
+      font-weight: 600;
+    }
+    .confirmSubTitle {
+      margin-top: 40px;
+      font-size: 22px;
+      width: 428px;
+      text-align: center;
+    }
+    .logo {
+      margin-top: 24px;
+    }
+    .homeBtn {
+      width: 80%;
+      height: 40px;
+      background-color: $learnMoreColor;
+      color: $whiteColor;
+      border: none;
+      position: relative;
+      margin-bottom: -110px;
+    }
+  }
+}
+
+.greyTextContainer {
+  width: 100%;
+  height: 88px;
+  color: $whiteColor;
+  background: $footerbackgroundColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 22px;
+  line-height: 120%; /* 26.4px */
+  @include mobile {
+    font-size: 14px;
+    margin-top: 159px;
+    height: 40px;
+  }
 }

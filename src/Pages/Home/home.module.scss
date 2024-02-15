@@ -1,5 +1,14 @@
 @import "../../variable.module.scss";
 
+.reverseCol {
+  flex-direction: row-reverse;
+  align-items: end;
+}
+.forwardCol {
+  flex-direction: row;
+  align-items: start;
+}
+
 .homeContainer {
   .heroContainer {
     .firstHeroImg {
@@ -19,7 +28,7 @@
         align-items: end;
         justify-content: space-between;
         // position: relative;
-        padding: 0 56px 40px 56px;
+        padding: 40px 56px 40px 56px;
         @include mobile {
           padding: 0 24px 40px 24px;
         }
@@ -28,7 +37,7 @@
           width: 92%;
           display: flex;
           flex-direction: column;
-          align-items: center;
+
           .mainHeading {
             color: $headerColor;
             font-size: 80px;
@@ -44,7 +53,7 @@
             color: $whiteColor;
             font-size: 20px;
             max-width: 800px;
-            text-align: center;
+            text-align: left;
             margin-bottom: 12px;
             line-height: 120%; /* 31.2px */
             transition-delay: 500ms;
@@ -297,7 +306,7 @@
   position: relative;
   bottom: 543px;
   margin-bottom: -522px;
-  background: linear-gradient(6deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
 }
 
 .client_cards {
@@ -395,11 +404,11 @@
 }
 
 .slide_in2 {
-  animation: slide-in2 0.5s forwards;
+  animation: slide-in2 1.5s forwards;
 }
 
 .slide_out2 {
-  animation: slide-out2 0.5s forwards;
+  animation: slide-out2 1.5s forwards;
 }
 
 @keyframes slide-in2 {
