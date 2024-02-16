@@ -45,9 +45,8 @@ i18n.use(initReactI18next).init({
         missionTextOne:
           "At IB Engineering, our mission is to serve as your comprehensive partner in construction, offering a full spectrum of services that seamlessly guide your projects from inception to realization. We embark on this mission by beginning with thorough land assessment, ensuring that your chosen site aligns perfectly with your vision",
         missionTextTwo:
-          "From there, our dedicated team employs the latest advancements in technology to craft meticulous plans that optimize efficiency and precision.",
-        missionTextThree: `Our commitment extends beyond the drawing board, we actively manage every aspect of your project,
-        keeping a keen eye on both construction and operational elements.`,
+          "We embark on this mission by beginning with thorough land assessment, ensuring that your chosen site aligns perfectly with your vision. From there, our dedicated team employs the latest advancements in technology to craft meticulous plans that optimize efficiency and precision.",
+        missionTextThree: `Our commitment extends beyond the drawing board, we actively manage every aspect of your project, keeping a keen eye on both construction and operational elements.`,
         missonTextFour:
           "At IB Engineering, we take immense pride in offering personalized service and expertise tailored to your unique needs. Whether you aspire to build a new home, breathe new life into an existing structure or embark on a commercial venture, we are your perfect partner, ready to transform your construction dreams into reality",
         whatWeDoTitleOne: "Build.",

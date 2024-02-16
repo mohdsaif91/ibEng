@@ -268,6 +268,60 @@ function Header() {
             />
           </div>
           <ul className={`${style.pageLinks}`}>
+            <div
+              className={style.languageSelectLabel}
+              onClick={() => setOpenLng((state) => !state)}
+              onBlur={() => setOpenLng(false)}
+            >
+              <div className={style.parentLabel}>
+                <img src={worldIcon} className={style.langIconParent} />
+                <div className={style.label}>{t("languageLabel")}</div>
+                <img src={lngDownArrow} className={style.dropDownIcon} />
+              </div>
+              {openLang && (
+                <Animated
+                  animationIn="fadeInDown"
+                  isVisible={openLang}
+                  animationInDuration={1000}
+                  className={`${style.lngOptionContainer} ${
+                    i18n.language === "he" && style.rmLeftMargin
+                  }`}
+                >
+                  <li
+                    className={`${style.langOption} ${
+                      i18n.language === "en" && style.langActive
+                    }`}
+                    value="en"
+                    onClick={() => onChangeLang("en")}
+                  >
+                    <div
+                      className={`${
+                        i18n.language === "en" && style.langActive
+                      } ${style.langLiItem}`}
+                    >
+                      English
+                      <img src={englishIcon} className={style.langIcon} />
+                    </div>
+                  </li>
+                  <li
+                    className={`${style.langOption} ${
+                      i18n.language === "he" && style.langActive
+                    }`}
+                    value="he"
+                    onClick={() => onChangeLang("he")}
+                  >
+                    <div
+                      className={`${
+                        i18n.language === "en" && style.langActive
+                      } ${style.langLiItem}`}
+                    >
+                      Hebrew
+                      <img src={hebrewIcon} className={style.langIcon} />
+                    </div>
+                  </li>
+                </Animated>
+              )}
+            </div>
             {pageRoutes.map((m) => (
               <>
                 {!m.icon ? (
@@ -380,7 +434,8 @@ function Header() {
                 )}
               </>
             ))}
-            <li className={`${style.link}`}>
+
+            {/* <li className={`${style.link}`}>
               <select
                 className={style.languageDropdown}
                 defaultValue={i18n.language}
@@ -393,7 +448,7 @@ function Header() {
                   HE
                 </option>
               </select>
-            </li>
+            </li> */}
           </ul>
         </Animated>
       )}

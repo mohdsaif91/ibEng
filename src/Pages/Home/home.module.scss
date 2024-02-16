@@ -9,6 +9,27 @@
   align-items: start;
 }
 
+.hewText {
+  text-align: center;
+}
+
+.engText {
+  text-align: left;
+}
+
+.icon180 {
+  transform: rotate(180deg);
+}
+
+.maxWidth {
+  max-width: 800px;
+}
+
+.hewItem {
+  justify-content: center;
+  align-items: center;
+}
+
 .homeContainer {
   .heroContainer {
     .firstHeroImg {
@@ -44,7 +65,7 @@
             font-weight: 800;
             letter-spacing: 6.8px;
             margin-bottom: 18px;
-            text-align: center;
+
             @include mobile {
               font-size: 26px;
             }
@@ -52,11 +73,12 @@
           .imageDescription {
             color: $whiteColor;
             font-size: 20px;
-            max-width: 800px;
-            text-align: left;
+            // max-width: 100%;
             margin-bottom: 12px;
             line-height: 120%; /* 31.2px */
             transition-delay: 500ms;
+            display: flex;
+            flex-direction: column;
             @include mobile {
               font-size: 15px;
             }
@@ -70,6 +92,7 @@
             }
             .moreTextSubText {
               margin-bottom: 24px;
+              max-width: 800px;
               &:first-child {
                 margin-top: 16px;
               }
@@ -122,6 +145,9 @@
           bottom: 3px;
           color: $blackColor;
           background: none;
+        }
+        @include largeDesktop {
+          bottom: 761px;
         }
         .serviceHeading {
           text-align: center;
@@ -325,11 +351,11 @@
 
 .hero1imgOverlay {
   position: relative;
-  // background: rgba(0, 0, 0, 0.3);
   height: 855px;
   width: 100%;
   margin-top: -858px;
   @include mobile {
+    display: none;
     height: 242px;
     margin-top: -244px;
     z-index: 99;
@@ -364,7 +390,6 @@
 }
 .showMoreContainer {
   display: flex;
-  align-items: center;
   flex-direction: column;
   justify-content: center;
 }
@@ -404,11 +429,11 @@
 }
 
 .slide_in2 {
-  animation: slide-in2 1.5s forwards;
+  animation: slide-in2 0.5s forwards;
 }
 
 .slide_out2 {
-  animation: slide-out2 1.5s forwards;
+  animation: slide-out2 0.5s forwards;
 }
 
 @keyframes slide-in2 {

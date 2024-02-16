@@ -130,7 +130,7 @@
 }
 
 .mobileNavDrawer {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -177,6 +177,9 @@
 }
 
 .languageSelectLabel {
+  @include mobile {
+    margin-bottom: 32px;
+  }
   .parentLabel {
     cursor: pointer;
     display: flex;
@@ -231,4 +234,7 @@
 }
 .rmLeftMargin {
   margin-left: 0 !important;
+  @include mobile {
+    margin-left: -32px !important;
+  }
 }

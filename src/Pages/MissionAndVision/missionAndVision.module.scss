@@ -30,6 +30,11 @@
         @include s20Ultra {
           margin-top: -51%;
         }
+        @include largeDesktop {
+          height: 499px;
+          margin-bottom: -249px;
+          bottom: 500px;
+        }
       }
       .heroImg {
         width: 100%;

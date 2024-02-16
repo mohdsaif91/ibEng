@@ -125,6 +125,9 @@
             width: 275px;
             height: 236px;
           }
+          &:after {
+            box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
+          }
         }
         .imgOverLay {
           position: relative;

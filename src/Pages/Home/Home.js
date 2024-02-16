@@ -152,15 +152,31 @@ function Home() {
                   animationInDelay={500}
                   animationInDuration={1000}
                 >
-                  <h1 className={style.mainHeading}> {t("homeVisionTitle")}</h1>
+                  <h1
+                    className={`${style.mainHeading} ${
+                      i18n.language === "he" ? style.hewText : style.engText
+                    }`}
+                  >
+                    {t("homeVisionTitle")}
+                  </h1>
                 </Animated>
-                <div className={`${style.imageDescription}`}>
+                <div
+                  className={`${style.imageDescription}  ${
+                    i18n.language === "he" && style.hewItem
+                  }`}
+                >
                   <Animated
                     animationIn="slideInRight"
                     animationOut="fadeOut"
                     isVisible={visionAnim}
                     animationInDelay={500}
                     animationInDuration={1000}
+                    className={`${style.maxWidth}
+                      ${
+                        i18n.language === "he"
+                          ? `${style.hewText} `
+                          : style.engText
+                      }`}
                   >
                     {i18n.language === "he" ? (
                       <>
@@ -188,23 +204,47 @@ function Home() {
                     <React.Fragment>
                       {i18n.language === "he" ? (
                         <React.Fragment>
-                          <div className={style.moreTextSubText}>
+                          <div
+                            className={`${style.moreTextSubText} ${
+                              i18n.language === "he"
+                                ? style.hewText
+                                : style.engText
+                            }`}
+                          >
                             צוות המקצוענים שלנו עומד לרשותכם בכל שלב, ומספק
                             פתרונות הנדסיים מותאמים ויצירתיים העונים על הצרכים
                             הספציפיים שלכם
                           </div>
-                          <div className={style.moreTextSubText}>
+                          <div
+                            className={`${style.moreTextSubText} ${
+                              i18n.language === "he"
+                                ? style.hewText
+                                : style.engText
+                            }`}
+                          >
                             אנו מחויבים להישאר מעודכנים בטכנולוגיה העדכנית ביותר
                             ולהשתמש בכלים מתקדמים כמו Building Information
                             Modeling (BIM) כדי לייעל את תהליך הבנייה ולהגביר את
                             היעילות
                           </div>
-                          <div className={style.moreTextSubText}>
+                          <div
+                            className={`${style.moreTextSubText} ${
+                              i18n.language === "he"
+                                ? style.hewText
+                                : style.engText
+                            }`}
+                          >
                             הגישה שלנו מתמקדת במציאת פתרונות יצירתיים המייעלים
                             הן את ההיבטים הבנייה והן התפעוליים של כל פרויקט,
                             ובסופו של דבר חוסכים ללקוחותינו זמן וכסף
                           </div>
-                          <div className={style.moreTextSubText}>
+                          <div
+                            className={`${style.moreTextSubText} ${
+                              i18n.language === "he"
+                                ? style.hewText
+                                : style.engText
+                            }`}
+                          >
                             ב-איי.ביי הנדסה, אנו גאים ביכולתנו לספק שירות מקיף
                             ומותאם אישית לכל אחד ואחת מלקוחותינו. בין אם אתם
                             מחפשים לבנות בית חדש, לשפץ בניין קיים או לבצע פרויקט
@@ -213,12 +253,24 @@ function Home() {
                         </React.Fragment>
                       ) : (
                         <React.Fragment>
-                          <div className={style.moreTextSubText}>
+                          <div
+                            className={`${style.moreTextSubText} ${
+                              i18n.language === "he"
+                                ? style.hewText
+                                : style.engText
+                            }`}
+                          >
                             Our team of professionals is there for you every
                             step of the way, providing customized and creative
                             engineering solutions that meet your specific needs.
                           </div>
-                          <div className={style.moreTextSubText}>
+                          <div
+                            className={`${style.moreTextSubText} ${
+                              i18n.language === "he"
+                                ? style.hewText
+                                : style.engText
+                            }`}
+                          >
                             We are committed to staying up-to-date with the
                             latest technology and using cutting-edge tools like
                             Building Information Modeling (BIM) to streamline
@@ -228,7 +280,13 @@ function Home() {
                             operational aspects of each project, ultimately
                             saving our clients time and money.
                           </div>
-                          <div className={style.moreTextSubText}>
+                          <div
+                            className={`${style.moreTextSubText} ${
+                              i18n.language === "he"
+                                ? style.hewText
+                                : style.engText
+                            }`}
+                          >
                             At IB Eng, we take pride in our ability to provide
                             comprehensive and personalized service to each and
                             every one of our clients. Whether you are looking to
@@ -242,7 +300,9 @@ function Home() {
                   )}
                 </div>
                 <Animated
-                  className={style.showMoreContainer}
+                  className={`${style.showMoreContainer} ${
+                    i18n.language === "he" ? style.hewItem : style.engText
+                  }`}
                   animationIn="slideInLeft"
                   animationOut="fadeOut"
                   isVisible={visionAnim}
@@ -275,7 +335,9 @@ function Home() {
                   onClick={() => navigate("/missionAndVision")}
                   src={forwardBtn}
                   alt="view"
-                  className={style.viewIcon}
+                  className={`${style.viewIcon} ${
+                    i18n.language === "he" && style.icon180
+                  }`}
                 />
               </Animated>
             </div>
@@ -290,6 +352,7 @@ function Home() {
             alt=""
             className={style.heroImg}
           />
+
           <div
             className={`${style.linearHighLight}  ${
               containerTwo
@@ -297,7 +360,11 @@ function Home() {
                 : `${style.defaultContainerTwo}`
             } `}
           >
-            <div className={`${style.detialsContainer} `}>
+            <div
+              className={`${style.detialsContainer} ${
+                i18n.language === "he" ? style.reverseCol : style.forwardCol
+              }`}
+            >
               <div
                 className={`${style.imageTextContainer}  ${
                   containerTwo ? style.slide_in2 : style.slide_out2
@@ -309,7 +376,13 @@ function Home() {
                   animationInDelay={500}
                   animationInDuration={1000}
                 >
-                  <h1 className={style.mainHeading}>{t("homeMissionTitle")}</h1>
+                  <h1
+                    className={`${style.mainHeading} ${
+                      i18n.language === "he" ? style.hewText : style.engText
+                    }`}
+                  >
+                    {t("homeMissionTitle")}
+                  </h1>
                 </Animated>
                 <Animated
                   animationIn="slideInRight"
@@ -317,80 +390,167 @@ function Home() {
                   animationInDelay={500}
                   animationInDuration={1000}
                 >
-                  <div className={style.imageDescription}>
-                    {i18n.language === "en" ? (
-                      <React.Fragment>
-                        {!containerTwo ? (
-                          <div className={style.moreTextSubText}>
-                            At IB Engineering, our mission is to serve as your
-                            comprehensive partner in construction, offering a
-                            full spectrum of services that seamlessly guide your
-                            projects from inception to realization.
-                          </div>
-                        ) : (
-                          <React.Fragment>
-                            <div className={style.moreTextSubText}>
+                  <div
+                    className={`${style.imageDescription}  ${
+                      i18n.language === "he" && style.hewItem
+                    }`}
+                  >
+                    <Animated
+                      animationIn="slideInRight"
+                      animationOut="fadeOut"
+                      isVisible={visionAnim}
+                      animationInDelay={500}
+                      animationInDuration={1000}
+                      className={`${style.maxWidth}
+                      ${
+                        i18n.language === "he"
+                          ? `${style.hewText} `
+                          : style.engText
+                      }`}
+                    >
+                      {i18n.language === "en" ? (
+                        <React.Fragment>
+                          {!containerTwo ? (
+                            <div
+                              className={`${style.moreTextSubText} ${
+                                i18n.language === "he"
+                                  ? style.hewText
+                                  : style.engText
+                              }`}
+                            >
                               At IB Engineering, our mission is to serve as your
                               comprehensive partner in construction, offering a
                               full spectrum of services that seamlessly guide
                               your projects from inception to realization.
-                            </div>{" "}
-                            <div className={style.moreTextSubText}>
-                              We embark on this mission by beginning with
-                              thorough land assessment, ensuring that your
-                              chosen site aligns perfectly with your vision.
-                              From there, our dedicated team employs the latest
-                              advancements in technology to craft meticulous
-                              plans that optimize efficiency and precision.
                             </div>
-                            <div className={style.moreTextSubText}>
-                              At IB Engineering, we take immense pride in
-                              offering personalized service and expertise
-                              tailored to your unique needs. Whether you aspire
-                              to build a new home, breathe new life into an
-                              existing structure or embark on a commercial
-                              venture, we are your perfect partner, ready to
-                              transform your construction dreams into reality.
-                            </div>
-                          </React.Fragment>
-                        )}
-                      </React.Fragment>
-                    ) : (
-                      <React.Fragment>
-                        {!containerTwo ? (
-                          <>
-                            <span className={style.highLight}>ב-איי</span>{" "}
-                            ב-איי.ביי הנדסה משימתנו היא לשמש שותף מקיף בתחום
-                            הבנייה תוך הצעת מגוון שירותים המנחים את הפרויקטים
-                            שלך מהרגע הראשון ועד להגשמתם
-                          </>
-                        ) : (
-                          <>
-                            <div className={style.moreTextSubText}>
+                          ) : (
+                            <React.Fragment>
+                              <div
+                                className={`${style.moreTextSubText} ${
+                                  i18n.language === "he"
+                                    ? style.hewText
+                                    : style.engText
+                                }`}
+                              >
+                                At IB Engineering, our mission is to serve as
+                                your comprehensive partner in construction,
+                                offering a full spectrum of services that
+                                seamlessly guide your projects from inception to
+                                realization.
+                              </div>{" "}
+                              <div
+                                className={`${style.moreTextSubText} ${
+                                  i18n.language === "he"
+                                    ? style.hewText
+                                    : style.engText
+                                }`}
+                              >
+                                Our commitment extends beyond the drawing board;
+                                we actively manage every aspect of your project,
+                                keeping a keen eye on both construction and
+                                operational elements.
+                              </div>
+                              <div
+                                className={`${style.moreTextSubText} ${
+                                  i18n.language === "he"
+                                    ? style.hewText
+                                    : style.engText
+                                }`}
+                              >
+                                We embark on this mission by beginning with
+                                thorough land assessment, ensuring that your
+                                chosen site aligns perfectly with your vision.
+                                From there, our dedicated team employs the
+                                latest advancements in technology to craft
+                                meticulous plans that optimize efficiency and
+                                precision.
+                              </div>
+                              <div
+                                className={`${style.moreTextSubText} ${
+                                  i18n.language === "he"
+                                    ? style.hewText
+                                    : style.engText
+                                }`}
+                              >
+                                At IB Engineering, we take immense pride in
+                                offering personalized service and expertise
+                                tailored to your unique needs. Whether you
+                                aspire to build a new home, breathe new life
+                                into an existing structure or embark on a
+                                commercial venture, we are your perfect partner,
+                                ready to transform your construction dreams into
+                                reality.
+                              </div>
+                            </React.Fragment>
+                          )}
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          {!containerTwo ? (
+                            <>
                               <span className={style.highLight}>ב-איי</span>{" "}
                               ב-איי.ביי הנדסה משימתנו היא לשמש שותף מקיף בתחום
                               הבנייה תוך הצעת מגוון שירותים המנחים את הפרויקטים
                               שלך מהרגע הראשון ועד להגשמתם
-                            </div>
-                            <div className={style.moreTextSubText}>
-                              משם, צוותנו המסור מעסיק את ההתקדמויות העדכניות
-                              ביותר בטכנולוגיה כדי ליצור תוכניות מדוקדקות
-                              הממקסמות יעילות ודיוק. התחייבותנו נטויה מעבר ללוח
-                              השרטוטים, אנו ניהולם באופן פעיל לכל פקטור בפרויקט
-                              שלך, תוך שמירה על עין חדה הן על אלמנטים של הבנייה
-                              והן על ההיבטים התפעוליים
-                            </div>
-                            <div className={style.moreTextSubText}>
-                              אנו מתגאים באופן עצום בהצעת שירות אישי ומומחיות
-                              המותאמים לצרכים הייחודיים שלך בין אם אתה שואף
-                              לבנות בית חדש, להנשים חיים חדשים במבנה קיים או
-                              להתחיל ביוזמה מסחרית, אנו השותף המושלם עבורך,
-                              מוכנים להפוך את חלומות הבנייה שלך למציאות
-                            </div>
-                          </>
-                        )}
-                      </React.Fragment>
-                    )}
+                            </>
+                          ) : (
+                            <>
+                              <div
+                                className={`${style.moreTextSubText} ${
+                                  i18n.language === "he"
+                                    ? style.hewText
+                                    : style.engText
+                                }`}
+                              >
+                                <span className={style.highLight}>ב-איי</span>{" "}
+                                ב-איי.ביי הנדסה משימתנו היא לשמש שותף מקיף בתחום
+                                הבנייה תוך הצעת מגוון שירותים המנחים את
+                                הפרויקטים שלך מהרגע הראשון ועד להגשמתם
+                              </div>
+                              <div
+                                className={`${style.moreTextSubText} ${
+                                  i18n.language === "he"
+                                    ? style.hewText
+                                    : style.engText
+                                }`}
+                              >
+                                המחויבות שלנו משתרעת מעבר ללוח השרטוט; אנו
+                                מנהלים באופן פעיל כל היבט של הפרויקט שלך, תוך
+                                שמירה קפדנית על שני המרכיבים התפעוליים של
+                                הבנייה.
+                              </div>
+                              <div
+                                className={`${style.moreTextSubText} ${
+                                  i18n.language === "he"
+                                    ? style.hewText
+                                    : style.engText
+                                }`}
+                              >
+                                משם, צוותנו המסור מעסיק את ההתקדמויות העדכניות
+                                ביותר בטכנולוגיה כדי ליצור תוכניות מדוקדקות
+                                הממקסמות יעילות ודיוק. התחייבותנו נטויה מעבר
+                                ללוח השרטוטים, אנו ניהולם באופן פעיל לכל פקטור
+                                בפרויקט שלך, תוך שמירה על עין חדה הן על אלמנטים
+                                של הבנייה והן על ההיבטים התפעוליים
+                              </div>
+                              <div
+                                className={`${style.moreTextSubText} ${
+                                  i18n.language === "he"
+                                    ? style.hewText
+                                    : style.engText
+                                }`}
+                              >
+                                אנו מתגאים באופן עצום בהצעת שירות אישי ומומחיות
+                                המותאמים לצרכים הייחודיים שלך בין אם אתה שואף
+                                לבנות בית חדש, להנשים חיים חדשים במבנה קיים או
+                                להתחיל ביוזמה מסחרית, אנו השותף המושלם עבורך,
+                                מוכנים להפוך את חלומות הבנייה שלך למציאות
+                              </div>
+                            </>
+                          )}
+                        </React.Fragment>
+                      )}
+                    </Animated>
                   </div>
                 </Animated>
                 <Animated
@@ -398,6 +558,9 @@ function Home() {
                   isVisible={missionAnim}
                   animationInDelay={500}
                   animationInDuration={1000}
+                  className={`${style.showMoreContainer} ${
+                    i18n.language === "he" ? style.hewItem : style.engText
+                  }`}
                 >
                   <div
                     className={style.showMore}
@@ -422,7 +585,9 @@ function Home() {
                   onClick={() => navigate("/missionAndVision")}
                   src={forwardBtn}
                   alt="view"
-                  className={style.viewIcon}
+                  className={`${style.viewIcon} ${
+                    i18n.language === "he" && style.icon180
+                  }`}
                 />
               </Animated>
             </div>
