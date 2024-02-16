@@ -41,9 +41,9 @@
     padding-top: 64px;
     height: 400px;
     background: linear-gradient(
-      360deg,
-      rgba(0, 0, 0, 0.62) 0%,
-      rgba(255, 255, 255, 0) 100%
+      0deg,
+      rgba(0, 0, 0, 0.62) 2%,
+      rgba(255, 255, 255, 0) 18%
     );
     @include mobile {
       height: 160px;
@@ -101,6 +101,10 @@
         height: 340px;
         cursor: pointer;
         transition: transform 0.5s; /* Animation */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         @include mobile {
           margin-left: 16px;
           margin-right: 16px;
@@ -135,7 +139,7 @@
           width: 248px;
           height: 219px;
           border-radius: 10px;
-          background: rgba(0, 0, 0, 0.3);
+          background: rgb(89 86 86 / 30%);
           @include smallLaptop {
             height: 200px;
             width: 224px;
@@ -370,4 +374,14 @@
   100% {
     transform: translateY(-30%);
   }
+}
+
+.shadow {
+  border-radius: 50%;
+  width: 160px;
+  height: 100px;
+  background: #6c6868;
+  opacity: 0.5;
+  -webkit-filter: blur(10px);
+  -webkit-transform: scale(1, 0.2);
 }

@@ -112,13 +112,16 @@ function Protfolio() {
                         window.scroll(0, 0);
                       }}
                     >
-                      <img
-                        src={m.mainProject}
-                        alt="project1"
-                        className={style.projectImg}
-                      />
-                      <div className={style.imgOverLay} />
-                      <div className={style.projectText}>{m.projectName}</div>
+                      <div>
+                        <img
+                          src={m.mainProject}
+                          alt="project1"
+                          className={style.projectImg}
+                        />
+                        <div className={style.imgOverLay} />
+                        <div className={style.projectText}>{m.projectName}</div>
+                      </div>
+                      <div className={style.shadow} />
                     </div>
                   ))}
                 </div>
