@@ -347,6 +347,9 @@
     .closeIcon {
       z-index: 999;
       cursor: pointer;
+      @include mobile {
+        height: 40px;
+      }
     }
   }
   .confirmationBox {
@@ -358,23 +361,36 @@
     flex-direction: column;
     width: 640px;
     height: 360px;
+    @include mobile {
+      width: 320px;
+    }
     .rightTickIcon {
       position: relative;
       margin-top: -188px;
       width: 195px;
       height: 195px;
+      @include mobile {
+        width: 80px;
+        height: 80px;
+      }
     }
     .confrimTitle {
       margin-top: 24px;
       font-size: 48px;
       color: $confirmMainTextColor;
       font-weight: 600;
+      @include mobile {
+        font-size: 40px;
+      }
     }
     .confirmSubTitle {
       margin-top: 40px;
       font-size: 22px;
       width: 428px;
       text-align: center;
+      @include mobile {
+        width: 324px;
+      }
     }
     .logo {
       margin-top: 24px;
@@ -387,6 +403,10 @@
       border: none;
       position: relative;
       margin-bottom: -110px;
+      @include mobile {
+        margin-top: 46px;
+        margin-bottom: -184px;
+      }
     }
   }
 }

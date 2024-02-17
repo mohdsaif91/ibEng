@@ -48,7 +48,7 @@ function ContactUs() {
   const [formError, setFormError] = useState("");
   const [pageLoading, setPageLoading] = useState(false);
   const [btnResponse, setBtnResponse] = useState(false);
-  const [thankYou, setThankyou] = useState(true);
+  const [thankYou, setThankyou] = useState(false);
 
   const navigate = useNavigate();
 

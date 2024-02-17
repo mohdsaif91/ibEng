@@ -141,7 +141,6 @@
       }
       .imgContainer {
         display: flex;
-        justify-content: space-between;
         @include mobile {
           flex-direction: column;
         }
@@ -150,6 +149,7 @@
           align-items: end;
           margin-bottom: 64px;
           justify-content: center;
+          margin-left: 120px;
           @include smallLaptop {
             width: 504px;
           }
@@ -159,6 +159,7 @@
           }
           .firstTextContainer {
             margin-left: 144px;
+            max-width: 447px;
             @include smallLaptop {
               margin-left: 40px;
             }
@@ -304,7 +305,7 @@
         }
         .topMarginTextContainer {
           //   margin-top: 40%;
-          margin-left: 20%;
+          margin-left: 40%;
           width: 447px;
           margin-top: 48%;
           @include smallLaptop {
