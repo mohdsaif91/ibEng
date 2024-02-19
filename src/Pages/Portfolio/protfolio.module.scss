@@ -184,6 +184,7 @@
       }
       .leftIcon {
         cursor: pointer;
+        animation: leftRight 2s ease infinite;
         &:hover {
           transform: scale(1.5);
         }
@@ -387,4 +388,18 @@
   opacity: 0.5;
   -webkit-filter: blur(10px);
   -webkit-transform: scale(1, 0.2);
+}
+
+@keyframes leftRight {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  50% {
+    transform: translateX(10%);
+  }
+
+  100% {
+    transform: translateX(-10%);
+  }
 }

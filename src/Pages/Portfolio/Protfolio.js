@@ -49,7 +49,7 @@ function Protfolio() {
           }
         );
       };
-      getProject();
+      // getProject();
     }
   }, [project]);
 
@@ -99,7 +99,6 @@ function Protfolio() {
               </div>
               <div className={style.actualprojectContainer}>
                 <div className={style.projectCardContainer}>
-                  {/* Array.isArray(project) && */}
                   {projectData.map((m, index) => (
                     <div
                       key={m._id}
