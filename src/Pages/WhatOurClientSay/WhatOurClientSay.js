@@ -48,7 +48,7 @@ function WhatOurClientSay() {
     Math.min(window.screen.width, window.screen.height) < 768 ||
       navigator.userAgent.indexOf("Mobi") > -1
   );
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className={style.whatOurClientSayContainer}>

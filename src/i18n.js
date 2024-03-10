@@ -143,6 +143,9 @@ i18n.use(initReactI18next).init({
         followMsg:
           "Follow us on social media to stay updated on our latest projects:",
         languageLabel: "Select Language",
+        menuOption1: "Mission and Vision",
+        menuOption2: "Mission and Vision",
+        menuOption3: "Mission and Vision",
       },
     },
     // send footer btn שלח

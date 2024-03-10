@@ -24,7 +24,7 @@ function TheMindBehind() {
       navigator.userAgent.indexOf("Mobi") > -1
   );
 
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className={style.whoWeAreContaineParent}>

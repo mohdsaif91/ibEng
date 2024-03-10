@@ -262,7 +262,7 @@ function WhatWeDo() {
                     animationInDuration={1000}
                     className={style.containerHeadingTwo}
                   >
-                    <span translate="yes">בדיקת מבנים</span>
+                    <span translate="yes">{t("whatWeDoContainerFour")}</span>
                   </Animated>
                 )}
               </div>
@@ -312,7 +312,7 @@ function WhatWeDo() {
                     animationInDuration={1000}
                     className={style.containerHeadingTwo}
                   >
-                    עיצוב פנים
+                    {t("whatWedoContainerEight")}
                     <span className={style.headingIcon}>IN</span>
                   </Animated>
                 )}

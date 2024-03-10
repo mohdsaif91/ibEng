@@ -40,7 +40,10 @@ function Header() {
     <div className={style.headerContainer}>
       <div className={style.logoContainer}>
         {mobile ? (
-          <div className={style.mobileIconContainer}>
+          <div
+            className={style.mobileIconContainer}
+            onClick={() => navigate("/")}
+          >
             <img
               src={mobileIcon1}
               alt="mobileIcon"
@@ -53,7 +56,12 @@ function Header() {
             />
           </div>
         ) : (
-          <img src={Logo} alt="" className={style.logo} />
+          <img
+            onClick={() => navigate("/")}
+            src={Logo}
+            alt=""
+            className={style.logo}
+          />
         )}
       </div>
       {!mobile && (
@@ -407,7 +415,7 @@ function Header() {
                             navigate("/missionAndVision");
                           }}
                         >
-                          משימה וחזון
+                          {t("missionVission")}
                         </div>
                         <div
                           className={style.subLinks}
@@ -417,7 +425,7 @@ function Header() {
                             navigate("/theMindBehind");
                           }}
                         >
-                          IB ENG המוח מאחורי
+                          {t("theBrainBehind")}
                         </div>
                         <div
                           className={style.subLinks}
@@ -427,7 +435,7 @@ function Header() {
                             navigate("/team");
                           }}
                         >
-                          קְבוּצָה
+                          {t("meetTheLeaders")}
                         </div>
                       </Animated>
                     )}
