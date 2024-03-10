@@ -14,7 +14,6 @@ import linkedIn from "../../Asset/Icon/LinkedIn.png";
 import leftArrow from "../../Asset/Icon/leftArrowIcon.png";
 import rightArrow from "../../Asset/Icon/rightArrowIcon.png";
 import { leaderData } from "../../utils";
-import project2_5 from "../../Asset/project/project2_5.png";
 
 import style from "./team.module.scss";
 

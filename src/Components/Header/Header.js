@@ -264,6 +264,7 @@ function Header() {
               onClick={() => {
                 setOpenDrawer(false);
                 setOpenNavDrawer(false);
+                setOpenLng(false);
               }}
             />
           </div>
