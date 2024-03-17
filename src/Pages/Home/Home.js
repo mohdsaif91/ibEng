@@ -94,7 +94,7 @@ function Home() {
       <div className={style.heroContainer}>
         <video
           ref={videoRef}
-          poster={mobile ? heroMobileImg1 : hero1}
+          // poster={mobile ? heroMobileImg1 : hero1}
           controls={false}
           className={style.videoPlayer}
           loop={true}
@@ -103,10 +103,11 @@ function Home() {
             const promise = videoRef.current.play();
             if (promise !== undefined) {
               promise
-                .then(() => {})
+                .then(() => {
+                  videoRef.current.play();
+                })
                 .catch((err) => {
                   videoRef.current.muted();
-                  videoRef.current.play();
                 });
             }
           }}
