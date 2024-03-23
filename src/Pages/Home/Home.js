@@ -95,6 +95,7 @@ function Home() {
         <video
           ref={videoRef}
           // poster={mobile ? heroMobileImg1 : hero1}
+          playsInline={true}
           controls={false}
           className={style.videoPlayer}
           loop={true}
@@ -116,6 +117,7 @@ function Home() {
             src="https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo+(1).mp4"
             type="video/mp4"
           />
+          Your browser does not support the video tag.
         </video>
         <div className={style.hero1imgOverlay} />
         <div
