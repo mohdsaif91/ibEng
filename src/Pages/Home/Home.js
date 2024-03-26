@@ -22,6 +22,7 @@ import heroMobileImg3 from "../../Asset/Img/heroImgmobile3.png";
 
 import style from "./home.module.scss";
 import "glider-js/glider.min.css";
+import ReactPlayer from "react-player";
 
 const sliderConfiguration = {
   animationDuration: 1000,
@@ -92,9 +93,29 @@ function Home() {
   return (
     <div className={style.homeContainer}>
       <div className={style.heroContainer}>
-        <video
+        <ReactPlayer
+          width="100%"
+          height="50%"
+          style={{
+            position: "relative",
+            width: "100%",
+            zIndex: "99",
+          }}
           ref={videoRef}
-          // poster={mobile ? heroMobileImg1 : hero1}
+          // playsinline={true}
+          controls={false}
+          loop={true}
+          muted={true}
+          url={[
+            {
+              src: "https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo+(1).mp4",
+              type: "video/mp4",
+            },
+          ]}
+          playing={true}
+        />
+        {/* <video
+          ref={videoRef}
           playsInline={true}
           controls={false}
           className={style.videoPlayer}
@@ -118,7 +139,7 @@ function Home() {
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
         <div className={style.hero1imgOverlay} />
         <div
           className={`${style.heroImageContainer} ${style.marginTopHero2}`}
