@@ -56,6 +56,7 @@ function Home() {
 
   useLayoutEffect(() => {
     window.scroll(0, 0);
+    console.log(getMobileOperatingSystem(), " <>?");
   }, []);
 
   useEffect(() => {
@@ -90,56 +91,84 @@ function Home() {
     []
   );
 
+  function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    console.log(userAgent, " <>?");
+
+    // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+      return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+      return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      return "iOS";
+    }
+
+    return "unknown";
+  }
+
+  const operatingSystem = getMobileOperatingSystem();
+
   return (
     <div className={style.homeContainer}>
       <div className={style.heroContainer}>
-        <ReactPlayer
-          width="100%"
-          height="50%"
-          style={{
-            position: "relative",
-            width: "100%",
-            zIndex: "99",
-          }}
-          ref={videoRef}
-          // playsinline={true}
-          controls={false}
-          loop={true}
-          muted={true}
-          url={[
-            {
-              src: "https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo+(1).mp4",
-              type: "video/mp4",
-            },
-          ]}
-          playing={true}
-        />
-        {/* <video
-          ref={videoRef}
-          playsInline={true}
-          controls={false}
-          className={style.videoPlayer}
-          loop={true}
-          muted={true}
-          onLoadedData={() => {
-            const promise = videoRef.current.play();
-            if (promise !== undefined) {
-              promise
-                .then(() => {
-                  videoRef.current.play();
-                })
-                .catch((err) => {
-                  videoRef.current.muted();
-                });
-            }
-          }}
-        >
-          <source
-            src="https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo+(1).mp4"
-            type="video/mp4"
+        {operatingSystem === "unknown" || operatingSystem === "Android" ? (
+          <ReactPlayer
+            width="100%"
+            height="50%"
+            style={{
+              position: "relative",
+              width: "100%",
+              zIndex: "99",
+            }}
+            ref={videoRef}
+            // playsinline={true}
+            controls={false}
+            loop={true}
+            muted={true}
+            url={[
+              {
+                src: "https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo+(1).mp4",
+                type: "video/mp4",
+              },
+            ]}
+            playing={true}
           />
-          Your browser does not support the video tag.
-        </video> */}
+        ) : (
+          <video
+            ref={videoRef}
+            playsInline={true}
+            controls={true}
+            className={style.videoPlayer}
+            loop={true}
+            muted={true}
+            // onLoadedData={() => {
+            //   const promise = videoRef.current.play();
+            //   if (promise !== undefined) {
+            //     promise
+            //       .then(() => {
+            //         videoRef.current.play();
+            //       })
+            //       .catch((err) => {
+            //         videoRef.current.muted();
+            //       });
+            //   }
+            // }}
+          >
+            <source
+              src="https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo+(1).mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        )}
+
         <div className={style.hero1imgOverlay} />
         <div
           className={`${style.heroImageContainer} ${style.marginTopHero2}`}
