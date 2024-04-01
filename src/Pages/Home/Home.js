@@ -25,16 +25,16 @@ import "glider-js/glider.min.css";
 import ReactPlayer from "react-player";
 
 const sliderConfiguration = {
-  animationDuration: 1000,
-  autoplay: 2000,
+  animationDuration: 2000,
+  autoplay: 3000,
   dragDistance: false,
-  gap: 2,
-  hoverMouse: false,
-  perView: window.innerWidth <= 700 ? 2 : 3,
-  paddings: window.innerWidth <= 700 ? "2%" : "25%",
+  gap: window.innerWidth <= 700 ? 4 : 2,
+  hoverMouse: true,
+  perView: window.innerWidth <= 700 ? 1 : 3,
+  paddings: window.innerWidth <= 700 ? "0%" : "25%",
   reqwind: true,
   startAt: 0,
-  type: "carousel",
+  type: window.innerWidth <= 700 ? "slider" : "carousel",
 };
 
 function Home() {
@@ -75,7 +75,7 @@ function Home() {
         >
           <ul className={style.client_cards}>
             {brandData.map((m) => (
-              <li className="glide__slide slider">
+              <li className={`glide__slide slider ${style.slideCard}`}>
                 <img
                   className={style.brandImg}
                   key={m.id}
@@ -93,8 +93,6 @@ function Home() {
 
   function getMobileOperatingSystem() {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-    console.log(userAgent, " <>?");
 
     // Windows Phone must come first because its UA also contains "Android"
     if (/windows phone/i.test(userAgent)) {
@@ -148,18 +146,6 @@ function Home() {
             className={style.videoPlayer}
             loop={true}
             muted={true}
-            // onLoadedData={() => {
-            //   const promise = videoRef.current.play();
-            //   if (promise !== undefined) {
-            //     promise
-            //       .then(() => {
-            //         videoRef.current.play();
-            //       })
-            //       .catch((err) => {
-            //         videoRef.current.muted();
-            //       });
-            //   }
-            // }}
           >
             <source
               src="https://ibeng.s3.ap-south-1.amazonaws.com/ibEngHeroVideo+(1).mp4"

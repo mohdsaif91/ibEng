@@ -264,8 +264,12 @@
 }
 .brandImg {
   height: 120px !important;
+  width: 100%;
   max-width: 292px !important;
   margin-right: 64px;
+  @include mobile {
+    margin-right: 0;
+  }
 }
 
 .sliderContainer {
@@ -339,6 +343,14 @@
   display: flex;
   justify-content: center;
   list-style: none;
+
+  .slideCard {
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 .glide {
