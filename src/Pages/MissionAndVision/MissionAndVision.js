@@ -23,12 +23,13 @@ function MissionAndVision() {
     <div className={style.whoWeAreContaineParent}>
       <div className={style.heroContainer}>
         <div className={style.imgTextContainer}>
-          <img
+          <div className={style.heroImg} />
+          {/* <img
             alt="hero img"
             src={isMobile ? heroImgMobile : heroImg}
             className={style.heroImg}
           />
-          <div className={style.heroImgOverLay} />
+          <div className={style.heroImgOverLay} /> */}
           <Animated
             animationIn="slideInLeft"
             animationOut="fadeOut"
