@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Animated } from "react-animated-css";
 import { useTranslation } from "react-i18next";
 
-import heroImg from "../../Asset/Img/whoAreWeHeroImg.png";
+// import heroImg from "../../Asset/Img/whoAreWeHeroImg.png";
 import intialConOne from "../../Asset/Img/initialConOne.png";
 import intialConTow from "../../Asset/Img/initialConTwo.png";
-import heroImgMobile from "../../Asset/Img/missionAndVIsionMobile.jpeg";
+// import heroImgMobile from "../../Asset/Img/missionAndVIsionMobile.jpeg";
 
 import style from "./missionAndVision.module.scss";
 
@@ -24,12 +24,6 @@ function MissionAndVision() {
       <div className={style.heroContainer}>
         <div className={style.imgTextContainer}>
           <div className={style.heroImg} />
-          {/* <img
-            alt="hero img"
-            src={isMobile ? heroImgMobile : heroImg}
-            className={style.heroImg}
-          />
-          <div className={style.heroImgOverLay} /> */}
           <Animated
             animationIn="slideInLeft"
             animationOut="fadeOut"
@@ -38,12 +32,14 @@ function MissionAndVision() {
             animationInDuration={1000}
           >
             <div className={style.heroText}>
-              <div
-                className={`${style.borderUnderLine} ${
-                  i18n.language === "he" && style.textCenter
-                }`}
-              >
-                {t("missionVissionHeading")}
+              <div className={style.borderUnderlineContainer}>
+                <div
+                  className={`${style.borderUnderLine} ${
+                    i18n.language === "he" && style.textCenter
+                  }`}
+                >
+                  {t("missionVissionHeading")}
+                </div>
               </div>
             </div>
           </Animated>
@@ -106,6 +102,7 @@ function MissionAndVision() {
               animationInDuration={1000}
               className={style.imgTextcontainer}
             >
+              {/* <div className={style.initialOneImg} /> */}
               <img
                 src={intialConOne}
                 alt="initial"
@@ -125,8 +122,6 @@ function MissionAndVision() {
                   <div className={style.text}>{t("visionTextFour")}</div>
                 </div>
               </div>
-              {/* </Animated> */}
-              {/* </div> */}
             </Animated>
           )}
         </div>
@@ -157,6 +152,7 @@ function MissionAndVision() {
               >
                 <div
                   className={`${style.heading} ${style.initialContainerThreeText} ${style.smallLaptopMargin}`}
+                  onMouseEnter={() => setContainerTwo(true)}
                 >
                   {t("missionTextOne")}
                 </div>
@@ -184,6 +180,7 @@ function MissionAndVision() {
                 animationInDelay={500}
                 animationInDuration={1000}
               >
+                {/* <div className={style.heroImg} /> */}
                 <img alt="img" src={intialConTow} className={style.heroImg} />
               </Animated>
               <Animated
@@ -212,6 +209,7 @@ function MissionAndVision() {
           )}
         </div>
       </div>
+      <div className={style.extraMargin} />
     </div>
   );
 }

@@ -78,11 +78,9 @@ function ContactUs() {
         .then((apiRes) => {
           setPageLoading(false);
           setBtnResponse(true);
-          console.log("got res 200 ", apiRes);
         })
         .catch((err) => {
           setPageLoading(false);
-          console.log(err);
         });
     }
     setThankyou(true);

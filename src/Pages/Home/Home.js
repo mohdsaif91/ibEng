@@ -56,7 +56,6 @@ function Home() {
 
   useLayoutEffect(() => {
     window.scroll(0, 0);
-    console.log(getMobileOperatingSystem(), " <>?");
   }, []);
 
   useEffect(() => {

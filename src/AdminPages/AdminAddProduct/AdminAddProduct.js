@@ -62,12 +62,10 @@ const AdminAddProduct = () => {
       onAuthenticated(payload, true)
         .then((res) => {
           setPageLoading(false);
-          console.log(res.status);
         })
         .catch((err) => {
           setPageLoading(false);
           setError({ show: true, message: err });
-          console.log(err);
         });
     }
   };
@@ -103,17 +101,14 @@ const AdminAddProduct = () => {
       onAuthenticated(payload, updateMainImage || updateSubImage)
         .then((res) => {
           setPageLoading(false);
-          console.log(res.status);
         })
         .catch((err) => {
           setPageLoading(false);
-          console.log(err);
         });
     }
   };
 
   const editProjectItem = (editProjectData) => {
-    console.log(editProjectData);
     setProjectData({ ...editProjectData });
   };
   const removeImage = (removeImg) => {
@@ -141,8 +136,6 @@ const AdminAddProduct = () => {
         setPageLoading(false);
       });
   };
-
-  console.log(projectData, " <>?");
 
   return (
     <div className={style.addAdminProductContainer}>

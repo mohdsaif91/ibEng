@@ -38,8 +38,9 @@
       // }
       .heroImg {
         width: 100%;
+        height: 366px;
         background-image: url("../../Asset/Img/whoAreWeHeroImg.png");
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         position: relative;
         &:before {
@@ -70,15 +71,15 @@
         );
       }
       .heroText {
-        width: 509px;
+        width: 100%;
         position: absolute;
         margin-top: -24%;
         color: $whiteColor;
         font-size: 50px;
         font-weight: 700;
-        border-bottom: 4px solid $borderColor2;
-        margin-left: 2%;
+        height: 320px;
         @include mobile {
+          height: auto;
           font-size: 20px;
           width: 215px;
           margin-top: -28%;
@@ -88,9 +89,18 @@
           width: 100%;
           border-bottom: none;
         }
-        .borderUnderLine {
-          @include mobile {
+        .borderUnderlineContainer {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          margin-left: 3%;
+          .borderUnderLine {
+            width: 509px;
             border-bottom: 4px solid $borderColor2;
+            @include mobile {
+              width: auto;
+              border-bottom: 4px solid $borderColor2;
+            }
           }
         }
       }
@@ -176,7 +186,7 @@
             color: $whiteColor;
             width: 100% !important;
             height: 365px;
-            background: rgba(0, 0, 0, 0.55);
+            // background: rgba(0, 0, 0, 0.55);
             text-align: center;
             position: relative;
             top: -32%;
@@ -201,14 +211,14 @@
           }
         }
         .blackHighlight {
-          height: 160px;
+          height: 179px;
           background: linear-gradient(
             0deg,
             #000 13.54%,
             rgba(137, 134, 134, 0) 100%
           );
           position: relative;
-          top: 0%;
+          top: -4%;
           @include mobile {
             top: -28%;
           }
@@ -235,7 +245,20 @@
           }
         }
         .initialOneImg {
-          width: 1019px;
+          // width: 1019px;
+          max-width: 1019px;
+          width: 100%;
+          height: 480px;
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+          }
           @include mobile {
             width: 100%;
             height: 366px;
@@ -416,7 +439,7 @@
 
 .vissionContainer {
   position: relative;
-  margin-top: -15.5%;
+  margin-top: -4.5%;
   z-index: 99;
   display: flex;
   align-items: center;
@@ -487,6 +510,10 @@
   @include smallLaptop {
     margin-top: 24px;
   }
+}
+
+.extraMargin {
+  height: 64px;
 }
 
 .textCenter {

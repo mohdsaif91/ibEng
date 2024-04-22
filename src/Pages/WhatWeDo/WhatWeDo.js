@@ -510,7 +510,7 @@ function WhatWeDo() {
                   animationInDuration={1000}
                   className={`${style.containerHeadingFour} `}
                 >
-                  ייעוץ הנדסי
+                  {t("whatWeDoTwelve")}
                 </Animated>
               </div>
             )}

@@ -1,6 +1,8 @@
 @import "../../variable.module.scss";
 
 .footerContainer {
+  position: relative;
+  z-index: 99;
   background-color: $footerbackgroundColor;
   padding: 32px 96px;
   display: flex;

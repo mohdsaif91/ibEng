@@ -26,8 +26,6 @@ function Team() {
   );
   const { i18n, t } = useTranslation();
 
-  console.log(i18n.language);
-
   return (
     <div className={style.whoWeAreContaineParent}>
       <div className={style.meetOurLeaderContainer}>
@@ -131,7 +129,11 @@ function Team() {
                     {leaderData[leaderCount].name}
                   </div>
                   <div className={style.designationLabel}>
-                    {leaderData[leaderCount].designation}
+                    {leaderCount === 0
+                      ? t("leaderOneMainText")
+                      : leaderCount === 1
+                      ? t("leaderTwoMainText")
+                      : t("leaderThreeMainText")}
                   </div>
                 </div>
               </div>

@@ -168,13 +168,9 @@ function Protfolio() {
                   )}
                   {isMobile && (
                     <div className={style.btnContainer}>
-                      <div
-                        onMouseEnter={() => setUpMouse(true)}
-                        onMouseLeave={() => setUpMouse(false)}
-                        className={style.imgContainer}
-                      >
+                      <div className={style.imgContainer}>
                         <img
-                          src={upMouse ? upBtn : whiteUpArrow}
+                          src={upBtn}
                           onClick={(e) =>
                             currentProjectIndex === 0
                               ? e.preventDefault()
@@ -190,7 +186,7 @@ function Protfolio() {
                         className={style.imgContainer}
                       >
                         <img
-                          src={downMouse ? downBtn : whiteDownArrow}
+                          src={downBtn}
                           alt="down  btn"
                           onClick={(e) =>
                             currentProjectIndex + 1 ===
@@ -212,13 +208,7 @@ function Protfolio() {
                     {projectData[
                       projectSelected.projectData || 0
                     ].projectDetails.map((m) => (
-                      <div
-                        className={`${style.subTextItem} ${
-                          i18n.language === "en" && style.textLeft
-                        }`}
-                      >
-                        {m}
-                      </div>
+                      <div className={`${style.subTextItem}`}>{m}</div>
                     ))}
                     {/* <div className={style.subTextItem}>
                       {
@@ -227,11 +217,25 @@ function Protfolio() {
                       }
                     </div> */}
                   </div>
-                  <div className={style.cityImgConmtainer}>
-                    <img src={city1} alt="city 1" className={style.city1Icon} />
-                    <img src={city2} alt="city 2" className={style.city2Icon} />
-                    <img src={city3} alt="city 3" className={style.city3Icon} />
-                  </div>
+                  {!isMobile && (
+                    <div className={style.cityImgConmtainer}>
+                      <img
+                        src={city1}
+                        alt="city 1"
+                        className={style.city1Icon}
+                      />
+                      <img
+                        src={city2}
+                        alt="city 2"
+                        className={style.city2Icon}
+                      />
+                      <img
+                        src={city3}
+                        alt="city 3"
+                        className={style.city3Icon}
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className={style.imgContainer}>
                   {projectData[projectSelected.projectData].imgBackground.map(

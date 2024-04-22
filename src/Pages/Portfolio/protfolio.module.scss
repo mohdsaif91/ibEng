@@ -202,12 +202,14 @@
         width: 40%;
         margin-right: 4%;
         @include mobile {
-          width: auto;
+          width: 100%;
         }
         .subTextContainer {
           margin-top: 56px;
           @include mobile {
             margin-top: 0;
+            max-width: 280px;
+            width: 100%;
           }
           .subTextItem {
             color: $whiteColor;
@@ -225,8 +227,8 @@
           display: flex;
           align-items: end;
           justify-content: start;
-          // position: absolute;
-          margin-top: 1%;
+          margin-top: 15%;
+          margin-bottom: -29%;
           @include smallLaptop {
             margin-top: 8.3%;
           }
