@@ -3,8 +3,8 @@ import { Animated } from "react-animated-css";
 import { useTranslation } from "react-i18next";
 
 // import heroImg from "../../Asset/Img/whoAreWeHeroImg.png";
-import intialConOne from "../../Asset/Img/initialConOne.png";
-import intialConTow from "../../Asset/Img/initialConTwo.png";
+// import intialConOne from "../../Asset/Img/initialConOne.png";
+// import intialConTow from "../../Asset/Img/initialConTwo.png";
 // import heroImgMobile from "../../Asset/Img/missionAndVIsionMobile.jpeg";
 
 import style from "./missionAndVision.module.scss";
@@ -102,12 +102,12 @@ function MissionAndVision() {
               animationInDuration={1000}
               className={style.imgTextcontainer}
             >
-              {/* <div className={style.initialOneImg} /> */}
-              <img
+              <div className={style.initialOneImg} />
+              {/* <img
                 src={intialConOne}
                 alt="initial"
                 className={style.initialOneImg}
-              />
+              /> */}
               <div
                 className={
                   isMobile ? style.mobileBlackHighlight : style.blackHighlight
@@ -180,8 +180,8 @@ function MissionAndVision() {
                 animationInDelay={500}
                 animationInDuration={1000}
               >
-                {/* <div className={style.heroImg} /> */}
-                <img alt="img" src={intialConTow} className={style.heroImg} />
+                <div className={style.heroImgTwo} />
+                {/* <img alt="img" src={intialConTow} className={style.heroImg} /> */}
               </Animated>
               <Animated
                 animationIn="fadeInUp"

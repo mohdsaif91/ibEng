@@ -56,11 +56,9 @@ function Footer() {
         .then((apiRes) => {
           setPageLoading(false);
           setbtnResponse(true);
-          console.log("got res 200 ", apiRes);
         })
         .catch((err) => {
           setPageLoading(false);
-          console.log(err);
         });
     }
   };

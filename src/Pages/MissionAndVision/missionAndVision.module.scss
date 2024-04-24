@@ -218,7 +218,7 @@
             rgba(137, 134, 134, 0) 100%
           );
           position: relative;
-          top: -4%;
+          top: -3%;
           @include mobile {
             top: -28%;
           }
@@ -249,19 +249,25 @@
           max-width: 1019px;
           width: 100%;
           height: 480px;
-          position: relative;
-          &:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-          }
+          background-image: url("../../Asset/Img/initialConOne.png");
+          background-size: cover;
+          background-repeat: no-repeat;
           @include mobile {
             width: 100%;
             height: 366px;
+            background-image: url("../../Asset/Img/initialConOne.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            &:before {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              background: rgba(0, 0, 0, 0.5);
+            }
           }
         }
       }
@@ -376,16 +382,32 @@
           top: 45%;
           margin-bottom: 10%;
         }
-        .heroImg {
+        .heroImgTwo {
           width: 1019px;
+          height: 480px;
+          background-image: url("../../Asset/Img/initialConTwo.png");
+          background-size: cover;
+          background-repeat: no-repeat;
           @include mobile {
-            width: 100%;
             height: 366px;
+            background-image: url("../../Asset/Img/initialConTwo.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            &:before {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              background: rgba(0, 0, 0, 0.5);
+            }
           }
         }
         .mobileHighlight {
           position: relative;
-          background: rgba(0, 0, 0, 0.7);
+          // background: rgba(0, 0, 0, 0.7);
           width: 100%;
           height: 366px;
           color: $whiteColor;
